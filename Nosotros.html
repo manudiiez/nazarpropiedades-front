@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - Nazar Propiedades</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-red': '#E10600',
+                        'primary-red-hover': '#B30500'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-black font-sans">
+    <!-- Mini menu superior -->
+    <div class="bg-gray-900 text-white py-2 text-sm">
+        <div class="max-w-7xl mx-auto px-4 flex justify-end items-center space-x-6">
+            <a href="#" class="hover:text-primary-red transition-colors">Blog</a>
+            <span class="text-gray-400">|</span>
+            <a href="tel:+5712345678" class="hover:text-primary-red transition-colors flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+                +57 (1) 234-5678
+            </a>
+            <span class="text-gray-400">|</span>
+            <a href="mailto:info@nazarpropiedades.com" class="hover:text-primary-red transition-colors flex items-center">
+                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+                info@nazarpropiedades.com
+            </a>
+        </div>
+    </div>
+
+    <!-- Barra superior sticky -->
+    <header class="sticky top-0 bg-white shadow-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo -->
+            <div class="flex items-center cursor-pointer" onclick="goHome()">
+                <div class="w-10 h-10 bg-primary-red rounded-lg flex items-center justify-center mr-3">
+                    <span class="text-white font-bold text-xl">NP</span>
+                </div>
+                <span class="text-2xl font-bold text-black hover:text-primary-red transition-colors">Nazar Propiedades</span>
+            </div>
+
+            <!-- Menú de navegación -->
+            <nav class="hidden lg:flex items-center space-x-8 flex-1 justify-center">
+                <a href="#" class="text-black hover:text-primary-red font-medium transition-colors">Comprar</a>
+                <a href="#" class="text-black hover:text-primary-red font-medium transition-colors">Vender</a>
+                <a href="#" class="text-black hover:text-primary-red font-medium transition-colors">Alquilar</a>
+                <a href="#" class="text-primary-red font-medium">Nosotros</a>
+            </nav>
+
+            <!-- Botón contactar -->
+            <button onclick="contactWhatsApp()" class="bg-primary-red hover:bg-primary-red-hover text-white px-6 py-2 rounded-lg font-medium transition-colors">
+                Contactar
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-r from-gray-900 to-gray-700 text-white py-20">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Nosotros</h1>
+            <p class="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto">
+                Más de una década conectando familias con su hogar ideal en Bogotá
+            </p>
+        </div>
+        
+        <!-- Decorative SVG -->
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1200 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-12">
+                <path d="M0 120L50 110C100 100 200 80 300 70C400 60 500 60 600 65C700 70 800 80 900 85C1000 90 1100 90 1150 90L1200 90V120H1150C1100 120 1000 120 900 120C800 120 700 120 600 120C500 120 400 120 300 120C200 120 100 120 50 120H0Z" fill="white"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Nuestra Historia -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Nuestra Historia</h2>
+                    <div class="space-y-4 text-gray-700 leading-relaxed">
+                        <p>
+                            Fundada en 2013, <strong>Nazar Propiedades</strong> nació con la visión de transformar la experiencia inmobiliaria en Bogotá. Comenzamos como una pequeña empresa familiar con un gran sueño: hacer que encontrar el hogar perfecto fuera una experiencia memorable y sin complicaciones.
+                        </p>
+                        <p>
+                            Durante más de 10 años, hemos crecido hasta convertirnos en una de las inmobiliarias más confiables de la capital, manteniendo siempre nuestros valores fundamentales: <strong>transparencia, profesionalismo y compromiso genuino</strong> con cada cliente.
+                        </p>
+                        <p>
+                            Hoy, con más de <strong>2,500 familias satisfechas</strong> y un portafolio de propiedades que abarca desde apartamentos modernos hasta casas de lujo, seguimos escribiendo historias de hogares encontrados y sueños cumplidos.
+                        </p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-gray-100 rounded-2xl p-8 h-96 flex items-center justify-center">
+                        <svg class="w-full h-full max-w-md" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Edificio principal -->
+                            <rect fill="#E10600" x="150" y="100" width="100" height="150" rx="5"/>
+                            <rect fill="#B30500" x="160" y="110" width="80" height="140" rx="3"/>
+                            
+                            <!-- Ventanas -->
+                            <rect fill="#ffffff" x="170" y="120" width="15" height="20" rx="2"/>
+                            <rect fill="#ffffff" x="195" y="120" width="15" height="20" rx="2"/>
+                            <rect fill="#ffffff" x="220" y="120" width="15" height="20" rx="2"/>
+                            
+                            <rect fill="#ffffff" x="170" y="150" width="15" height="20" rx="2"/>
+                            <rect fill="#ffffff" x="195" y="150" width="15" height="20" rx="2"/>
+                            <rect fill="#ffffff" x="220" y="150" width="15" height="20" rx="2"/>
+                            
+                            <rect fill="#ffffff" x="170" y="180" width="15" height="20" rx="2"/>
+                            <rect fill="#ffffff" x="195" y="180" width="15" height="20" rx="2"/>
+                            <rect fill="#ffffff" x="220" y="180" width="15" height="20" rx="2"/>
+                            
+                            <!-- Puerta -->
+                            <rect fill="#8B4513" x="190" y="210" width="20" height="40" rx="10"/>
+                            <circle fill="#FFD700" cx="205" cy="230" r="2"/>
+                            
+                            <!-- Edificios de fondo -->
+                            <rect fill="#dee2e6" x="80" y="130" width="60" height="120" rx="3"/>
+                            <rect fill="#ced4da" x="260" y="140" width="50" height="110" rx="3"/>
+                            
+                            <!-- Nubes -->
+                            <circle fill="#ffffff" cx="100" cy="50" r="15" opacity="0.8"/>
+                            <circle fill="#ffffff" cx="115" cy="45" r="18" opacity="0.8"/>
+                            <circle fill="#ffffff" cx="130" cy="50" r="12" opacity="0.8"/>
+                            
+                            <circle fill="#ffffff" cx="300" cy="40" r="12" opacity="0.8"/>
+                            <circle fill="#ffffff" cx="315" cy="35" r="15" opacity="0.8"/>
+                            <circle fill="#ffffff" cx="330" cy="40" r="10" opacity="0.8"/>
+                            
+                            <!-- Texto NP -->
+                            <text x="200" y="180" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="24" font-weight="bold">NP</text>
+                        </svg>
+                    </div>
+                    
+                    <!-- Elementos decorativos -->
+                    <div class="absolute -top-4 -right-4 w-20 h-20 bg-primary-red rounded-full flex items-center justify-center text-white font-bold text-lg">
+                        10+
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center text-white font-bold">
+                        2013
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas Impresionantes -->
+    <section class="py-16 bg-primary-red text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestros Números Hablan</h2>
+                <p class="text-xl text-red-100">Más de una década de resultados excepcionales</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <!-- Casas Vendidas -->
+                <div class="text-center">
+                    <div class="bg-white/10 rounded-lg p-6 mb-4">
+                        <div class="text-4xl mb-2">🏠</div>
+                        <div class="text-3xl font-bold mb-2" data-counter="1847">0</div>
+                        <div class="text-sm text-red-100">Casas Vendidas</div>
+                    </div>
+                </div>
+                
+                <!-- Apartamentos Vendidos -->
+                <div class="text-center">
+                    <div class="bg-white/10 rounded-lg p-6 mb-4">
+                        <div class="text-4xl mb-2">🏢</div>
+                        <div class="text-3xl font-bold mb-2" data-counter="2156">0</div>
+                        <div class="text-sm text-red-100">Apartamentos Vendidos</div>
+                    </div>
+                </div>
+                
+                <!-- Alquileres Gestionados -->
+                <div class="text-center">
+                    <div class="bg-white/10 rounded-lg p-6 mb-4">
+                        <div class="text-4xl mb-2">🔑</div>
+                        <div class="text-3xl font-bold mb-2" data-counter="3420">0</div>
+                        <div class="text-sm text-red-100">Alquileres Gestionados</div>
+                    </div>
+                </div>
+                
+                <!-- Administraciones -->
+                <div class="text-center">
+                    <div class="bg-white/10 rounded-lg p-6 mb-4">
+                        <div class="text-4xl mb-2">🏗️</div>
+                        <div class="text-3xl font-bold mb-2" data-counter="892">0</div>
+                        <div class="text-sm text-red-100">Administraciones</div>
+                    </div>
+                </div>
+                
+                <!-- Propiedades Publicadas -->
+                <div class="text-center">
+                    <div class="bg-white/10 rounded-lg p-6 mb-4">
+                        <div class="text-4xl mb-2">📋</div>
+                        <div class="text-3xl font-bold mb-2" data-counter="8750">0</div>
+                        <div class="text-sm text-red-100">Propiedades Publicadas</div>
+                    </div>
+                </div>
+                
+                <!-- Clientes Satisfechos -->
+                <div class="text-center">
+                    <div class="bg-white/10 rounded-lg p-6 mb-4">
+                        <div class="text-4xl mb-2">😊</div>
+                        <div class="text-3xl font-bold mb-2" data-counter="4523">0</div>
+                        <div class="text-sm text-red-100">Clientes Satisfechos</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Estadísticas adicionales -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="text-center bg-white/10 rounded-lg p-6">
+                    <div class="text-5xl font-bold mb-2">98%</div>
+                    <div class="text-lg">Tasa de Satisfacción</div>
+                </div>
+                <div class="text-center bg-white/10 rounded-lg p-6">
+                    <div class="text-5xl font-bold mb-2">15</div>
+                    <div class="text-lg">Días Promedio de Venta</div>
+                </div>
+                <div class="text-center bg-white/10 rounded-lg p-6">
+                    <div class="text-5xl font-bold mb-2">24/7</div>
+                    <div class="text-lg">Atención al Cliente</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestros Servicios -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestros Servicios</h2>
+                <p class="text-gray-600 text-lg">Soluciones integrales para todas tus necesidades inmobiliarias</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Compra y Venta -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary-red rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Compra y Venta</h3>
+                    <p class="text-gray-600 mb-6">Te acompañamos en todo el proceso de compra o venta de tu propiedad, desde la valoración hasta la escrituración.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Tasación profesional gratuita</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Estudio de mercado detallado</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Asesoría legal completa</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Acompañamiento en escrituración</li>
+                    </ul>
+                </div>
+                
+                <!-- Alquiler -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary-red rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Alquiler</h3>
+                    <p class="text-gray-600 mb-6">Gestionamos tu propiedad en alquiler o te ayudamos a encontrar el lugar perfecto para vivir.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Búsqueda personalizada</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Verificación de inquilinos</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Contratos legales</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Gestión de pagos</li>
+                    </ul>
+                </div>
+                
+                <!-- Administración -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary-red rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Administración</h3>
+                    <p class="text-gray-600 mb-6">Administramos tu propiedad de manera profesional para maximizar su rentabilidad y mantener su valor.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Mantenimiento preventivo</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Cobro de arriendos</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Reportes mensuales</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Atención 24/7</li>
+                    </ul>
+                </div>
+                
+                <!-- Asesoría Legal -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary-red rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Asesoría Legal</h3>
+                    <p class="text-gray-600 mb-6">Nuestro equipo legal te brinda seguridad jurídica en todas tus transacciones inmobiliarias.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Revisión de documentos</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Verificación de títulos</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Resolución de conflictos</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Trámites notariales</li>
+                    </ul>
+                </div>
+                
+                <!-- Avalúos -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary-red rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Avalúos</h3>
+                    <p class="text-gray-600 mb-6">Realizamos avalúos técnicos y comerciales con metodología certificada y respaldo profesional.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Avalúos comerciales</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Avalúos hipotecarios</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Estudios de mercado</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Informes detallados</li>
+                    </ul>
+                </div>
+                
+                <!-- Inversión -->
+                <div class="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-primary-red rounded-lg flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Asesoría en Inversión</h3>
+                    <p class="text-gray-600 mb-6">Te ayudamos a identificar las mejores oportunidades de inversión inmobiliaria en el mercado.</p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Análisis de rentabilidad</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Identificación de oportunidades</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Proyecciones financieras</li>
+                        <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Seguimiento de inversión</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nuestra Misión y Visión -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Misión -->
+                <div class="text-center lg:text-left">
+                    <div class="w-20 h-20 bg-primary-red rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Nuestra Misión</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Facilitar el acceso a la vivienda y la inversión inmobiliaria a través de un servicio integral, transparente y personalizado, construyendo relaciones de confianza duraderas con nuestros clientes y contribuyendo al desarrollo urbano sostenible de Bogotá.
+                    </p>
+                </div>
+                
+                <!-- Visión -->
+                <div class="text-center lg:text-left">
+                    <div class="w-20 h-20 bg-primary-red rounded-full flex items-center justify-center mx-auto lg:mx-0 mb-6">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Nuestra Visión</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ser la inmobiliaria líder en Bogotá, reconocida por nuestra excelencia en el servicio, innovación tecnológica y compromiso social, expandiendo nuestro alcance a nivel nacional mientras mantenemos la calidad y cercanía que nos caracteriza.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestros Valores</h2>
+                <p class="text-gray-600 text-lg">Los principios que guían cada una de nuestras acciones</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Transparencia -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Transparencia</h3>
+                    <p class="text-gray-600">Información clara y honesta en cada transacción, sin sorpresas ni costos ocultos.</p>
+                </div>
+                
+                <!-- Profesionalismo -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2V6"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Profesionalismo</h3>
+                    <p class="text-gray-600">Equipo altamente capacitado con conocimiento profundo del mercado inmobiliario.</p>
+                </div>
+                
+                <!-- Compromiso -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Compromiso</h3>
+                    <p class="text-gray-600">Dedicación total para lograr los objetivos de nuestros clientes y superar sus expectativas.</p>
+                </div>
+                
+                <!-- Innovación -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-red rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Innovación</h3>
+                    <p class="text-gray-600">Adoptamos las últimas tecnologías para brindar una experiencia moderna y eficiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 bg-primary-red text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Listo para encontrar tu hogar ideal?</h2>
+            <p class="text-xl text-red-100 mb-8">Únete a las miles de familias que han confiado en nosotros</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="contactWhatsApp()" class="bg-white text-primary-red hover:bg-gray-100 px-8 py-4 rounded-lg font-bold text-lg transition-colors flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
+                    </svg>
+                    Contactar por WhatsApp
+                </button>
+                <button onclick="callPhone()" class="border-2 border-white text-white hover:bg-white hover:text-primary-red px-8 py-4 rounded-lg font-bold text-lg transition-colors flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    Llamar Ahora
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Logo y descripción -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-primary-red rounded-lg flex items-center justify-center mr-3">
+                            <span class="text-white font-bold text-xl">NP</span>
+                        </div>
+                        <span class="text-2xl font-bold">Nazar Propiedades</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">Tu aliado de confianza en el mercado inmobiliario. Más de 10 años conectando familias con su hogar ideal.</p>
+                    <div class="flex space-x-4">
+                        <button onclick="contactWhatsApp()" class="bg-primary-red hover:bg-primary-red-hover px-6 py-2 rounded-lg font-medium transition-colors">
+                            WhatsApp
+                        </button>
+                        <button onclick="callPhone()" class="border border-gray-600 hover:border-gray-400 px-6 py-2 rounded-lg font-medium transition-colors">
+                            Llamar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Contacto</h3>
+                    <div class="space-y-3 text-gray-400">
+                        <p>📞 +57 (1) 234-5678</p>
+                        <p>📱 +57 300 123 4567</p>
+                        <p>✉️ info@nazarpropiedades.com</p>
+                        <p>📍 Calle 93 #15-20, Bogotá</p>
+                    </div>
+                </div>
+
+                <!-- Enlaces -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Enlaces</h3>
+                    <div class="space-y-2">
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Propiedades</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Servicios</a>
+                        <a href="#" class="block text-primary-red">Nosotros</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Blog</a>
+                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Contacto</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Nazar Propiedades. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Función para contactar por WhatsApp
+        function contactWhatsApp() {
+            const message = encodeURIComponent("Hola, estoy interesado en los servicios de Nazar Propiedades. ¿Podrían ayudarme?");
+            window.open(`https://wa.me/573001234567?text=${message}`, '_blank');
+        }
+
+        // Función para llamar
+        function callPhone() {
+            window.open('tel:+5712345678', '_self');
+        }
+
+        // Función para ir al inicio
+        function goHome() {
+            window.location.href = '/';
+        }
+
+        // Animación de contadores
+        function animateCounters() {
+            const counters = document.querySelectorAll('[data-counter]');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-counter'));
+                const duration = 2000; // 2 segundos
+                const increment = target / (duration / 16); // 60fps
+                let current = 0;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        counter.textContent = target.toLocaleString();
+                        clearInterval(timer);
+                    } else {
+                        counter.textContent = Math.floor(current).toLocaleString();
+                    }
+                }, 16);
+            });
+        }
+
+        // Observer para activar animaciones cuando entran en vista
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.querySelector('[data-counter]')) {
+                        animateCounters();
+                        observer.unobserve(entry.target);
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Animaciones de entrada para elementos
+        function setupAnimations() {
+            const animatedElements = document.querySelectorAll('.grid > div, .bg-white');
+            
+            animatedElements.forEach((element, index) => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+            });
+
+            const elementObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        elementObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animatedElements.forEach(element => {
+                elementObserver.observe(element);
+            });
+        }
+
+        // Inicializar cuando se carga la página
+        document.addEventListener('DOMContentLoaded', function() {
+            // Observar la sección de estadísticas para animar contadores
+            const statsSection = document.querySelector('.bg-primary-red');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+
+            // Configurar animaciones
+            setupAnimations();
+
+            // Smooth scroll para navegación
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Efecto parallax suave para el hero
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('section.relative');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'963745a664c8acf7',t:'MTc1MzIzMjc1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
