@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mendoza Homes - Real Estate Agency</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+        font-size: 20px;
+      }
+    </style>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1f2937",
+              accent: "#d90429",
+              "background-light": "#ffffff",
+              "background-dark": "#111827",
+              "neutral-light": "#f3f4f6",
+              "neutral-dark": "#374151",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-display bg-background-light dark:bg-background-dark">
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden"
+    >
+      <div class="layout-container flex h-full grow flex-col">
+        <header
+          class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-neutral-light bg-background-light/95 px-4 py-4 backdrop-blur-sm dark:border-neutral-dark/30 dark:bg-background-dark/95 sm:px-6 md:px-8 lg:px-10"
+        >
+          <div
+            class="flex items-center gap-3 text-neutral-dark dark:text-neutral-light"
+          >
+            <div class="text-accent size-6">
+              <svg
+                fill="none"
+                viewBox="0 0 48 48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <h2
+              class="text-lg font-semibold tracking-tight text-primary dark:text-white"
+            >
+              Mendoza Homes
+            </h2>
+          </div>
+          <div class="hidden items-center gap-8 md:flex">
+            <a
+              class="text-sm font-medium text-primary hover:text-accent dark:text-neutral-light dark:hover:text-accent"
+              href="#"
+              >Buy</a
+            >
+            <a
+              class="text-sm font-medium text-primary hover:text-accent dark:text-neutral-light dark:hover:text-accent"
+              href="#"
+              >Rent</a
+            >
+            <a
+              class="text-sm font-medium text-primary hover:text-accent dark:text-neutral-light dark:hover:text-accent"
+              href="#"
+              >About Us</a
+            >
+            <a
+              class="text-sm font-medium text-primary hover:text-accent dark:text-neutral-light dark:hover:text-accent"
+              href="#"
+              >Contact</a
+            >
+          </div>
+          <div class="flex items-center gap-4">
+            <button
+              class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md bg-transparent px-4 py-2 text-sm font-medium text-primary ring-1 ring-inset ring-neutral-light transition-colors hover:bg-neutral-light dark:text-white dark:ring-neutral-dark dark:hover:bg-neutral-dark"
+            >
+              <span class="truncate">List Your Property</span>
+            </button>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
+              data-alt="User profile picture"
+              style="
+                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5O3KvG8WYJcu4lfRc230y6Pvv3KhfXeaVFP2JaK1RCyT6CwHDhLa1JE33rriACk4F-rZT3RqhvUssoiOd2VD3xEgfsHO4ROcsf74ekygISBnbrJ0EuQ9Uyk3N8LeRpgEahuwL0NDrn7o1R69_YQqgg2ZYRom2ETKtVq8ItLaHH0-h49GqBAG_GJ6Gn8PxpWZfluevqIo0PUOxPJf6JbaBY2VOoKh2sgn8F11iywgwkTxIAifyJFjdw_JUWFxyln-yVoamN7zHXrM');
+              "
+            ></div>
+          </div>
+        </header>
+        <main class="flex-1">
+          <div
+            class="relative flex min-h-[60vh] w-full items-center justify-center bg-cover bg-center bg-no-repeat px-4 py-16 md:min-h-[70vh]"
+            data-alt="A modern, luxurious home with a large pool in a scenic vineyard landscape"
+            style="
+              background-image: linear-gradient(
+                  rgba(0, 0, 0, 0.4) 0%,
+                  rgba(0, 0, 0, 0.2) 100%
+                ),
+                url('https://lh3.googleusercontent.com/aida-public/AB6AXuCCE8Bm8OGRTLTDvIY52e97pNOmtsGhICu5JMSbYqa6s3UC_O-SyLCWqsn21dL7q2jrV16-eiZz2jAaqSz7mD9TLsnYlQuHMdjBnRS5T_CTcbiaK-luUZ88xAyXHvCPeh3pHiMFN--Vr3gX7jjG3M80B0FHa04HauvaAcC4DjRxV2yea6M-yDCv1KL2YAh0UL-fsSQgde1osYzU4gaIiXe7ZqR9ceGPIIHzitSk0E4hveUSewQDu2VNJpsmkEE2Tto3ACaisTG_ZK8');
+            "
+          >
+            <div
+              class="flex max-w-5xl flex-col items-center gap-8 text-center text-white"
+            >
+              <div class="flex flex-col gap-3">
+                <h1
+                  class="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl"
+                >
+                  Find Your Dream Home in Mendoza
+                </h1>
+                <p class="text-lg font-light text-neutral-light">
+                  Exceptional properties in Argentina's wine country.
+                </p>
+              </div>
+              <div
+                class="w-full rounded-lg bg-background-light p-3 shadow-2xl dark:bg-background-dark/95"
+              >
+                <div
+                  class="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_auto]"
+                >
+                  <label
+                    class="flex flex-col w-full col-span-1 sm:col-span-2 lg:col-span-1"
+                  >
+                    <div class="relative flex w-full items-stretch">
+                      <div
+                        class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3"
+                      >
+                        <span class="material-symbols-outlined text-gray-400"
+                          >search</span
+                        >
+                      </div>
+                      <input
+                        class="form-input h-12 w-full min-w-0 flex-1 rounded-md border-neutral-light bg-neutral-light pl-10 text-primary placeholder:text-gray-500 focus:border-accent focus:ring-accent dark:border-neutral-dark dark:bg-neutral-dark dark:text-white dark:placeholder:text-gray-400"
+                        placeholder="e.g. 'pool', 'downtown'"
+                        value=""
+                      />
+                    </div>
+                  </label>
+                  <button
+                    class="flex h-12 w-full shrink-0 items-center justify-between gap-x-2 rounded-md bg-neutral-light px-4 text-left dark:bg-neutral-dark"
+                  >
+                    <p
+                      class="text-sm font-medium text-primary dark:text-neutral-light"
+                    >
+                      Property Type
+                    </p>
+                    <span
+                      class="material-symbols-outlined text-gray-500 dark:text-gray-400"
+                      >expand_more</span
+                    >
+                  </button>
+                  <button
+                    class="flex h-12 w-full shrink-0 items-center justify-between gap-x-2 rounded-md bg-neutral-light px-4 text-left dark:bg-neutral-dark"
+                  >
+                    <p
+                      class="text-sm font-medium text-primary dark:text-neutral-light"
+                    >
+                      Min Price
+                    </p>
+                    <span
+                      class="material-symbols-outlined text-gray-500 dark:text-gray-400"
+                      >expand_more</span
+                    >
+                  </button>
+                  <button
+                    class="flex h-12 w-full shrink-0 items-center justify-between gap-x-2 rounded-md bg-neutral-light px-4 text-left dark:bg-neutral-dark"
+                  >
+                    <p
+                      class="text-sm font-medium text-primary dark:text-neutral-light"
+                    >
+                      Max Price
+                    </p>
+                    <span
+                      class="material-symbols-outlined text-gray-500 dark:text-gray-400"
+                      >expand_more</span
+                    >
+                  </button>
+                  <button
+                    class="flex h-12 w-full cursor-pointer items-center justify-center overflow-hidden rounded-md bg-accent px-6 text-base font-bold text-white transition-colors hover:bg-accent/90"
+                  >
+                    <span class="truncate">Search</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32"
+          >
+            <div class="flex flex-col gap-16 sm:gap-24 lg:gap-32">
+              <section>
+                <h2
+                  class="text-3xl font-bold tracking-tight text-primary dark:text-white sm:text-4xl"
+                >
+                  Explore by Style
+                </h2>
+                <div
+                  class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                >
+                  <div
+                    class="group relative aspect-[3/4] overflow-hidden rounded-lg"
+                    data-alt="A modern villa with sharp architectural lines and a swimming pool"
+                  >
+                    <div
+                      class="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-105"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdiRnJ1zkDGg8oVBi7Z5rsYfNMBr5Ce1XDOrtVTjVHIU_tE9aEz0iyYQ1zXAtq8E2Mf8gnznRBgLRJUldUjqoMR4b44ZNSlzwFcHx6Yxgxfa-Oje4qdRPLhArZCXq5kJQvYbEUPmhIwyb4Lp78mwoO2nSP-v55spsHk3wLubvFHHUyJKviuYIR2p_OElOQstbSI0EUauTtTs-hGc2xaAzZezxVYtoG2bxkqf1qP-fxfX5M4qOZdLUZB0N60ZDZYqmJK3h0rIg6FZI');
+                      "
+                    ></div>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                    ></div>
+                    <div class="flex h-full flex-col justify-end p-5">
+                      <p class="text-lg font-semibold text-white">
+                        Luxury Villas
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="group relative aspect-[3/4] overflow-hidden rounded-lg"
+                    data-alt="Interior of a chic apartment with city views through a large window"
+                  >
+                    <div
+                      class="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-105"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdiRnJ1zkDGg8oVBi7Z5rsYfNMBr5Ce1XDOrtVTjVHIU_tE9aEz0iyYQ1zXAtq8E2Mf8gnznRBgLRJUldUjqoMR4b44ZNSlzwFcHx6Yxgxfa-Oje4qdRPLhArZCXq5kJQvYbEUPmhIwyb4Lp78mwoO2nSP-v55spsHk3wLubvFHHUyJKviuYIR2p_OElOQstbSI0EUauTtTs-hGc2xaAzZezxVYtoG2bxkqf1qP-fxfX5M4qOZdLUZB0N60ZDZYqmJK3h0rIg6FZI');
+                      "
+                    ></div>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                    ></div>
+                    <div class="flex h-full flex-col justify-end p-5">
+                      <p class="text-lg font-semibold text-white">
+                        Downtown Apartments
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="group relative aspect-[3/4] overflow-hidden rounded-lg"
+                    data-alt="A rustic house surrounded by lush green vineyards under a sunny sky"
+                  >
+                    <div
+                      class="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-105"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdiRnJ1zkDGg8oVBi7Z5rsYfNMBr5Ce1XDOrtVTjVHIU_tE9aEz0iyYQ1zXAtq8E2Mf8gnznRBgLRJUldUjqoMR4b44ZNSlzwFcHx6Yxgxfa-Oje4qdRPLhArZCXq5kJQvYbEUPmhIwyb4Lp78mwoO2nSP-v55spsHk3wLubvFHHUyJKviuYIR2p_OElOQstbSI0EUauTtTs-hGc2xaAzZezxVYtoG2bxkqf1qP-fxfX5M4qOZdLUZB0N60ZDZYqmJK3h0rIg6FZI');
+                      "
+                    ></div>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                    ></div>
+                    <div class="flex h-full flex-col justify-end p-5">
+                      <p class="text-lg font-semibold text-white">Vineyards</p>
+                    </div>
+                  </div>
+                  <div
+                    class="group relative aspect-[3/4] overflow-hidden rounded-lg"
+                    data-alt="An open plot of land with mountains in the background"
+                  >
+                    <div
+                      class="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-in-out group-hover:scale-105"
+                      style="
+                        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdiRnJ1zkDGg8oVBi7Z5rsYfNMBr5Ce1XDOrtVTjVHIU_tE9aEz0iyYQ1zXAtq8E2Mf8gnznRBgLRJUldUjqoMR4b44ZNSlzwFcHx6Yxgxfa-Oje4qdRPLhArZCXq5kJQvYbEUPmhIwyb4Lp78mwoO2nSP-v55spsHk3wLubvFHHUyJKviuYIR2p_OElOQstbSI0EUauTtTs-hGc2xaAzZezxVYtoG2bxkqf1qP-fxfX5M4qOZdLUZB0N60ZDZYqmJK3h0rIg6FZI');
+                      "
+                    ></div>
+                    <div
+                      class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"
+                    ></div>
+                    <div class="flex h-full flex-col justify-end p-5">
+                      <p class="text-lg font-semibold text-white">Land</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h2
+                  class="text-3xl font-bold tracking-tight text-primary dark:text-white sm:text-4xl"
+                >
+                  Just Listed
+                </h2>
+                <div
+                  class="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+                >
+                  <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white dark:border-neutral-dark/30 dark:bg-neutral-dark"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary dark:text-white"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary dark:text-white"
+                        >
+                          Modern Family Home
+                        </p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600 dark:border-neutral-dark/30 dark:text-gray-300"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Beds</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baths</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          2,800 sqft</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white dark:border-neutral-dark/30 dark:bg-neutral-dark"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Bright and airy living room of a downtown apartment"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCByOzq8Alrsb8oTn50dYNFki2Nf2g_nJE4kWlhUnikbd_ndOB-IFocZ5ZCzTx4hYZFY75SKPgjLpJCLPUE-Cr_nz0fhP8XEPBANdoRPr55n67JfDQUPgeJGUDob74Uhoiw6SBFnLmvu4nqMa3SQYFAnD4n-UJzYlVbE-vtDFpc3KeBFfTmiwjrj5dcnvtjC821Nh_2UU9OQaNzYxLhNHaMMRqlK5x5jBplyXTRRsbI9CqZ4ktoNpDI26zCjonYDhge1N66OxbOY_M');
+                        "
+                      ></div>
+                      <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary dark:text-white"
+                        >
+                          $420,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary dark:text-white"
+                        >
+                          Chic Downtown Loft
+                        </p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                          456 Central Ave, Mendoza City
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600 dark:border-neutral-dark/30 dark:text-gray-300"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          2 Beds</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          2 Baths</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          1,200 sqft</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white dark:border-neutral-dark/30 dark:bg-neutral-dark"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="A sprawling estate with extensive vineyards in the foreground"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLbTzso-_C1n12IQJu_JmlI6UP1UPH6Hiar2GhmiC7OfXnS-LpW5oU49xw9ddWBfWV_LKMr29p9cI7qNUxaVHcSs7c5Skiu98En7kB-b4hofHwtHboZ-ES2msDEPwhlQ9ZzORsCcR0LTq8PlOXhaTPf2y1xfEP0ZdNNXY4L7uzUgY48NyjyeUJ1buzI2bBCUjY6ADrhdPTYR8DWkYiliUEt1njGFwUYQKyr70H5kUPlKSntN42DnR1eq6kuFkwb7i1z8khIoijPnc');
+                        "
+                      ></div>
+                      <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button>
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary dark:text-white"
+                        >
+                          $2,100,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary dark:text-white"
+                        >
+                          Vineyard Estate
+                        </p>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                          789 Malbec Rd, Uco Valley
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600 dark:border-neutral-dark/30 dark:text-gray-300"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          6 Beds</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          5 Baths</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          6,500 sqft</span
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <h2
+                  class="text-center text-3xl font-bold tracking-tight text-primary dark:text-white sm:text-4xl"
+                >
+                  What Our Clients Say
+                </h2>
+                <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2">
+                  <div
+                    class="rounded-lg bg-neutral-light p-8 dark:bg-neutral-dark"
+                  >
+                    <div class="flex items-center gap-4">
+                      <img
+                        class="size-14 rounded-full"
+                        data-alt="Portrait of a smiling man"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMXRp8_7P-RPPsiC8jQpG-5lxGnu1RqzAnWG-Qj8iokJ5ygxkX3SNILJZl0qSTtsoBg8OV5XPuYgxf0or4rrFY3uvV1Mvx3gZ9E-Pm_uBVkrGocTQxNV5JS-4E7fdCRxNobWdwLgyp3yiQqXGLBc6H8oPzaPrvgX-Q5E9aW8Q-m6epIrw3vdmhO3QzT-7_ymQjg1s7piABsMMky2j9CCll-xhZGV5GakpQkJVpbFX_ggw5ktFVtd3wQJ2TnBMaNCa8uy7-n93Ifk0"
+                      />
+                      <div>
+                        <p class="font-semibold text-primary dark:text-white">
+                          Carlos Gomez
+                        </p>
+                        <div class="flex text-yellow-500">
+                          <span class="material-symbols-outlined !text-base"
+                            >star</span
+                          >
+                          <span class="material-symbols-outlined !text-base"
+                            >star</span
+                          >
+                          <span class="material-symbols-outlined !text-base"
+                            >star</span
+                          >
+                          <span class="material-symbols-outlined !text-base"
+                            >star</span
+                          >
+                          <span class="material-symbols-outlined !text-base"
+                            >star</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <blockquote class="mt-4 text-gray-600 dark:text-gray-300">
+                      "Mendoza Homes made our dream of owning a vineyard a
+                      reality. Their professionalism and local knowledge are
+                      second to none. Truly a five-star experience from start to
+                      finish!"
+                    </blockquote>
+                  </div>
+                  <div
+                    class="rounded-lg bg-neutral-light p-8 dark:bg-neutral-dark"
+                  >
+                    <div class="flex items-center gap-4">
+                      <img
+                        class="size-14 rounded-full"
+                        data-alt="Portrait of a smiling woman"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCptiN9U5yAJ3AwLymmT6jmM2VzaU2kanQK06wwOO32sdUpDs1vfmznTPhHaNftivEYshJ7VjOkCe2_ff5cnLFRUP7OG5Y6D28LXVqDL-KBngr9Zoiow649YnSs8Sp5hDGgZnMUR1syuEAM4O93RHfsgEbDIIkNeNX-X9yx7G87Dayqi3msxKbW_j2UHApZJDgcxfZmE1zFCkoCYwlaat_Yqon7ou0y9TAOdjt3dOPi5HTPyvvvo1iVVzUIo30FhLCjpbNw2yxw27Q"
+                      />
+                      <div>
+                        <p class="font-semibold text-primary dark:text-white">
+                          Ana Rodriguez
+                        </p>
+                        <div class="flex text-yellow-500">
+                          <span class="material-symbols-outlined !text-base"
+                            >star</span
+                          >
+                          <span class="material-symbols-outlined !text-base"
+                            >star</span
+                          >
+                          <span class="material-symbols-outlined !text-base"
+                            >star</span
+                          >
+                          <span class="material-symbols-outlined !text-base"
+                            >star</span
+                          >
+                          <span class="material-symbols-outlined !text-base"
+                            >star</span
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <blockquote class="mt-4 text-gray-600 dark:text-gray-300">
+                      "Finding an apartment in the city was daunting, but their
+                      team was incredibly patient and helpful. We found the
+                      perfect place with a stunning view of the Andes."
+                    </blockquote>
+                  </div>
+                </div>
+              </section>
+              <section
+                class="rounded-lg bg-neutral-light px-6 py-12 text-center dark:bg-neutral-dark md:px-10 md:py-16"
+              >
+                <h2
+                  class="text-3xl font-bold text-primary dark:text-white sm:text-4xl"
+                >
+                  Ready to Find Your Mendoza Home?
+                </h2>
+                <p
+                  class="mx-auto mt-4 max-w-2xl text-gray-600 dark:text-gray-300"
+                >
+                  Let our expert agents guide you through the process. Whether
+                  you're buying, selling, or just exploring, we're here to help.
+                </p>
+                <button
+                  class="mt-8 flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md bg-accent px-6 py-3 text-base font-bold text-white transition-colors hover:bg-accent/90 mx-auto"
+                >
+                  <span class="truncate">Get in Touch</span>
+                </button>
+              </section>
+            </div>
+          </div>
+        </main>
+        <footer class="bg-neutral-light dark:bg-neutral-dark">
+          <div class="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+              <div class="md:col-span-1">
+                <div
+                  class="flex items-center gap-3 text-primary dark:text-white"
+                >
+                  <div class="text-accent size-6">
+                    <svg
+                      fill="none"
+                      viewBox="0 0 48 48"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"
+                        fill="currentColor"
+                      ></path>
+                    </svg>
+                  </div>
+                  <h2 class="text-lg font-semibold">Mendoza Homes</h2>
+                </div>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                  Your key to exceptional properties in Argentina's wine
+                  country.
+                </p>
+              </div>
+              <div class="grid grid-cols-2 gap-8 md:col-span-3 md:grid-cols-3">
+                <div>
+                  <h3 class="font-semibold text-primary dark:text-white">
+                    Quick Links
+                  </h3>
+                  <ul class="mt-4 space-y-3 text-sm">
+                    <li>
+                      <a
+                        class="text-gray-600 hover:text-accent dark:text-gray-400 dark:hover:text-accent"
+                        href="#"
+                        >Buy</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="text-gray-600 hover:text-accent dark:text-gray-400 dark:hover:text-accent"
+                        href="#"
+                        >Rent</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="text-gray-600 hover:text-accent dark:text-gray-400 dark:hover:text-accent"
+                        href="#"
+                        >List Your Property</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-primary dark:text-white">
+                    Company
+                  </h3>
+                  <ul class="mt-4 space-y-3 text-sm">
+                    <li>
+                      <a
+                        class="text-gray-600 hover:text-accent dark:text-gray-400 dark:hover:text-accent"
+                        href="#"
+                        >About Us</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="text-gray-600 hover:text-accent dark:text-gray-400 dark:hover:text-accent"
+                        href="#"
+                        >Contact</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="text-gray-600 hover:text-accent dark:text-gray-400 dark:hover:text-accent"
+                        href="#"
+                        >Careers</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-primary dark:text-white">
+                    Contact Us
+                  </h3>
+                  <ul
+                    class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400"
+                  >
+                    <li>123 Av. San Martín, Mendoza</li>
+                    <li>+54 261 123 4567</li>
+                    <li>contact@mendozahomes.com</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div
+              class="mt-8 border-t border-gray-200 pt-6 text-center text-sm text-gray-500 dark:border-neutral-dark/50 dark:text-gray-400"
+            >
+              <p>© 2024 Mendoza Homes. All rights reserved.</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

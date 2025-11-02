@@ -1,1869 +1,524 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nazar Propiedades - Tu hogar ideal te espera</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'primary-red': '#E10600',
-                        'primary-red-hover': '#B30500'
-                    }
-                }
-            }
-        }
+<html class="light" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mendoza Homes - Real Estate</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1A202C", // Dark Gray for text
+              "accent-red": "#C53030", // Corporate Red
+              "background-light": "#FFFFFF",
+              "background-dark": "#101922",
+              "text-light": "#2D3748",
+              "text-dark": "#F8F9FA",
+              "neutral-light": "#F7FAFC", // Light grey for sections
+              "neutral-medium": "#E2E8F0", // Medium grey for borders
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem", // Increased border radius for modern feel
+              lg: "0.75rem",
+              xl: "1rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
     </script>
-</head>
-<body class="bg-white text-black font-sans">
-    <!-- Mini menu superior -->
-    <div class="bg-gray-900 text-white py-2 text-sm">
-        <div class="max-w-7xl mx-auto px-4 flex justify-end items-center space-x-6">
-            <a href="#" class="hover:text-primary-red transition-colors">Blog</a>
-            <span class="text-gray-400">|</span>
-            <a href="tel:+5712345678" class="hover:text-primary-red transition-colors flex items-center">
-                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                </svg>
-                +57 (1) 234-5678
-            </a>
-            <span class="text-gray-400">|</span>
-            <a href="mailto:info@nazarpropiedades.com" class="hover:text-primary-red transition-colors flex items-center">
-                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                </svg>
-                info@nazarpropiedades.com
-            </a>
+  </head>
+  <body
+    class="bg-background-light font-display text-text-light dark:text-text-dark"
+  >
+    <div class="relative flex min-h-screen w-full flex-col">
+      <header
+        class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-neutral-medium/50 bg-background-light/80 px-4 py-4 backdrop-blur-sm sm:px-6 lg:px-8"
+      >
+        <div class="flex items-center gap-3 text-accent-red">
+          <div class="size-7">
+            <svg
+              fill="none"
+              viewBox="0 0 48 48"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"
+                fill="currentColor"
+              ></path>
+            </svg>
+          </div>
+          <h2
+            class="text-2xl font-bold leading-tight tracking-[-0.015em] text-primary dark:text-white"
+          >
+            Mendoza Homes
+          </h2>
         </div>
-    </div>
-
-    <!-- Barra superior sticky -->
-    <header class="sticky top-0 bg-white shadow-md z-50 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-            <!-- Logo -->
-            <div class="flex items-center cursor-pointer" onclick="goBackToMain()">
-                <div class="w-10 h-10 rounded-lg flex items-center justify-center mr-3">
-                    <!-- <span class="text-white font-bold text-xl">NP</span> -->
-                    <img src="/imagenes/logo.png" class="w-100">
+        <nav class="hidden items-center gap-10 md:flex">
+          <a
+            class="text-base font-medium leading-normal text-text-light hover:text-accent-red"
+            href="#"
+            >Buy</a
+          >
+          <a
+            class="text-base font-medium leading-normal text-text-light hover:text-accent-red"
+            href="#"
+            >Rent</a
+          >
+          <a
+            class="text-base font-medium leading-normal text-text-light hover:text-accent-red"
+            href="#"
+            >Sell</a
+          >
+          <a
+            class="text-base font-medium leading-normal text-text-light hover:text-accent-red"
+            href="#"
+            >Agents</a
+          >
+          <a
+            class="text-base font-medium leading-normal text-text-light hover:text-accent-red"
+            href="#"
+            >Contact</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <button
+            class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-11 px-5 bg-primary text-white text-base font-semibold leading-normal tracking-wide transition-colors hover:bg-primary/90"
+          >
+            <span class="truncate">Sign In</span>
+          </button>
+          <button class="p-2 md:hidden">
+            <span class="material-symbols-outlined text-text-light">menu</span>
+          </button>
+        </div>
+      </header>
+      <main class="flex flex-1 flex-col">
+        <section
+          class="relative flex min-h-[70vh] flex-col items-center justify-center bg-cover bg-center bg-no-repeat p-4 text-center text-white"
+          data-alt="A beautiful modern home in Mendoza with a vineyard in the background under a sunny sky."
+          style="
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0.4) 0%,
+                rgba(0, 0, 0, 0.6) 100%
+              ),
+              url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&amp;w=2574&amp;auto=format&amp;fit=crop');
+          "
+        >
+          <div class="flex max-w-4xl flex-col items-center gap-6">
+            <h1
+              class="text-4xl font-extrabold leading-tight tracking-tight md:text-6xl"
+            >
+              Find Your Dream Home in Mendoza
+            </h1>
+            <p
+              class="text-lg font-normal leading-normal text-slate-100 md:text-xl"
+            >
+              Explore exclusive properties in Argentina's finest wine region.
+            </p>
+            <div
+              class="mt-8 w-full max-w-4xl rounded-xl bg-white p-6 shadow-2xl"
+            >
+              <div
+                class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-[1fr_1fr_1fr_auto]"
+              >
+                <div class="flex flex-col items-start">
+                  <label
+                    class="mb-2 text-sm font-semibold text-text-light"
+                    for="property-type"
+                    >Property Type</label
+                  >
+                  <select
+                    class="w-full rounded-lg border border-neutral-medium bg-neutral-light px-4 py-3 text-text-light focus:border-accent-red focus:ring-2 focus:ring-accent-red/50"
+                    id="property-type"
+                  >
+                    <option>House</option>
+                    <option>Apartment</option>
+                    <option>Vineyard</option>
+                  </select>
                 </div>
-                <span class="text-2xl font-bold text-black hover:text-primary-red transition-colors">Nazar Propiedades</span>
+                <div class="flex flex-col items-start">
+                  <label
+                    class="mb-2 text-sm font-semibold text-text-light"
+                    for="location"
+                    >Location</label
+                  >
+                  <select
+                    class="w-full rounded-lg border border-neutral-medium bg-neutral-light px-4 py-3 text-text-light focus:border-accent-red focus:ring-2 focus:ring-accent-red/50"
+                    id="location"
+                  >
+                    <option>Luján de Cuyo</option>
+                    <option>Godoy Cruz</option>
+                    <option>Chacras de Coria</option>
+                  </select>
+                </div>
+                <div class="flex flex-col items-start">
+                  <label
+                    class="mb-2 text-sm font-semibold text-text-light"
+                    for="rooms"
+                    >Rooms</label
+                  >
+                  <select
+                    class="w-full rounded-lg border border-neutral-medium bg-neutral-light px-4 py-3 text-text-light focus:border-accent-red focus:ring-2 focus:ring-accent-red/50"
+                    id="rooms"
+                  >
+                    <option>2 Rooms</option>
+                    <option>3 Rooms</option>
+                    <option>4+ Rooms</option>
+                  </select>
+                </div>
+                <button
+                  class="flex w-full items-center justify-center rounded-lg bg-accent-red px-6 py-3 text-base font-bold text-white transition-colors hover:bg-accent-red/90 sm:self-end h-[50px] md:w-auto"
+                >
+                  <span class="material-symbols-outlined mr-2">search</span>
+                  Search
+                </button>
+              </div>
             </div>
-
-            <!-- Menú de navegación -->
-            <nav class="hidden lg:flex items-center space-x-8 flex-1 justify-center">
-                <!-- Dropdown Inicio -->
-                <div class="relative group">
-                    <button class="text-black hover:text-primary-red font-medium transition-colors flex items-center">
-                        Inicio
-                        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <!-- Dropdown Menu -->
-                    <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-                        <a href="index.html" class="block px-4 py-3 text-black hover:bg-gray-50 hover:text-primary-red transition-colors rounded-t-lg">Inicio</a>
-                        <a href="index2.html" class="block px-4 py-3 text-black hover:bg-gray-50 hover:text-primary-red transition-colors">Inicio2</a>
-                        <a href="index3.html" class="block px-4 py-3 text-black hover:bg-gray-50 hover:text-primary-red transition-colors rounded-b-lg">Inicio3</a>
-                    </div>
-                </div>
-                
-                <a href="#" onclick="showPropertiesPage('venta')" class="text-black hover:text-primary-red font-medium transition-colors">Comprar</a>
-                <a href="#" class="text-black hover:text-primary-red font-medium transition-colors">Vender</a>
-                <a href="#" onclick="showPropertiesPage('alquiler')" class="text-black hover:text-primary-red font-medium transition-colors">Alquilar</a>
-                <a href="#" onclick="showPropertiesPage('alquiler')" class="text-black hover:text-primary-red font-medium transition-colors">Emprendimientos</a>
-                <a href="/Nosotros.html" class="text-black hover:text-primary-red font-medium transition-colors">Nosotros</a>
-            </nav>
-
-            <!-- Botón contactar -->
-            <button onclick="contactWhatsApp()" class="bg-primary-red hover:bg-primary-red-hover text-white px-6 py-2 rounded-lg font-medium transition-colors">
-                Contactar
+          </div>
+        </section>
+        <section class="w-full max-w-7xl mx-auto px-4 py-24 sm:px-6 lg:px-8">
+          <div class="flex flex-col items-center text-center">
+            <h2
+              class="text-4xl font-bold tracking-tight text-primary sm:text-5xl"
+            >
+              Featured Listings
+            </h2>
+            <p class="mt-4 max-w-2xl text-lg text-text-light/80">
+              Discover our curated selection of the finest properties in
+              Mendoza.
+            </p>
+          </div>
+          <div
+            class="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            <div class="group relative flex flex-col">
+              <div
+                class="aspect-h-7 aspect-w-10 w-full overflow-hidden rounded-xl bg-gray-200"
+              >
+                <img
+                  class="h-full w-full object-cover object-center transition-transform group-hover:scale-105"
+                  data-alt="Exterior of a modern suburban house with a well-kept lawn"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLhn6_me7VEmv9TuqJqIN0gaXzefxPyAM_TqYBN-kN7oyBBZvobqKP8puc2Jg1aYnqPXLisM8wyWQoeJOSluvUOp9dMOZRkfQr6dHTEroa0BNx2V6kizISZN6SwTBqGjCvOKF289yoFsWUDTXJL1n7dK1eo1XeiNFACOdlGvFe7SJH7sF_Q78r8Lod8_DMKQE8wGZCM6WTGkbdXIklDiZdE2Ujtsd6L1VPwpLjXlTp05GEPIiMgU6lvG_Ljbyyw0t4bluMWYt9gMg"
+                />
+              </div>
+              <div class="mt-4">
+                <p class="text-2xl font-bold text-primary">$450,000</p>
+                <p class="mt-1 text-base font-semibold text-text-light">
+                  Luján de Cuyo
+                </p>
+                <p class="text-base text-text-light/80">
+                  3 beds, 2 baths, 200m²
+                </p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col">
+              <div
+                class="aspect-h-7 aspect-w-10 w-full overflow-hidden rounded-xl bg-gray-200"
+              >
+                <img
+                  class="h-full w-full object-cover object-center transition-transform group-hover:scale-105"
+                  data-alt="A two-story modern house with large windows and a garage"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9uq4fqa8LBx5llmYA_5yUwghtJCYJRogfT19_BI1HROCV33djeCXSoZAjz7c0hLeqgLP5pi3vOLPysHJp_Wzv_g9eNmrx8AGrP5TdrOgl69XPBgZhnWIMZ3tB7RPQcjCkc4Vzsu5TRC-rNFtjNtaq4FPsEfJ_-5lvuCyd4_NYj2lvl2Y8PQCt-jDv3LuOtx4adlyYz-_OBwTV9J6PRDnBphRguICvzW3RowP4D_zSUxvaQcpf5ZreuC_GAYGAUn5hmYGtyDVs94M"
+                />
+              </div>
+              <div class="mt-4">
+                <p class="text-2xl font-bold text-primary">$620,000</p>
+                <p class="mt-1 text-base font-semibold text-text-light">
+                  Godoy Cruz
+                </p>
+                <p class="text-base text-text-light/80">
+                  4 beds, 3 baths, 250m²
+                </p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col">
+              <div
+                class="aspect-h-7 aspect-w-10 w-full overflow-hidden rounded-xl bg-gray-200"
+              >
+                <img
+                  class="h-full w-full object-cover object-center transition-transform group-hover:scale-105"
+                  data-alt="Cozy living room with a fireplace and stylish furniture"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeVLELLy7Mf0i6vICwnNJjVFFb1IPBb9zLyoJcpJwf5KgCc-VwPmim6kJHQ1RY7KtLVLP_NgcX-M_s8Dgqk_nJwwjXY5nKqSqOYahLV2uUpDaGnH11_v8dLSTe6-eYbKbaeQzplJGQhBTIeQRzb6Z1cdfwBxd8m9kbBkYvSjZa24Xj8c7Fi8KGNQ7Er-FFuM5EBb4MXucKnE9jzj-GDWAq86FU0cPv1GDL_q58_kWbC2FOU7GNmOYB1iBFH72FxguY9R6Y4M2DiIU"
+                />
+              </div>
+              <div class="mt-4">
+                <p class="text-2xl font-bold text-primary">$380,000</p>
+                <p class="mt-1 text-base font-semibold text-text-light">
+                  Chacras de Coria
+                </p>
+                <p class="text-base text-text-light/80">
+                  3 beds, 2 baths, 180m²
+                </p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col">
+              <div
+                class="aspect-h-7 aspect-w-10 w-full overflow-hidden rounded-xl bg-gray-200"
+              >
+                <img
+                  class="h-full w-full object-cover object-center transition-transform group-hover:scale-105"
+                  data-alt="Luxury home interior with an open-plan kitchen and dining area"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlEErrsI3zLUlHGnM1f0ZBv0Rrvz8MjFMyoYKF9RbrXihb6xpN0HwdGBx6SwmI0tzKvqZyKo3viDOtgcbP-dKwP7pZFJIzi4C63_-qesiQyz2029grWNOtoSNrjbYyOgdBCFnCiYzhhBhzA4HjhXkmtSAcUETaAg_OBHwgRQb0JSgzJZ7GyFBeEKMeLK5WzCUnKsKIKxyIrnN-Fnobsk-_ocBFt5IOufS0_U2Fi1qxEwil_Nvh_Zi6Re1MezUQNucbzsVXq1XnRUw"
+                />
+              </div>
+              <div class="mt-4">
+                <p class="text-2xl font-bold text-primary">$750,000</p>
+                <p class="mt-1 text-base font-semibold text-text-light">
+                  Vistalba
+                </p>
+                <p class="text-base text-text-light/80">
+                  5 beds, 4 baths, 320m²
+                </p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col">
+              <div
+                class="aspect-h-7 aspect-w-10 w-full overflow-hidden rounded-xl bg-gray-200"
+              >
+                <img
+                  class="h-full w-full object-cover object-center transition-transform group-hover:scale-105"
+                  data-alt="White modern house with a pool and palm trees"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCniVRwM4Wx10sSajL-VyrVsSlV__NacYewB2WjTP9WT-g05dEHtyyY5nM9v5j9mZz_6WRPEI4fwjfGf9OoGjE-704qPzSkYjaeYI6QVWeab0yTr0XfQoehPg8eSi4PKS_78R3sFsfUrtkuxkFTxBuvlGiGTSxn7WOAvstrt3l89z99EJ8R9SXqSQsvtJi8Mzqkoj5aM5QmKjAy1bS8hixCJN57fn1C5YKmDsn4HolDk8IfuNtlUGaY1CRgbGg6eWeQ1XpULwqVmg0"
+                />
+              </div>
+              <div class="mt-4">
+                <p class="text-2xl font-bold text-primary">$510,000</p>
+                <p class="mt-1 text-base font-semibold text-text-light">
+                  Maipú
+                </p>
+                <p class="text-base text-text-light/80">
+                  4 beds, 2 baths, 220m²
+                </p>
+              </div>
+            </div>
+            <div class="group relative flex flex-col">
+              <div
+                class="aspect-h-7 aspect-w-10 w-full overflow-hidden rounded-xl bg-gray-200"
+              >
+                <img
+                  class="h-full w-full object-cover object-center transition-transform group-hover:scale-105"
+                  data-alt="Modern apartment building with balconies"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCU-ba40ARL-HQ1XLSejn-LWNW3aL-pLZUt1u13swTZLDLc5ZQJymEpPMUTP_di9__ONV_FCKO6p-C6X2sO3XjTIUHzqB0VBAnT_GjMs8ioECUN2UBpgUl75gbkhb9dj0DtS51sljMccECjxob65FPnkVn2_BStSy3qyrX3Vv2FKeq3McXaNjjvoEAxPdB8QxOXsSTfSyXVpaAIdtdGpB-9fJhBkqju2eehieoqXForAyQdIKU24JdLaUTLnwOUxueE7X11__surs"
+                />
+              </div>
+              <div class="mt-4">
+                <p class="text-2xl font-bold text-primary">$485,000</p>
+                <p class="mt-1 text-base font-semibold text-text-light">
+                  Mendoza City
+                </p>
+                <p class="text-base text-text-light/80">
+                  3 beds, 3 baths, 210m²
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-16 text-center">
+            <button
+              class="rounded-lg bg-primary px-8 py-3 text-base font-bold text-white transition-colors hover:bg-primary/90"
+            >
+              See All Properties
             </button>
+          </div>
+        </section>
+        <section class="bg-neutral-light py-24">
+          <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+              <h2
+                class="text-4xl font-bold tracking-tight text-primary sm:text-5xl"
+              >
+                Your Trusted Partner in Real Estate
+              </h2>
+              <p class="mx-auto mt-4 max-w-2xl text-lg text-text-light/80">
+                We combine local expertise with a commitment to personalized
+                service.
+              </p>
+            </div>
+            <div class="mt-20 grid grid-cols-1 gap-16 md:grid-cols-3">
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-accent-red/10 text-accent-red"
+                >
+                  <span class="material-symbols-outlined !text-4xl">map</span>
+                </div>
+                <h3 class="mt-6 text-xl font-bold text-primary">
+                  Local Expertise
+                </h3>
+                <p class="mt-2 text-base text-text-light/80">
+                  Our deep roots in Mendoza give us unparalleled knowledge of
+                  the local market, from hidden gems to prime locations.
+                </p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-accent-red/10 text-accent-red"
+                >
+                  <span class="material-symbols-outlined !text-4xl"
+                    >verified_user</span
+                  >
+                </div>
+                <h3 class="mt-6 text-xl font-bold text-primary">
+                  Trusted Service
+                </h3>
+                <p class="mt-2 text-base text-text-light/80">
+                  We build lasting relationships based on trust, transparency,
+                  and delivering exceptional results for our clients.
+                </p>
+              </div>
+              <div class="text-center">
+                <div
+                  class="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-accent-red/10 text-accent-red"
+                >
+                  <span class="material-symbols-outlined !text-4xl"
+                    >support_agent</span
+                  >
+                </div>
+                <h3 class="mt-6 text-xl font-bold text-primary">
+                  Personalized Attention
+                </h3>
+                <p class="mt-2 text-base text-text-light/80">
+                  Your journey is unique. We listen to your needs and provide
+                  tailored guidance every step of the way.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="py-24">
+          <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+              <h2
+                class="text-4xl font-bold tracking-tight text-primary sm:text-5xl"
+              >
+                Meet Our Expert Agents
+              </h2>
+              <p class="mx-auto mt-4 max-w-2xl text-lg text-text-light/80">
+                Our team of dedicated professionals is here to help you navigate
+                the Mendoza property market.
+              </p>
+            </div>
+            <div
+              class="mt-20 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              <div class="text-center">
+                <img
+                  class="mx-auto h-40 w-40 rounded-full object-cover"
+                  data-alt="Professional headshot of a smiling man in a suit"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg-BE5tRn7mNE1aFhQD202420Osv6Nsgf3S2aJitq4V4aPF7jkGVqZfkMEwe2jhZUtRnAqcjr4f8YHln1IoZwT1b3wFge5modPgTKWDu71hfQPYjC32CmCRAUsiOrkJE4xKz7H9uW03YaNCQod-l0Njv8pKqflnv2-ws5KgaR_uCmt3egZZUeV05RaeSuHsQ5OYAzeoAVCm6jZB9hZSHVznO-of5KXZw3O9kHH2DgwP4Va5wYzEQWEj_s90P3m3K22EhlY-Ur38sI"
+                />
+                <h3 class="mt-6 text-xl font-semibold text-primary">
+                  Carlos Rodriguez
+                </h3>
+                <p class="text-accent-red font-medium">Luxury Homes Expert</p>
+              </div>
+              <div class="text-center">
+                <img
+                  class="mx-auto h-40 w-40 rounded-full object-cover"
+                  data-alt="Professional headshot of a smiling woman with blonde hair"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNtAsQyPR8WFwaKbRgWlPinoh92wFAmRty5uRo50n9CNBszbOzcWS_pG2vxHlKhfx5ZWqyMA1dRBBKmKfXgDfVBD3mWftXte0FUvE2X-gSn89lbJ0PT8E--v_nqeskwiaXXoaRoWIHNG5b-Tgq0Yet5ELEGHiIaDU89Y0xlq-FejWYlUiO2vZJ14NsIhcFVXBkifZrXmo8XZm6VFzpgnYx2zITUtgEgwpqWb1y4v5VLlCW78zw3rlB_-syGq_2Y35kjnIq0a2vrDs"
+                />
+                <h3 class="mt-6 text-xl font-semibold text-primary">
+                  Sofia Gomez
+                </h3>
+                <p class="text-accent-red font-medium">
+                  Vineyard Properties Specialist
+                </p>
+              </div>
+              <div class="text-center">
+                <img
+                  class="mx-auto h-40 w-40 rounded-full object-cover"
+                  data-alt="Professional headshot of a friendly man with a beard"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkM6lnZham_tlZEGZzfDI_uD2ea-DJpjyvLUj6SRydigzwFI89CbI4X5DdZOpnHfTheCd0FHVOHhG9DTqJ1iYKrYe_yn_jNu_JhUn8b5q9fcVsjFzmRuojFPVhqhE6pJ1fozLuo0z1-nq0q97mBun6zOq3zUPVGA2rTg4RPwy_3hPpKLYQViA3Fk5QD20cYE78cxlftGDDHvgQPf78mIkyVdR6U0t6qZuytIHEoq-K3czDNYQSZnvJ1F_jN4vPVyFAVbYxIcND5tI"
+                />
+                <h3 class="mt-6 text-xl font-semibold text-primary">
+                  Javier Fernandez
+                </h3>
+                <p class="text-accent-red font-medium">
+                  City Apartments Consultant
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="bg-primary text-white">
+        <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 gap-8 md:grid-cols-4">
+            <div class="md:col-span-1">
+              <h3 class="text-xl font-bold">Mendoza Homes</h3>
+              <p class="mt-4 text-sm text-slate-300">
+                Your key to finding the perfect property in the heart of wine
+                country.
+              </p>
+            </div>
+            <div class="md:col-span-3 grid grid-cols-2 gap-8 sm:grid-cols-3">
+              <div>
+                <h4 class="font-semibold tracking-wider">Quick Links</h4>
+                <ul class="mt-4 space-y-3 text-sm">
+                  <li>
+                    <a class="text-slate-300 hover:text-white" href="#">Buy</a>
+                  </li>
+                  <li>
+                    <a class="text-slate-300 hover:text-white" href="#">Rent</a>
+                  </li>
+                  <li>
+                    <a class="text-slate-300 hover:text-white" href="#">Sell</a>
+                  </li>
+                  <li>
+                    <a class="text-slate-300 hover:text-white" href="#"
+                      >Agents</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold tracking-wider">Contact Us</h4>
+                <ul class="mt-4 space-y-3 text-sm text-slate-300">
+                  <li>Av. San Martín 1234, Mendoza</li>
+                  <li>+54 261 412 3456</li>
+                  <li>contact@mendozahomes.com</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-semibold tracking-wider">Newsletter</h4>
+                <p class="mt-4 text-sm text-slate-300">
+                  Stay updated with the latest properties.
+                </p>
+                <form class="mt-4 flex">
+                  <input
+                    class="w-full rounded-l-md border-0 bg-white/20 px-3 py-2 text-sm text-white placeholder-slate-300 focus:ring-2 focus:ring-accent-red"
+                    placeholder="Your Email"
+                    type="email"
+                  />
+                  <button
+                    class="rounded-r-md bg-accent-red px-3 text-white transition-colors hover:bg-accent-red/90"
+                  >
+                    <span class="material-symbols-outlined">send</span>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mt-12 border-t border-white/20 pt-8 text-center text-sm text-slate-300"
+          >
+            <p>© 2024 Mendoza Homes. All Rights Reserved.</p>
+          </div>
         </div>
-    </header>
-
-    <!-- Página principal -->
-    <div id="mainPage">
-        <!-- Hero con diseño dividido -->
-        <section class="relative min-h-screen bg-white ">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
-                    <!-- Columna izquierda - Contenido -->
-                    <div class="flex items-center justify-center px-4 py-16 lg:py-0">
-                        <div class="max-w-lg">
-                            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-6 leading-tight">
-                                Tu hogar ideal 
-                                <span class="text-primary-red">te espera</span>
-                            </h1>
-                            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                                Encuentra la propiedad perfecta con el mejor acompañamiento profesional en Mendoza
-                            </p>
-                            <!-- Estadísticas rápidas -->
-                            <div class="flex items-center space-x-6 mb-8">
-                                <div class="text-center">
-                                    <div class="text-2xl font-bold text-gray-900">2,500+</div>
-                                    <div class="text-sm text-gray-600">Familias felices</div>
-                                </div>
-                                <div class="w-px h-12 bg-gray-300"></div>
-                                <div class="text-center">
-                                    <div class="text-2xl font-bold text-gray-900">98%</div>
-                                    <div class="text-sm text-gray-600">Satisfacción</div>
-                                </div>
-                                <div class="w-px h-12 bg-gray-300"></div>
-                                <div class="text-center">
-                                    <div class="text-2xl font-bold text-gray-900">24h</div>
-                                    <div class="text-sm text-gray-600">Respuesta</div>
-                                </div>
-                            </div>
-                           <!-- Botones principales -->
-                            <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                                <button onclick="showPropertiesPage()" class="group bg-primary-red hover:bg-primary-red-hover text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
-                                    <svg class="w-5 h-5 mr-2 group-hover:animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                                    </svg>
-                                    Ver Propiedades
-                                </button>
-                                <button onclick="contactWhatsApp()" class="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-lg">
-                                    💬 Contactar
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Columna derecha - Imagen -->
-                    <div class="relative bg-gray-100 overflow-hidden">
-                        <div class="absolute inset-0 bg-[url('/imagenes/hero1.png')] bg-cover bg-center bg-no-repeat">
-                        
-                        </div>
-                        
-                        
-                    </div>
-                </div>
-            </div>
-
-            <!-- Buscador flotante -->
-            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-full max-w-4xl px-4">
-                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/20">
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <div class="relative">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Ubicación</label>
-                            <input type="text" placeholder="Ej: Godoy Cruz, Barrio Dalvian, etc" class="w-full px-4 py-3 bg-gray-50 border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-red focus:bg-white text-black transition-all">
-                        </div>
-                        <div class="relative">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Tipo de propiedad</label>
-                            <select class="w-full px-4 py-3 bg-gray-50 border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-red focus:bg-white text-black transition-all">
-                                <option>Seleccionar</option>
-                                <option>Casa</option>
-                                <option>Apartamento</option>
-                                <option>Local comercial</option>
-                                <option>Terreno</option>
-                            </select>
-                        </div>
-                        <div class="relative">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Precio máximo</label>
-                            <input type="text" placeholder="Ej: $500.000.000" class="w-full px-4 py-3 bg-gray-50 border-0 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-red focus:bg-white text-black transition-all">
-                        </div>
-                        <div class="flex items-end">
-                            <button onclick="searchProperties()" class="w-full bg-primary-red hover:bg-primary-red-hover text-white py-3 rounded-xl font-semibold transition-all transform hover:scale-105 shadow-lg">
-                                🔍 Buscar
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Propiedades destacadas con carrusel -->
-        <section id="properties" class="py-16 bg-white">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Propiedades Destacadas</h2>
-                    <p class="text-gray-600 text-lg">Descubre las mejores oportunidades del mercado</p>
-                </div>
-
-                <!-- Carrusel de propiedades -->
-                <div class="relative">
-                    <!-- Contenedor del carrusel -->
-                    <div class="overflow-hidden rounded-xl">
-                        <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
-                            <!-- Slide 1 -->
-                            <div class="w-full flex-shrink-0">
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
-                                    <!-- Propiedad 1 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(1)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#f8f9fa" width="300" height="200"/>
-                                                <rect fill="#e9ecef" x="0" y="120" width="300" height="80"/>
-                                                <rect fill="#dee2e6" x="50" y="60" width="80" height="60"/>
-                                                <rect fill="#ced4da" x="170" y="80" width="60" height="40"/>
-                                                <circle fill="#adb5bd" cx="250" cy="40" r="20"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-primary-red text-white px-2 py-1 rounded text-sm font-medium">
-                                                Destacada
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Casa Moderna Chapinero</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Chapinero, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$450.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 3 hab</span>
-                                                <span>🚿 2 baños</span>
-                                                <span>📐 120 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad 2 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(2)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#f1f3f4" width="300" height="200"/>
-                                                <rect fill="#e8eaed" x="0" y="100" width="300" height="100"/>
-                                                <rect fill="#dadce0" x="40" y="40" width="100" height="80"/>
-                                                <rect fill="#bdc1c6" x="160" y="60" width="80" height="60"/>
-                                                <rect fill="#9aa0a6" x="20" y="140" width="260" height="20"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Nuevo
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Apartamento Zona Rosa</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Zona Rosa, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$320.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 2 hab</span>
-                                                <span>🚿 2 baños</span>
-                                                <span>📐 85 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad 3 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(3)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#fafafa" width="300" height="200"/>
-                                                <rect fill="#f5f5f5" x="0" y="80" width="300" height="120"/>
-                                                <rect fill="#eeeeee" x="60" y="30" width="120" height="90"/>
-                                                <rect fill="#e0e0e0" x="200" y="50" width="70" height="70"/>
-                                                <polygon fill="#bdbdbd" points="60,30 120,10 180,30 180,120 60,120"/>
-                                            </svg>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Casa Familiar Cedritos</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Cedritos, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$580.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 4 hab</span>
-                                                <span>🚿 3 baños</span>
-                                                <span>📐 180 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slide 2 -->
-                            <div class="w-full flex-shrink-0">
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
-                                    <!-- Propiedad 4 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(4)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#f8f8f8" width="300" height="200"/>
-                                                <rect fill="#f0f0f0" x="0" y="120" width="300" height="80"/>
-                                                <rect fill="#e8e8e8" x="80" y="40" width="140" height="100"/>
-                                                <rect fill="#d8d8d8" x="100" y="60" width="40" height="60"/>
-                                                <rect fill="#c8c8c8" x="160" y="60" width="40" height="60"/>
-                                                <circle fill="#b8b8b8" cx="50" cy="50" r="15"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-blue-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Oportunidad
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Apartamento La Candelaria</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 La Candelaria, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$280.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 2 hab</span>
-                                                <span>🚿 1 baño</span>
-                                                <span>📐 65 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad adicional 5 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(1)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#e8f5e8" width="300" height="200"/>
-                                                <rect fill="#d4f4d4" x="0" y="120" width="300" height="80"/>
-                                                <rect fill="#c0f0c0" x="60" y="50" width="100" height="80"/>
-                                                <rect fill="#a8e8a8" x="180" y="70" width="80" height="60"/>
-                                                <circle fill="#90e090" cx="240" cy="50" r="25"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-purple-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Premium
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Penthouse Rosales</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Rosales, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$850.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 3 hab</span>
-                                                <span>🚿 3 baños</span>
-                                                <span>📐 200 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad adicional 6 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(2)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#fff8e1" width="300" height="200"/>
-                                                <rect fill="#ffecb3" x="0" y="100" width="300" height="100"/>
-                                                <rect fill="#ffe082" x="50" y="40" width="120" height="90"/>
-                                                <rect fill="#ffd54f" x="190" y="60" width="80" height="70"/>
-                                                <polygon fill="#ffca28" points="40,160 100,140 160,160 160,200 40,200"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Exclusiva
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Casa Campestre Chía</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Chía, Cundinamarca</p>
-                                            <p class="text-primary-red font-bold text-xl">$680.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 4 hab</span>
-                                                <span>🚿 4 baños</span>
-                                                <span>📐 250 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Botones de navegación -->
-                    <button id="prevBtn" onclick="previousSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                        </svg>
-                    </button>
-                    <button id="nextBtn" onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </button>
-
-                    <!-- Indicadores -->
-                    <div class="flex justify-center mt-8 space-x-2">
-                        <button onclick="goToSlide(0)" class="carousel-indicator w-3 h-3 rounded-full bg-primary-red transition-all duration-300"></button>
-                        <button onclick="goToSlide(1)" class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"></button>
-                    </div>
-                </div>
-
-                <div class="text-center mt-12">
-                    <button onclick="viewAllProperties()" class="bg-black hover:bg-gray-800 text-white px-8 py-3 rounded-lg font-medium transition-colors">
-                        Ver Todas las Propiedades
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Propuesta de valor -->
-        <section class="py-16 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Por qué elegir Nazar Propiedades?</h2>
-                    <p class="text-gray-600 text-lg">Te acompañamos en cada paso hacia tu nuevo hogar</p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <!-- Ventaja 1 -->
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-primary-red rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Acompañamiento Personalizado</h3>
-                        <p class="text-gray-600">Te guiamos desde la búsqueda hasta la firma, con asesoría experta en cada decisión importante.</p>
-                    </div>
-
-                    <!-- Ventaja 2 -->
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-primary-red rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Asesoría Legal Completa</h3>
-                        <p class="text-gray-600">Verificamos documentos, historial y aspectos legales para que tu compra sea 100% segura.</p>
-                    </div>
-
-                    <!-- Ventaja 3 -->
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-primary-red rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <h3 class="text-xl font-bold mb-4">Visitas Virtuales 360°</h3>
-                        <p class="text-gray-600">Recorre las propiedades desde casa con tours virtuales inmersivos y de alta calidad.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Tasación gratuita -->
-        <section class="py-16 bg-primary-red">
-            <div class="max-w-4xl mx-auto px-4 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">¿Quieres vender tu propiedad?</h2>
-                <p class="text-white/90 text-lg mb-8">Obtén nuestra asesoría profesional en menos de 24 horas.</p>
-                
-                <div class="bg-white rounded-lg p-6 md:p-8 max-w-2xl mx-auto">
-                    <form class="space-y-4" onsubmit="submitValuation(event)">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <input type="text" placeholder="Nombre completo" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                            <input type="tel" placeholder="Teléfono" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                        </div>
-                        <input type="email" placeholder="Correo electrónico" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                        <select required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                            <option value="">Tipo de propiedad</option>
-                            <option>Casa</option>
-                            <option>Apartamento</option>
-                            <option>Local comercial</option>
-                            <option>Terreno</option>
-                            <option>Oficina</option>
-                        </select>
-                        <button type="submit" class="w-full bg-black hover:bg-gray-800 text-white py-4 rounded-lg font-bold text-lg transition-colors">
-                            Solicitar Asesoría
-                        </button>
-                    </form>
-                    <p class="text-sm text-gray-500 mt-4">* Nos contactaremos contigo en las próximas 2 horas</p>
-                </div>
-            </div>
-        </section>
+      </footer>
     </div>
-
-    <!-- Página de propiedades -->
-    <div id="propertiesPage" class="hidden">
-        <!-- Breadcrumb -->
-        <div class="bg-gray-50 py-4">
-            <div class="max-w-7xl mx-auto px-4">
-                <button onclick="goBackToMain()" class="text-primary-red hover:text-primary-red-hover font-medium flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                    </svg>
-                    Volver al inicio
-                </button>
-            </div>
-        </div>
-
-        <!-- Filtros básicos -->
-        <div class="bg-white shadow-sm border-b">
-            <div class="max-w-7xl mx-auto px-4 py-6">
-                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
-                    <div class="relative">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Ubicación</label>
-                        <input type="text" id="locationFilter" placeholder="Buscar ubicación..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red" oninput="showLocationSuggestions(this.value)" onblur="hideLocationSuggestions()" onfocus="showLocationSuggestions(this.value)">
-                        <div id="locationSuggestions" class="absolute z-10 w-full bg-white border border-gray-300 rounded-lg mt-1 hidden max-h-48 overflow-y-auto">
-                            <div class="p-2 hover:bg-gray-100 cursor-pointer" onclick="selectLocation('chapinero', 'Chapinero')">Chapinero</div>
-                            <div class="p-2 hover:bg-gray-100 cursor-pointer" onclick="selectLocation('zona-rosa', 'Zona Rosa')">Zona Rosa</div>
-                            <div class="p-2 hover:bg-gray-100 cursor-pointer" onclick="selectLocation('cedritos', 'Cedritos')">Cedritos</div>
-                            <div class="p-2 hover:bg-gray-100 cursor-pointer" onclick="selectLocation('la-candelaria', 'La Candelaria')">La Candelaria</div>
-                            <div class="p-2 hover:bg-gray-100 cursor-pointer" onclick="selectLocation('rosales', 'Rosales')">Rosales</div>
-                            <div class="p-2 hover:bg-gray-100 cursor-pointer" onclick="selectLocation('chia', 'Chía')">Chía</div>
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Condición</label>
-                        <select id="conditionFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                            <option value="">Todas</option>
-                            <option value="venta">Venta</option>
-                            <option value="alquiler">Alquiler</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Tipo</label>
-                        <select id="typeFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                            <option value="">Todos los tipos</option>
-                            <option value="casa">Casa</option>
-                            <option value="apartamento">Apartamento</option>
-                            <option value="penthouse">Penthouse</option>
-                            <option value="local">Local comercial</option>
-                            <option value="terreno">Terreno</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Precio máximo</label>
-                        <input type="text" id="priceFilter" placeholder="Ej: 500000000" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red" oninput="formatPriceInput(this)">
-                    </div>
-                    <div class="flex items-end">
-                        <button onclick="toggleAdvancedFilters()" class="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 rounded-lg font-medium transition-colors mb-2">
-                            Filtros Avanzados
-                        </button>
-                    </div>
-                </div>
-                
-                <!-- Botones de acción -->
-                <div class="flex justify-between items-center mt-4">
-                    <div class="flex space-x-4">
-                        <button onclick="applyFilters()" class="bg-primary-red hover:bg-primary-red-hover text-white px-6 py-2 rounded-lg font-medium transition-colors">
-                            🔍 Buscar
-                        </button>
-                        <button onclick="clearFilters()" class="bg-gray-200 hover:bg-gray-300 text-gray-700 px-6 py-2 rounded-lg font-medium transition-colors">
-                            Limpiar filtros
-                        </button>
-                    </div>
-                    <div class="flex items-center space-x-4">
-                        <span class="text-gray-600" id="resultsCount">Mostrando 12 propiedades</span>
-                        <select id="sortBy" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red" onchange="sortProperties()">
-                            <option value="newest">Más recientes</option>
-                            <option value="price-low">Precio: menor a mayor</option>
-                            <option value="price-high">Precio: mayor a menor</option>
-                            <option value="area-large">Área: mayor a menor</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Filtros avanzados (ocultos por defecto) -->
-        <div id="advancedFilters" class="hidden bg-gray-50 border-b">
-            <div class="max-w-7xl mx-auto px-4 py-6">
-                <h3 class="text-lg font-bold mb-4">Filtros Avanzados</h3>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Habitaciones</label>
-                        <select id="bedroomsFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                            <option value="">Cualquier cantidad</option>
-                            <option value="1">1+</option>
-                            <option value="2">2+</option>
-                            <option value="3">3+</option>
-                            <option value="4">4+</option>
-                            <option value="5">5+</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Baños</label>
-                        <select id="bathroomsFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                            <option value="">Cualquier cantidad</option>
-                            <option value="1">1+</option>
-                            <option value="2">2+</option>
-                            <option value="3">3+</option>
-                            <option value="4">4+</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Área mínima (m²)</label>
-                        <input type="number" id="minAreaFilter" placeholder="Ej: 80" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Área máxima (m²)</label>
-                        <input type="number" id="maxAreaFilter" placeholder="Ej: 200" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-1 gap-4 mb-4">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-2">Cochera</label>
-                        <select id="parkingFilter" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                            <option value="">Cualquier cantidad</option>
-                            <option value="0">Sin cochera</option>
-                            <option value="1">1+</option>
-                            <option value="2">2+</option>
-                            <option value="3">3+</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- Características adicionales -->
-                <div class="mb-4">
-                    <label class="block text-sm font-medium text-gray-700 mb-3">Características adicionales</label>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-                        <label class="flex items-center">
-                            <input type="checkbox" id="balconyFilter" class="mr-2 text-primary-red focus:ring-primary-red">
-                            <span class="text-sm">Balcón</span>
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" id="gardenFilter" class="mr-2 text-primary-red focus:ring-primary-red">
-                            <span class="text-sm">Jardín</span>
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" id="poolFilter" class="mr-2 text-primary-red focus:ring-primary-red">
-                            <span class="text-sm">Piscina</span>
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" id="gymFilter" class="mr-2 text-primary-red focus:ring-primary-red">
-                            <span class="text-sm">Gimnasio</span>
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" id="elevatorFilter" class="mr-2 text-primary-red focus:ring-primary-red">
-                            <span class="text-sm">Ascensor</span>
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" id="securityFilter" class="mr-2 text-primary-red focus:ring-primary-red">
-                            <span class="text-sm">Seguridad 24h</span>
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" id="furnishedFilter" class="mr-2 text-primary-red focus:ring-primary-red">
-                            <span class="text-sm">Amoblado</span>
-                        </label>
-                        <label class="flex items-center">
-                            <input type="checkbox" id="petFriendlyFilter" class="mr-2 text-primary-red focus:ring-primary-red">
-                            <span class="text-sm">Acepta mascotas</span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Resultados -->
-        <div class="max-w-7xl mx-auto px-4 py-8">
-            <!-- Grid de propiedades -->
-            <div id="propertiesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                <!-- Las propiedades se cargarán aquí dinámicamente -->
-            </div>
-
-            <!-- Paginación -->
-            <div class="flex justify-center items-center space-x-4">
-                <button onclick="previousPage()" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50" id="prevPageBtn">
-                    Anterior
-                </button>
-                <div class="flex space-x-2" id="pageNumbers">
-                    <!-- Los números de página se generarán aquí -->
-                </div>
-                <button onclick="nextPage()" class="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors disabled:opacity-50" id="nextPageBtn">
-                    Siguiente
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Página de detalle de propiedad -->
-    <div id="propertyDetailPage" class="hidden">
-        <!-- Breadcrumb -->
-        <div class="bg-gray-50 py-4">
-            <div class="max-w-7xl mx-auto px-4">
-                <button onclick="goBackToMain()" class="text-primary-red hover:text-primary-red-hover font-medium flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                    </svg>
-                    Volver a propiedades
-                </button>
-            </div>
-        </div>
-
-        <!-- Contenido principal -->
-        <div class="max-w-7xl mx-auto px-4 py-8">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- Columna izquierda - Galería e información -->
-                <div class="lg:col-span-2">
-                    <!-- Galería de imágenes -->
-                    <div class="mb-8">
-                        <div class="relative bg-gray-200 rounded-lg overflow-hidden h-96 mb-4">
-                            <div id="mainImage" class="w-full h-full">
-                                <svg class="w-full h-full" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="#f8f9fa" width="600" height="400"/>
-                                    <rect fill="#e9ecef" x="0" y="240" width="600" height="160"/>
-                                    <rect fill="#dee2e6" x="100" y="120" width="160" height="120"/>
-                                    <rect fill="#ced4da" x="340" y="160" width="120" height="80"/>
-                                    <circle fill="#adb5bd" cx="500" cy="80" r="40"/>
-                                    <polygon fill="#6c757d" points="50,350 150,300 250,350 250,400 50,400"/>
-                                </svg>
-                            </div>
-                            <div class="absolute top-4 right-4 bg-primary-red text-white px-3 py-1 rounded-lg font-medium">
-                                Destacada
-                            </div>
-                        </div>
-                        
-                        <!-- Miniaturas -->
-                        <div class="grid grid-cols-4 gap-2">
-                            <div class="bg-gray-200 rounded-lg h-20 cursor-pointer hover:opacity-75 transition-opacity" onclick="changeMainImage(1)">
-                                <svg class="w-full h-full rounded-lg" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="#f1f3f4" width="100" height="80"/>
-                                    <rect fill="#e8eaed" x="20" y="30" width="60" height="30"/>
-                                </svg>
-                            </div>
-                            <div class="bg-gray-200 rounded-lg h-20 cursor-pointer hover:opacity-75 transition-opacity" onclick="changeMainImage(2)">
-                                <svg class="w-full h-full rounded-lg" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="#fafafa" width="100" height="80"/>
-                                    <circle fill="#e0e0e0" cx="50" cy="40" r="20"/>
-                                </svg>
-                            </div>
-                            <div class="bg-gray-200 rounded-lg h-20 cursor-pointer hover:opacity-75 transition-opacity" onclick="changeMainImage(3)">
-                                <svg class="w-full h-full rounded-lg" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="#f5f5f5" width="100" height="80"/>
-                                    <rect fill="#eeeeee" x="10" y="20" width="80" height="40"/>
-                                </svg>
-                            </div>
-                            <div class="bg-gray-200 rounded-lg h-20 cursor-pointer hover:opacity-75 transition-opacity" onclick="changeMainImage(4)">
-                                <svg class="w-full h-full rounded-lg" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg">
-                                    <rect fill="#f8f8f8" width="100" height="80"/>
-                                    <polygon fill="#d8d8d8" points="20,60 50,20 80,60 80,80 20,80"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Información básica -->
-                    <div class="mb-8">
-                        <h1 id="propertyTitle" class="text-3xl font-bold mb-4">Casa Moderna Chapinero</h1>
-                        <div class="flex items-center mb-4">
-                            <svg class="w-5 h-5 text-gray-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                            </svg>
-                            <span id="propertyLocation" class="text-gray-600">Calle 85 #15-23, Chapinero, Bogotá</span>
-                        </div>
-                        <div class="text-4xl font-bold text-primary-red mb-6" id="propertyPrice">$450.000.000</div>
-                        
-                        <!-- Características principales -->
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                            <div class="text-center p-4 bg-gray-50 rounded-lg">
-                                <div class="text-2xl mb-2">🛏️</div>
-                                <div class="font-bold text-lg" id="propertyBedrooms">3</div>
-                                <div class="text-sm text-gray-600">Habitaciones</div>
-                            </div>
-                            <div class="text-center p-4 bg-gray-50 rounded-lg">
-                                <div class="text-2xl mb-2">🚿</div>
-                                <div class="font-bold text-lg" id="propertyBathrooms">2</div>
-                                <div class="text-sm text-gray-600">Baños</div>
-                            </div>
-                            <div class="text-center p-4 bg-gray-50 rounded-lg">
-                                <div class="text-2xl mb-2">📐</div>
-                                <div class="font-bold text-lg" id="propertyArea">120</div>
-                                <div class="text-sm text-gray-600">m² construidos</div>
-                            </div>
-                            <div class="text-center p-4 bg-gray-50 rounded-lg">
-                                <div class="text-2xl mb-2">🚗</div>
-                                <div class="font-bold text-lg" id="propertyParking">2</div>
-                                <div class="text-sm text-gray-600">Cochera</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Descripción -->
-                    <div class="mb-8">
-                        <h2 class="text-2xl font-bold mb-4">Descripción</h2>
-                        <div id="propertyDescription" class="text-gray-700 leading-relaxed">
-                            <p class="mb-4">Hermosa casa moderna ubicada en el corazón de Chapinero, una de las zonas más exclusivas y valorizada de Bogotá. Esta propiedad combina elegancia contemporánea con funcionalidad, perfecta para familias que buscan comodidad y estilo.</p>
-                            <p class="mb-4">La casa cuenta con amplios espacios llenos de luz natural, acabados de primera calidad y una distribución inteligente que maximiza cada metro cuadrado. Ubicada en un sector tranquilo pero con fácil acceso a centros comerciales, restaurantes y transporte público.</p>
-                            <p>Ideal para quienes valoran la calidad de vida en una ubicación privilegiada con excelente valorización a futuro.</p>
-                        </div>
-                    </div>
-
-                    <!-- Características y amenidades -->
-                    <div class="mb-8">
-                        <h2 class="text-2xl font-bold mb-4">Características</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <h3 class="font-bold mb-3">Interiores</h3>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Cocina integral moderna</li>
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Pisos en porcelanato</li>
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Closets empotrados</li>
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Baño principal con jacuzzi</li>
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Sala con chimenea</li>
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Estudio/oficina</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h3 class="font-bold mb-3">Exteriores y Servicios</h3>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Jardín privado</li>
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Terraza cubierta</li>
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Cochera para 2 vehículos</li>
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Cuarto de servicio</li>
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Sistema de seguridad</li>
-                                    <li class="flex items-center"><span class="text-green-500 mr-2">✓</span> Calentador a gas</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mapa de ubicación -->
-                    <div class="mb-8">
-                        <h2 class="text-2xl font-bold mb-4">Ubicación</h2>
-                        <div class="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-                            <div class="text-center text-gray-600">
-                                <svg class="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                                </svg>
-                                <p class="font-medium">Mapa Interactivo</p>
-                                <p class="text-sm">Chapinero, Bogotá</p>
-                            </div>
-                        </div>
-                        
-                        <!-- Lugares cercanos -->
-                        <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div class="text-center p-3 bg-gray-50 rounded-lg">
-                                <div class="text-lg mb-1">🏥</div>
-                                <div class="font-medium text-sm">Hospital Militar</div>
-                                <div class="text-xs text-gray-600">800m</div>
-                            </div>
-                            <div class="text-center p-3 bg-gray-50 rounded-lg">
-                                <div class="text-lg mb-1">🏫</div>
-                                <div class="font-medium text-sm">Colegio San Patricio</div>
-                                <div class="text-xs text-gray-600">600m</div>
-                            </div>
-                            <div class="text-center p-3 bg-gray-50 rounded-lg">
-                                <div class="text-lg mb-1">🛒</div>
-                                <div class="font-medium text-sm">Centro Andino</div>
-                                <div class="text-xs text-gray-600">1.2km</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Columna derecha - Formulario de contacto -->
-                <div class="lg:col-span-1">
-                    <div class="sticky top-24">
-                        <!-- Información del agente -->
-                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
-                            <div class="flex items-center mb-4">
-                                <div class="w-16 h-16 bg-primary-red rounded-lg flex items-center justify-center mr-4">
-                                    <span class="text-white font-bold text-xl">NP</span>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-lg">Nazar Propiedades</h3>
-                                    <p class="text-gray-600 text-sm">Inmobiliaria Profesional</p>
-                                    <p class="text-gray-600 text-sm">+10 años de experiencia</p>
-                                </div>
-                            </div>
-                            
-                            <!-- Botones de contacto rápido -->
-                            <div class="space-y-3 mb-6">
-                                <button onclick="contactWhatsApp()" class="w-full bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center">
-                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106"/>
-                                    </svg>
-                                    WhatsApp
-                                </button>
-                                <button onclick="callPhone()" class="w-full bg-primary-red hover:bg-primary-red-hover text-white py-3 rounded-lg font-medium transition-colors flex items-center justify-center">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                                    </svg>
-                                    Llamar Ahora
-                                </button>
-                            </div>
-
-                            <!-- Formulario de contacto -->
-                            <form onsubmit="submitPropertyInquiry(event)" class="space-y-4">
-                                <input type="text" placeholder="Nombre completo" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                                <input type="tel" placeholder="Teléfono" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                                <input type="email" placeholder="Correo electrónico" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red">
-                                <textarea placeholder="Mensaje (opcional)" rows="3" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-red resize-none"></textarea>
-                                <button type="submit" class="w-full bg-black hover:bg-gray-800 text-white py-3 rounded-lg font-medium transition-colors">
-                                    Solicitar Información
-                                </button>
-                            </form>
-                            
-                            <p class="text-xs text-gray-500 mt-3 text-center">* Te contactaremos en menos de 2 horas</p>
-                        </div>
-
-                        <!-- Calculadora de crédito -->
-                        <div class="bg-gray-50 rounded-lg p-6">
-                            <h3 class="font-bold text-lg mb-4">Calculadora de Crédito</h3>
-                            <div class="space-y-4">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Valor de la propiedad</label>
-                                    <input type="text" value="$450.000.000" readonly class="w-full px-4 py-2 bg-white border border-gray-300 rounded-lg">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Cuota inicial (%)</label>
-                                    <input type="range" min="20" max="50" value="30" class="w-full" oninput="calculateCredit(this.value)">
-                                    <div class="flex justify-between text-sm text-gray-600">
-                                        <span>20%</span>
-                                        <span id="initialPaymentPercent">30%</span>
-                                        <span>50%</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Plazo (años)</label>
-                                    <select class="w-full px-4 py-2 border border-gray-300 rounded-lg" onchange="calculateCredit()">
-                                        <option value="15">15 años</option>
-                                        <option value="20" selected>20 años</option>
-                                        <option value="25">25 años</option>
-                                        <option value="30">30 años</option>
-                                    </select>
-                                </div>
-                                <div class="bg-white p-4 rounded-lg">
-                                    <div class="text-center">
-                                        <p class="text-sm text-gray-600">Cuota mensual aproximada</p>
-                                        <p class="text-2xl font-bold text-primary-red" id="monthlyPayment">$1.850.000</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Propiedades similares -->
-            <div class="mt-16">
-                <h2 class="text-3xl font-bold mb-8 text-center">Propiedades Similares</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Propiedad similar 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer" onclick="viewProperty(2)">
-                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                <rect fill="#f1f3f4" width="300" height="200"/>
-                                <rect fill="#e8eaed" x="0" y="100" width="300" height="100"/>
-                                <rect fill="#dadce0" x="40" y="40" width="100" height="80"/>
-                                <rect fill="#bdc1c6" x="160" y="60" width="80" height="60"/>
-                                <rect fill="#9aa0a6" x="20" y="140" width="260" height="20"/>
-                            </svg>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-lg mb-2">Apartamento Zona Rosa</h3>
-                            <p class="text-gray-600 text-sm mb-3">📍 Zona Rosa, Bogotá</p>
-                            <p class="text-primary-red font-bold text-xl">$320.000.000</p>
-                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                <span>🛏️ 2 hab</span>
-                                <span>🚿 2 baños</span>
-                                <span>📐 85 m²</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Propiedad similar 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer" onclick="viewProperty(3)">
-                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                <rect fill="#fafafa" width="300" height="200"/>
-                                <rect fill="#f5f5f5" x="0" y="80" width="300" height="120"/>
-                                <rect fill="#eeeeee" x="60" y="30" width="120" height="90"/>
-                                <rect fill="#e0e0e0" x="200" y="50" width="70" height="70"/>
-                                <polygon fill="#bdbdbd" points="60,30 120,10 180,30 180,120 60,120"/>
-                            </svg>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-lg mb-2">Casa Familiar Cedritos</h3>
-                            <p class="text-gray-600 text-sm mb-3">📍 Cedritos, Bogotá</p>
-                            <p class="text-primary-red font-bold text-xl">$580.000.000</p>
-                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                <span>🛏️ 4 hab</span>
-                                <span>🚿 3 baños</span>
-                                <span>📐 180 m²</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Propiedad similar 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer" onclick="viewProperty(4)">
-                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                <rect fill="#f8f8f8" width="300" height="200"/>
-                                <rect fill="#f0f0f0" x="0" y="120" width="300" height="80"/>
-                                <rect fill="#e8e8e8" x="80" y="40" width="140" height="100"/>
-                                <rect fill="#d8d8d8" x="100" y="60" width="40" height="60"/>
-                                <rect fill="#c8c8c8" x="160" y="60" width="40" height="60"/>
-                                <circle fill="#b8b8b8" cx="50" cy="50" r="15"/>
-                            </svg>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-bold text-lg mb-2">Apartamento La Candelaria</h3>
-                            <p class="text-gray-600 text-sm mb-3">📍 La Candelaria, Bogotá</p>
-                            <p class="text-primary-red font-bold text-xl">$280.000.000</p>
-                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                <span>🛏️ 2 hab</span>
-                                <span>🚿 1 baño</span>
-                                <span>📐 65 m²</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div></div>
-
-    <!-- Footer -->
-    <footer class="bg-black text-white py-12">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Logo y descripción -->
-                <div class="md:col-span-2">
-                    <div class="flex items-center mb-4">
-                        <div class="w-10 h-10 rounded-lg flex items-center justify-center mr-3">
-                            <!-- <span class="text-white font-bold text-xl">NP</span> -->
-                            <img src="/imagenes/logo.png" alt="">
-                        </div>
-                        <span class="text-2xl font-bold">Nazar Propiedades</span>
-                    </div>
-                    <p class="text-gray-400 mb-6 max-w-md">Tu aliado de confianza en el mercado inmobiliario. Más de 10 años conectando familias con su hogar ideal.</p>
-                    <div class="flex space-x-4">
-                        <button onclick="contactWhatsApp()" class="bg-primary-red hover:bg-primary-red-hover px-6 py-2 rounded-lg font-medium transition-colors">
-                            WhatsApp
-                        </button>
-                        <button onclick="callPhone()" class="border border-gray-600 hover:border-gray-400 px-6 py-2 rounded-lg font-medium transition-colors">
-                            Llamar
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Contacto -->
-                <div>
-                    <h3 class="font-bold text-lg mb-4">Contacto</h3>
-                    <div class="space-y-3 text-gray-400">
-                        <p>📞 +57 (1) 234-5678</p>
-                        <p>📱 +57 300 123 4567</p>
-                        <p>✉️ info@nazarpropiedades.com</p>
-                        <p>📍 Calle 93 #15-20, Mendoza</p>
-                    </div>
-                </div>
-
-                <!-- Enlaces -->
-                <div>
-                    <h3 class="font-bold text-lg mb-4">Enlaces</h3>
-                    <div class="space-y-2">
-                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Propiedades</a>
-                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Servicios</a>
-                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Nosotros</a>
-                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Blog</a>
-                        <a href="#" class="block text-gray-400 hover:text-white transition-colors">Contacto</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2024 Nazar Propiedades. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Base de datos extendida de propiedades
-        const allProperties = [
-            {
-                id: 1,
-                title: "Casa Moderna Chapinero",
-                location: "chapinero",
-                locationName: "Chapinero, Bogotá",
-                fullAddress: "Calle 85 #15-23, Chapinero, Bogotá",
-                price: 450000000,
-                priceText: "$450.000.000",
-                condition: "venta",
-                type: "casa",
-                bedrooms: 3,
-                bathrooms: 2,
-                area: 120,
-                parking: 2,
-                stratum: 5,
-                age: "recent",
-                status: "excellent",
-                features: ["balcony", "garden", "security"],
-                description: "Hermosa casa moderna ubicada en el corazón de Chapinero, una de las zonas más exclusivas y valorizada de Bogotá.",
-                featured: true,
-                dateAdded: new Date('2024-01-15')
-            },
-            {
-                id: 2,
-                title: "Apartamento Zona Rosa",
-                location: "zona-rosa",
-                locationName: "Zona Rosa, Bogotá",
-                fullAddress: "Carrera 13 #85-32, Zona Rosa, Bogotá",
-                price: 320000000,
-                priceText: "$320.000.000",
-                condition: "venta",
-                type: "apartamento",
-                bedrooms: 2,
-                bathrooms: 2,
-                area: 85,
-                parking: 1,
-                stratum: 5,
-                age: "new",
-                status: "excellent",
-                features: ["balcony", "elevator", "security"],
-                description: "Moderno apartamento en la exclusiva Zona Rosa, con acabados de lujo y una ubicación privilegiada.",
-                featured: false,
-                dateAdded: new Date('2024-01-20')
-            },
-            {
-                id: 3,
-                title: "Casa Familiar Cedritos",
-                location: "cedritos",
-                locationName: "Cedritos, Bogotá",
-                fullAddress: "Calle 147 #9-15, Cedritos, Bogotá",
-                price: 580000000,
-                priceText: "$580.000.000",
-                condition: "venta",
-                type: "casa",
-                bedrooms: 4,
-                bathrooms: 3,
-                area: 180,
-                parking: 2,
-                stratum: 4,
-                age: "good",
-                status: "good",
-                features: ["garden", "security", "pool"],
-                description: "Amplia casa familiar en Cedritos, ideal para familias grandes.",
-                featured: false,
-                dateAdded: new Date('2024-01-10')
-            },
-            {
-                id: 4,
-                title: "Apartamento La Candelaria",
-                location: "la-candelaria",
-                locationName: "La Candelaria, Bogotá",
-                fullAddress: "Carrera 4 #12-65, La Candelaria, Bogotá",
-                price: 280000000,
-                priceText: "$280.000.000",
-                condition: "venta",
-                type: "apartamento",
-                bedrooms: 2,
-                bathrooms: 1,
-                area: 65,
-                parking: 0,
-                stratum: 3,
-                age: "older",
-                status: "remodel",
-                features: [],
-                description: "Acogedor apartamento en el histórico barrio de La Candelaria.",
-                featured: false,
-                dateAdded: new Date('2024-01-05')
-            },
-            {
-                id: 5,
-                title: "Penthouse Rosales",
-                location: "rosales",
-                locationName: "Rosales, Bogotá",
-                fullAddress: "Carrera 7 #70-45, Rosales, Bogotá",
-                price: 850000000,
-                priceText: "$850.000.000",
-                condition: "venta",
-                type: "penthouse",
-                bedrooms: 3,
-                bathrooms: 3,
-                area: 200,
-                parking: 2,
-                stratum: 6,
-                age: "new",
-                status: "excellent",
-                features: ["balcony", "elevator", "security", "gym"],
-                description: "Exclusivo penthouse en Rosales con vista panorámica de la ciudad.",
-                featured: true,
-                dateAdded: new Date('2024-01-25')
-            },
-            {
-                id: 6,
-                title: "Casa Campestre Chía",
-                location: "chia",
-                locationName: "Chía, Cundinamarca",
-                fullAddress: "Vereda Fagua, Chía, Cundinamarca",
-                price: 680000000,
-                priceText: "$680.000.000",
-                condition: "venta",
-                type: "casa",
-                bedrooms: 4,
-                bathrooms: 4,
-                area: 250,
-                parking: 3,
-                stratum: 5,
-                age: "recent",
-                status: "excellent",
-                features: ["garden", "pool", "security"],
-                description: "Hermosa casa campestre en Chía, perfecta para descansar.",
-                featured: false,
-                dateAdded: new Date('2024-01-18')
-            },
-            {
-                id: 7,
-                title: "Apartamento Alquiler Chapinero",
-                location: "chapinero",
-                locationName: "Chapinero, Bogotá",
-                fullAddress: "Calle 63 #11-25, Chapinero, Bogotá",
-                price: 2500000,
-                priceText: "$2.500.000/mes",
-                condition: "alquiler",
-                type: "apartamento",
-                bedrooms: 1,
-                bathrooms: 1,
-                area: 45,
-                parking: 0,
-                stratum: 4,
-                age: "recent",
-                status: "excellent",
-                features: ["furnished", "elevator"],
-                description: "Moderno apartamento amoblado en alquiler en Chapinero.",
-                featured: false,
-                dateAdded: new Date('2024-01-22')
-            },
-            {
-                id: 8,
-                title: "Casa Alquiler Zona Rosa",
-                location: "zona-rosa",
-                locationName: "Zona Rosa, Bogotá",
-                fullAddress: "Calle 82 #12-34, Zona Rosa, Bogotá",
-                price: 4200000,
-                priceText: "$4.200.000/mes",
-                condition: "alquiler",
-                type: "casa",
-                bedrooms: 3,
-                bathrooms: 2,
-                area: 110,
-                parking: 1,
-                stratum: 5,
-                age: "good",
-                status: "good",
-                features: ["garden", "security", "petFriendly"],
-                description: "Casa en alquiler en Zona Rosa, acepta mascotas.",
-                featured: false,
-                dateAdded: new Date('2024-01-12')
-            },
-            {
-                id: 9,
-                title: "Local Comercial Centro",
-                location: "la-candelaria",
-                locationName: "Centro, Bogotá",
-                fullAddress: "Carrera 7 #14-23, Centro, Bogotá",
-                price: 180000000,
-                priceText: "$180.000.000",
-                condition: "venta",
-                type: "local",
-                bedrooms: 0,
-                bathrooms: 1,
-                area: 80,
-                parking: 0,
-                stratum: 3,
-                age: "older",
-                status: "good",
-                features: ["security"],
-                description: "Local comercial en el centro histórico de Bogotá.",
-                featured: false,
-                dateAdded: new Date('2024-01-08')
-            },
-            {
-                id: 10,
-                title: "Terreno Chía",
-                location: "chia",
-                locationName: "Chía, Cundinamarca",
-                fullAddress: "Vereda Bojacá, Chía, Cundinamarca",
-                price: 350000000,
-                priceText: "$350.000.000",
-                condition: "venta",
-                type: "terreno",
-                bedrooms: 0,
-                bathrooms: 0,
-                area: 500,
-                parking: 0,
-                stratum: 4,
-                age: "new",
-                status: "new",
-                features: [],
-                description: "Terreno plano ideal para construcción en Chía.",
-                featured: false,
-                dateAdded: new Date('2024-01-30')
-            },
-            {
-                id: 11,
-                title: "Apartamento Cedritos",
-                location: "cedritos",
-                locationName: "Cedritos, Bogotá",
-                fullAddress: "Calle 140 #15-67, Cedritos, Bogotá",
-                price: 380000000,
-                priceText: "$380.000.000",
-                condition: "venta",
-                type: "apartamento",
-                bedrooms: 3,
-                bathrooms: 2,
-                area: 95,
-                parking: 1,
-                stratum: 4,
-                age: "recent",
-                status: "excellent",
-                features: ["balcony", "elevator", "gym"],
-                description: "Apartamento moderno en Cedritos con excelentes acabados.",
-                featured: false,
-                dateAdded: new Date('2024-01-14')
-            },
-            {
-                id: 12,
-                title: "Casa Rosales Premium",
-                location: "rosales",
-                locationName: "Rosales, Bogotá",
-                fullAddress: "Carrera 5 #72-18, Rosales, Bogotá",
-                price: 1200000000,
-                priceText: "$1.200.000.000",
-                condition: "venta",
-                type: "casa",
-                bedrooms: 5,
-                bathrooms: 4,
-                area: 300,
-                parking: 3,
-                stratum: 6,
-                age: "new",
-                status: "excellent",
-                features: ["garden", "pool", "security", "gym", "elevator"],
-                description: "Casa de lujo en Rosales con todas las comodidades.",
-                featured: true,
-                dateAdded: new Date('2024-02-01')
-            }
-        ];
-
-        // Datos de las propiedades para compatibilidad
-        const properties = {
-            1: {
-                title: "Casa Moderna Chapinero",
-                location: "Calle 85 #15-23, Chapinero, Bogotá",
-                price: "$450.000.000",
-                bedrooms: "3",
-                bathrooms: "2",
-                area: "120",
-                parking: "2",
-                description: "Hermosa casa moderna ubicada en el corazón de Chapinero, una de las zonas más exclusivas y valorizada de Bogotá. Esta propiedad combina elegancia contemporánea con funcionalidad, perfecta para familias que buscan comodidad y estilo."
-            },
-            2: {
-                title: "Apartamento Zona Rosa",
-                location: "Carrera 13 #85-32, Zona Rosa, Bogotá",
-                price: "$320.000.000",
-                bedrooms: "2",
-                bathrooms: "2",
-                area: "85",
-                parking: "1",
-                description: "Moderno apartamento en la exclusiva Zona Rosa, con acabados de lujo y una ubicación privilegiada. Perfecto para profesionales jóvenes o parejas que buscan vivir en el centro de la vida nocturna y gastronómica de Bogotá."
-            },
-            3: {
-                title: "Casa Familiar Cedritos",
-                location: "Calle 147 #9-15, Cedritos, Bogotá",
-                price: "$580.000.000",
-                bedrooms: "4",
-                bathrooms: "3",
-                area: "180",
-                parking: "2",
-                description: "Amplia casa familiar en Cedritos, ideal para familias grandes. Cuenta con jardín privado, múltiples espacios sociales y excelente ubicación cerca de colegios y centros comerciales."
-            },
-            4: {
-                title: "Apartamento La Candelaria",
-                location: "Carrera 4 #12-65, La Candelaria, Bogotá",
-                price: "$280.000.000",
-                bedrooms: "2",
-                bathrooms: "1",
-                area: "65",
-                parking: "0",
-                description: "Acogedor apartamento en el histórico barrio de La Candelaria. Perfecto para quienes buscan vivir en el centro histórico de Bogotá, rodeado de cultura, arte y tradición."
-            }
-        };
-
-        // Función para contactar por WhatsApp
-        function contactWhatsApp() {
-            const message = encodeURIComponent("Hola, estoy interesado en los servicios de Nazar Propiedades. ¿Podrían ayudarme?");
-            window.open(`https://wa.me/573001234567?text=${message}`, '_blank');
-        }
-
-        // Función para llamar
-        function callPhone() {
-            window.open('tel:+5712345678', '_self');
-        }
-
-        // Función para buscar propiedades
-        function searchProperties() {
-            alert('Funcionalidad de búsqueda - En una implementación real, esto procesaría los filtros y mostraría los resultados.');
-        }
-
-        // Función para ver todas las propiedades
-        function viewAllProperties() {
-            alert('Funcionalidad de catálogo completo - En una implementación real, esto llevaría a la página de búsqueda avanzada.');
-        }
-
-        // Función para ver propiedad individual
-        function viewProperty(id) {
-            // Buscar propiedad en la base de datos extendida
-            const property = allProperties.find(p => p.id === id);
-            
-            if (property) {
-                // Actualizar información de la propiedad
-                document.getElementById('propertyTitle').textContent = property.title;
-                document.getElementById('propertyLocation').textContent = property.fullAddress;
-                document.getElementById('propertyPrice').textContent = property.priceText;
-                document.getElementById('propertyBedrooms').textContent = property.bedrooms;
-                document.getElementById('propertyBathrooms').textContent = property.bathrooms;
-                document.getElementById('propertyArea').textContent = property.area;
-                document.getElementById('propertyParking').textContent = property.parking;
-                document.getElementById('propertyDescription').innerHTML = `<p>${property.description}</p>`;
-
-                // Ocultar otras páginas y mostrar detalle
-                document.getElementById('mainPage').classList.add('hidden');
-                document.getElementById('propertiesPage').classList.add('hidden');
-                document.getElementById('propertyDetailPage').classList.remove('hidden');
-                
-                // Scroll al inicio
-                window.scrollTo(0, 0);
-            }
-        }
-
-        // Variables para la página de propiedades
-        let currentPage = 1;
-        let propertiesPerPage = 9;
-        let filteredProperties = [...allProperties];
-
-        // Función para mostrar la página de propiedades
-        function showPropertiesPage(condition = '') {
-            // Ocultar otras páginas
-            document.getElementById('mainPage').classList.add('hidden');
-            document.getElementById('propertyDetailPage').classList.add('hidden');
-            
-            // Mostrar página de propiedades
-            document.getElementById('propertiesPage').classList.remove('hidden');
-            
-            // Aplicar filtro de condición si se especifica
-            if (condition) {
-                document.getElementById('conditionFilter').value = condition;
-            }
-            
-            // Cargar propiedades
-            applyFilters();
-            window.scrollTo(0, 0);
-        }
-
-        // Función para volver a la página principal
-        function goBackToMain() {
-            document.getElementById('propertyDetailPage').classList.add('hidden');
-            document.getElementById('propertiesPage').classList.add('hidden');
-            document.getElementById('mainPage').classList.remove('hidden');
-            window.scrollTo(0, 0);
-        }
-
-        // Función para mostrar/ocultar filtros avanzados
-        function toggleAdvancedFilters() {
-            const advancedFilters = document.getElementById('advancedFilters');
-            advancedFilters.classList.toggle('hidden');
-        }
-
-        // Función para aplicar filtros
-        function applyFilters() {
-            const filters = {
-                location: document.getElementById('locationFilter').value.toLowerCase(),
-                condition: document.getElementById('conditionFilter').value,
-                type: document.getElementById('typeFilter').value,
-                maxPrice: document.getElementById('priceFilter').value.replace(/[^\d]/g, ''),
-                bedrooms: document.getElementById('bedroomsFilter').value,
-                bathrooms: document.getElementById('bathroomsFilter').value,
-                minArea: document.getElementById('minAreaFilter').value,
-                maxArea: document.getElementById('maxAreaFilter').value,
-                parking: document.getElementById('parkingFilter').value
-            };
-
-            // Obtener características seleccionadas
-            const features = [];
-            if (document.getElementById('balconyFilter').checked) features.push('balcony');
-            if (document.getElementById('gardenFilter').checked) features.push('garden');
-            if (document.getElementById('poolFilter').checked) features.push('pool');
-            if (document.getElementById('gymFilter').checked) features.push('gym');
-            if (document.getElementById('elevatorFilter').checked) features.push('elevator');
-            if (document.getElementById('securityFilter').checked) features.push('security');
-            if (document.getElementById('furnishedFilter').checked) features.push('furnished');
-            if (document.getElementById('petFriendlyFilter').checked) features.push('petFriendly');
-
-            // Filtrar propiedades
-            filteredProperties = allProperties.filter(property => {
-                // Filtro por ubicación (búsqueda flexible)
-                if (filters.location && !property.locationName.toLowerCase().includes(filters.location) && property.location !== filters.location) return false;
-                
-                // Filtro por condición
-                if (filters.condition && property.condition !== filters.condition) return false;
-                
-                // Filtro por tipo
-                if (filters.type && property.type !== filters.type) return false;
-                
-                // Filtro por precio máximo
-                if (filters.maxPrice && property.price > parseInt(filters.maxPrice)) return false;
-                
-                // Filtro por habitaciones
-                if (filters.bedrooms && property.bedrooms < parseInt(filters.bedrooms)) return false;
-                
-                // Filtro por baños
-                if (filters.bathrooms && property.bathrooms < parseInt(filters.bathrooms)) return false;
-                
-                // Filtro por área mínima
-                if (filters.minArea && property.area < parseInt(filters.minArea)) return false;
-                
-                // Filtro por área máxima
-                if (filters.maxArea && property.area > parseInt(filters.maxArea)) return false;
-                
-                // Filtro por cochera
-                if (filters.parking && property.parking < parseInt(filters.parking)) return false;
-                
-                // Filtro por características
-                if (features.length > 0) {
-                    const hasAllFeatures = features.every(feature => property.features.includes(feature));
-                    if (!hasAllFeatures) return false;
-                }
-                
-                return true;
-            });
-
-            // Resetear página actual
-            currentPage = 1;
-            
-            // Ordenar propiedades
-            sortProperties();
-        }
-
-        // Variables para ubicación
-        let selectedLocationValue = '';
-
-        // Función para mostrar sugerencias de ubicación
-        function showLocationSuggestions(value) {
-            const suggestions = document.getElementById('locationSuggestions');
-            const suggestionItems = suggestions.querySelectorAll('div');
-            
-            if (value.length === 0) {
-                suggestions.classList.add('hidden');
-                return;
-            }
-            
-            let hasVisibleSuggestions = false;
-            suggestionItems.forEach(item => {
-                const text = item.textContent.toLowerCase();
-                if (text.includes(value.toLowerCase())) {
-                    item.style.display = 'block';
-                    hasVisibleSuggestions = true;
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-            
-            if (hasVisibleSuggestions) {
-                suggestions.classList.remove('hidden');
-            } else {
-                suggestions.classList.add('hidden');
-            }
-        }
-
-        // Función para ocultar sugerencias
-        function hideLocationSuggestions() {
-            setTimeout(() => {
-                document.getElementById('locationSuggestions').classList.add('hidden');
-            }, 200);
-        }
-
-        // Función para seleccionar ubicación
-        function selectLocation(value, displayText) {
-            document.getElementById('locationFilter').value = displayText;
-            selectedLocationValue = value;
-            document.getElementById('locationSuggestions').classList.add('hidden');
-        }
-
-        // Función para formatear entrada de precio
-        function formatPriceInput(input) {
-            let value = input.value.replace(/[^\d]/g, '');
-            if (value) {
-                value = parseInt(value).toLocaleString();
-                input.value = '$' + value;
-            }
-        }
-
-        // Función para limpiar filtros
-        function clearFilters() {
-            // Limpiar filtros básicos
-            document.getElementById('locationFilter').value = '';
-            document.getElementById('conditionFilter').value = '';
-            document.getElementById('typeFilter').value = '';
-            document.getElementById('priceFilter').value = '';
-            
-            // Limpiar filtros avanzados
-            document.getElementById('bedroomsFilter').value = '';
-            document.getElementById('bathroomsFilter').value = '';
-            document.getElementById('minAreaFilter').value = '';
-            document.getElementById('maxAreaFilter').value = '';
-            document.getElementById('parkingFilter').value = '';
-            
-            // Limpiar checkboxes
-            document.getElementById('balconyFilter').checked = false;
-            document.getElementById('gardenFilter').checked = false;
-            document.getElementById('poolFilter').checked = false;
-            document.getElementById('gymFilter').checked = false;
-            document.getElementById('elevatorFilter').checked = false;
-            document.getElementById('securityFilter').checked = false;
-            document.getElementById('furnishedFilter').checked = false;
-            document.getElementById('petFriendlyFilter').checked = false;
-            
-            // Aplicar filtros (mostrar todas las propiedades)
-            applyFilters();
-        }
-
-        // Función para ordenar propiedades
-        function sortProperties() {
-            const sortBy = document.getElementById('sortBy').value;
-            
-            switch (sortBy) {
-                case 'newest':
-                    filteredProperties.sort((a, b) => b.dateAdded - a.dateAdded);
-                    break;
-                case 'price-low':
-                    filteredProperties.sort((a, b) => a.price - b.price);
-                    break;
-                case 'price-high':
-                    filteredProperties.sort((a, b) => b.price - a.price);
-                    break;
-                case 'area-large':
-                    filteredProperties.sort((a, b) => b.area - a.area);
-                    break;
-            }
-            
-            renderProperties();
-        }
-
-        // Función para renderizar propiedades
-        function renderProperties() {
-            const grid = document.getElementById('propertiesGrid');
-            const startIndex = (currentPage - 1) * propertiesPerPage;
-            const endIndex = startIndex + propertiesPerPage;
-            const currentProperties = filteredProperties.slice(startIndex, endIndex);
-            
-            // Actualizar contador de resultados
-            document.getElementById('resultsCount').textContent = `Mostrando ${filteredProperties.length} propiedades`;
-            
-            // Generar HTML de propiedades
-            grid.innerHTML = currentProperties.map(property => `
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(${property.id})">
-                    <div class="h-48 bg-gray-200 relative overflow-hidden">
-                        ${generatePropertySVG(property.id)}
-                        ${property.featured ? '<div class="absolute top-3 right-3 bg-primary-red text-white px-2 py-1 rounded text-sm font-medium">Destacada</div>' : ''}
-                        ${property.condition === 'alquiler' ? '<div class="absolute top-3 left-3 bg-blue-500 text-white px-2 py-1 rounded text-sm font-medium">Alquiler</div>' : ''}
-                    </div>
-                    <div class="p-4">
-                        <h3 class="font-bold text-lg mb-2">${property.title}</h3>
-                        <p class="text-gray-600 text-sm mb-3">📍 ${property.locationName}</p>
-                        <p class="text-primary-red font-bold text-xl">${property.priceText}</p>
-                        <div class="flex justify-between text-sm text-gray-500 mt-3">
-                            ${property.bedrooms > 0 ? `<span>🛏️ ${property.bedrooms} hab</span>` : '<span></span>'}
-                            ${property.bathrooms > 0 ? `<span>🚿 ${property.bathrooms} baños</span>` : '<span></span>'}
-                            <span>📐 ${property.area} m²</span>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-            
-            // Actualizar paginación
-            renderPagination();
-        }
-
-        // Función para generar SVG de propiedad
-        function generatePropertySVG(propertyId) {
-            const svgs = {
-                1: `<svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                    <rect fill="#f8f9fa" width="300" height="200"/>
-                    <rect fill="#e9ecef" x="0" y="120" width="300" height="80"/>
-                    <rect fill="#dee2e6" x="50" y="60" width="80" height="60"/>
-                    <rect fill="#ced4da" x="170" y="80" width="60" height="40"/>
-                    <circle fill="#adb5bd" cx="250" cy="40" r="20"/>
-                </svg>`,
-                2: `<svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                    <rect fill="#f1f3f4" width="300" height="200"/>
-                    <rect fill="#e8eaed" x="0" y="100" width="300" height="100"/>
-                    <rect fill="#dadce0" x="40" y="40" width="100" height="80"/>
-                    <rect fill="#bdc1c6" x="160" y="60" width="80" height="60"/>
-                    <rect fill="#9aa0a6" x="20" y="140" width="260" height="20"/>
-                </svg>`,
-                3: `<svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                    <rect fill="#fafafa" width="300" height="200"/>
-                    <rect fill="#f5f5f5" x="0" y="80" width="300" height="120"/>
-                    <rect fill="#eeeeee" x="60" y="30" width="120" height="90"/>
-                    <rect fill="#e0e0e0" x="200" y="50" width="70" height="70"/>
-                    <polygon fill="#bdbdbd" points="60,30 120,10 180,30 180,120 60,120"/>
-                </svg>`
-            };
-            
-            return svgs[propertyId] || svgs[1];
-        }
-
-        // Función para renderizar paginación
-        function renderPagination() {
-            const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
-            const pageNumbers = document.getElementById('pageNumbers');
-            
-            // Actualizar botones anterior/siguiente
-            document.getElementById('prevPageBtn').disabled = currentPage === 1;
-            document.getElementById('nextPageBtn').disabled = currentPage === totalPages;
-            
-            // Generar números de página
-            let paginationHTML = '';
-            for (let i = 1; i <= totalPages; i++) {
-                if (i === currentPage) {
-                    paginationHTML += `<button class="px-3 py-2 bg-primary-red text-white rounded-lg">${i}</button>`;
-                } else {
-                    paginationHTML += `<button onclick="goToPage(${i})" class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">${i}</button>`;
-                }
-            }
-            
-            pageNumbers.innerHTML = paginationHTML;
-        }
-
-        // Función para ir a página específica
-        function goToPage(page) {
-            currentPage = page;
-            renderProperties();
-            window.scrollTo(0, 0);
-        }
-
-        // Función para página anterior
-        function previousPage() {
-            if (currentPage > 1) {
-                currentPage--;
-                renderProperties();
-                window.scrollTo(0, 0);
-            }
-        }
-
-        // Función para página siguiente
-        function nextPage() {
-            const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
-            if (currentPage < totalPages) {
-                currentPage++;
-                renderProperties();
-                window.scrollTo(0, 0);
-            }
-        }
-
-        // Función para cambiar imagen principal
-        function changeMainImage(imageNumber) {
-            // En una implementación real, aquí cambiarías la imagen principal
-            console.log(`Cambiando a imagen ${imageNumber}`);
-        }
-
-        // Función para enviar formulario de tasación
-        function submitValuation(event) {
-            event.preventDefault();
-            alert('¡Solicitud enviada exitosamente! Nos contactaremos contigo en las próximas 2 horas para coordinar la tasación gratuita.');
-            event.target.reset();
-        }
-
-        // Función para enviar consulta de propiedad
-        function submitPropertyInquiry(event) {
-            event.preventDefault();
-            alert('¡Mensaje enviado! Nuestro asesor se contactará contigo en menos de 2 horas.');
-            event.target.reset();
-        }
-
-        // Función para calcular crédito
-        function calculateCredit(initialPaymentPercent = 30) {
-            const propertyValue = 450000000; // Valor de la propiedad
-            const initialPayment = propertyValue * (initialPaymentPercent / 100);
-            const loanAmount = propertyValue - initialPayment;
-            const interestRate = 0.12 / 12; // 12% anual / 12 meses
-            const years = 20;
-            const payments = years * 12;
-            
-            const monthlyPayment = loanAmount * (interestRate * Math.pow(1 + interestRate, payments)) / (Math.pow(1 + interestRate, payments) - 1);
-            
-            document.getElementById('initialPaymentPercent').textContent = initialPaymentPercent + '%';
-            document.getElementById('monthlyPayment').textContent = '$' + Math.round(monthlyPayment).toLocaleString();
-        }
-
-        // Variables del carrusel
-        let currentSlide = 0;
-        const totalSlides = 2;
-
-        // Función para ir al siguiente slide
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateCarousel();
-        }
-
-        // Función para ir al slide anterior
-        function previousSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateCarousel();
-        }
-
-        // Función para ir a un slide específico
-        function goToSlide(slideIndex) {
-            currentSlide = slideIndex;
-            updateCarousel();
-        }
-
-        // Función para actualizar la posición del carrusel
-        function updateCarousel() {
-            const carousel = document.getElementById('carousel');
-            const translateX = -currentSlide * 100;
-            carousel.style.transform = `translateX(${translateX}%)`;
-            
-            // Actualizar indicadores
-            const indicators = document.querySelectorAll('.carousel-indicator');
-            indicators.forEach((indicator, index) => {
-                if (index === currentSlide) {
-                    indicator.classList.remove('bg-gray-300');
-                    indicator.classList.add('bg-primary-red');
-                } else {
-                    indicator.classList.remove('bg-primary-red');
-                    indicator.classList.add('bg-gray-300');
-                }
-            });
-        }
-
-        // Auto-play del carrusel
-        let autoPlayInterval;
-
-        function startAutoPlay() {
-            autoPlayInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
-        }
-
-        function stopAutoPlay() {
-            clearInterval(autoPlayInterval);
-        }
-
-        // Pausar auto-play cuando el usuario interactúa
-        document.getElementById('carousel').addEventListener('mouseenter', stopAutoPlay);
-        document.getElementById('carousel').addEventListener('mouseleave', startAutoPlay);
-
-        // Efecto de scroll para la barra superior
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.classList.add('shadow-lg');
-            } else {
-                header.classList.remove('shadow-lg');
-            }
-        });
-
-        // Animación de entrada para las tarjetas de propiedades
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Aplicar animación a las tarjetas cuando se carga la página
-        document.addEventListener('DOMContentLoaded', function() {
-            const propertyCards = document.querySelectorAll('#properties .grid > div');
-            propertyCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-                observer.observe(card);
-            });
-
-            // Inicializar calculadora de crédito
-            calculateCredit();
-            
-            // Iniciar auto-play del carrusel
-            startAutoPlay();
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'963c119d25ea2752',t:'MTc1MzI4MzA1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  </body>
 </html>
