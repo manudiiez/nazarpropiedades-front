@@ -54,6 +54,22 @@
 
             <!-- Menú de navegación -->
             <nav class="hidden lg:flex items-center space-x-8 flex-1 justify-center">
+                <!-- Dropdown Inicio -->
+                <div class="relative group">
+                    <button class="text-black hover:text-primary-red font-medium transition-colors flex items-center">
+                        Inicio
+                        <svg class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                        <a href="index.html" class="block px-4 py-3 text-black hover:bg-gray-50 hover:text-primary-red transition-colors rounded-t-lg">Inicio</a>
+                        <a href="index2.html" class="block px-4 py-3 text-black hover:bg-gray-50 hover:text-primary-red transition-colors">Inicio2</a>
+                        <a href="index3.html" class="block px-4 py-3 text-black hover:bg-gray-50 hover:text-primary-red transition-colors rounded-b-lg">Inicio3</a>
+                    </div>
+                </div>
+                
                 <a href="#" onclick="showPropertiesPage('venta')" class="text-black hover:text-primary-red font-medium transition-colors">Comprar</a>
                 <a href="#" class="text-black hover:text-primary-red font-medium transition-colors">Vender</a>
                 <a href="#" onclick="showPropertiesPage('alquiler')" class="text-black hover:text-primary-red font-medium transition-colors">Alquilar</a>
