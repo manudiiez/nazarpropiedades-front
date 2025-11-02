@@ -8,19 +8,33 @@
       name="description"
       content="Encontrá la propiedad perfecta en Mendoza con el mejor acompañamiento profesional. Inmobiliaria con más de 15 años de experiencia."
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+     <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
+              primary: "#1f2937",
+              accent: "#d90429",
               "accent-red": "#CC3333",
+              "background-light": "#ffffff",
+              "background-dark": "#111827",
+              "neutral-light": "#f3f4f6",
+              "neutral-dark": "#374151",
               "gray-ui": "#F5F6F7",
               "gray-border": "#E5E7EB",
+              'primary-red': '#E10600',
+              'primary-red-hover': '#B30500'
             },
             fontFamily: {
               inter: ["Inter", "sans-serif"],
@@ -113,7 +127,6 @@
                   <a href="index5.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">Inicio 5</a>
                   <a href="index6.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">Inicio 6</a>
                   <a href="index7.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">Inicio 7</a>
-                  <a href="index8.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">Inicio 8</a>
                 </div>
               </div>
             </div>
@@ -253,311 +266,920 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <!-- Property Card 1 -->
-          <div class="group relative overflow-hidden rounded-xl cursor-pointer">
-            <div
-              class="aspect-square bg-gray-200 flex items-center justify-center transition-all duration-300 group-hover:scale-105"
-            >
-              <!-- <svg
-                class="w-12 h-12 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1"
-                  d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
-                ></path>
-                <polyline points="9,22 9,12 15,12 15,22"></polyline>
-              </svg> -->
-              <img
-                src="./imagenes/inmueble1.jpg"
-                alt="Imagen ilustrativa de casa en venta"
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <!-- Hover overlay -->
-            <div
-              class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
-            >
-              <div class="text-white">
-                <div class="mb-2">
-                  <span
-                    class="bg-accent-red text-white px-2 py-1 text-xs font-medium rounded"
-                    >Venta</span
+        <!-- Carrusel de propiedades -->
+                <div class="relative">
+                    <!-- Contenedor del carrusel -->
+                    <div class="overflow-hidden rounded-xl">
+                        <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                            <!-- Slide 1 -->
+                            <div class="w-full flex-shrink-0">
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+                                    <!-- Propiedad 1 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
                   >
-                </div>
-                <h3 class="text-lg font-semibold mb-1">Casa en Godoy Cruz</h3>
-                <p class="text-sm text-gray-200 mb-3">Godoy Cruz, Mendoza</p>
-                <div class="flex items-center space-x-3 text-xs">
-                  <span>180 m²</span>
-                  <span>3 dorm</span>
-                  <span>2 baños</span>
-                </div>
-              </div>
-            </div>
-          </div>
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
 
-          <!-- Property Card 2 -->
-          <div class="group relative overflow-hidden rounded-xl cursor-pointer">
-            <div
-              class="aspect-square bg-gray-200 flex items-center justify-center transition-all duration-300 group-hover:scale-105"
-            >
-              <!-- <svg
-                class="w-12 h-12 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1"
-                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                ></path>
-              </svg> -->
-              <img
-                src="./imagenes/inmueble2.jpg"
-                alt="Imagen ilustrativa de casa en venta"
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <!-- Hover overlay -->
-            <div
-              class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
-            >
-              <div class="text-white">
-                <div class="mb-2">
-                  <span
-                    class="bg-gray-600 text-white px-2 py-1 text-xs font-medium rounded"
-                    >Alquiler</span
+                                    <!-- Propiedad 2 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
                   >
-                </div>
-                <h3 class="text-lg font-semibold mb-1">Departamento Centro</h3>
-                <p class="text-sm text-gray-200 mb-3">Centro, Mendoza</p>
-                <div class="flex items-center space-x-3 text-xs">
-                  <span>95 m²</span>
-                  <span>2 dorm</span>
-                  <span>1 baño</span>
-                </div>
-              </div>
-            </div>
-          </div>
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
 
-          <!-- Property Card 3 -->
-          <div class="group relative overflow-hidden rounded-xl cursor-pointer">
-            <div
-              class="aspect-square bg-gray-200 flex items-center justify-center transition-all duration-300 group-hover:scale-105"
-            >
-              <!-- <svg
-                class="w-12 h-12 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1"
-                  d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
-                ></path>
-                <polyline points="9,22 9,12 15,12 15,22"></polyline>
-              </svg> -->
-              <img
-                src="./imagenes/inmueble3.jpg"
-                alt="Imagen ilustrativa de casa en venta"
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <!-- Hover overlay -->
-            <div
-              class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
-            >
-              <div class="text-white">
-                <div class="mb-2">
-                  <span
-                    class="bg-accent-red text-white px-2 py-1 text-xs font-medium rounded"
-                    >Venta</span
-                  >
-                </div>
-                <h3 class="text-lg font-semibold mb-1">PH en Las Heras</h3>
-                <p class="text-sm text-gray-200 mb-3">Las Heras, Mendoza</p>
-                <div class="flex items-center space-x-3 text-xs">
-                  <span>120 m²</span>
-                  <span>2 dorm</span>
-                  <span>1 baño</span>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- Property Card 4 -->
-          <div class="group relative overflow-hidden rounded-xl cursor-pointer">
-            <div
-              class="aspect-square bg-gray-200 flex items-center justify-center transition-all duration-300 group-hover:scale-105"
-            >
-              <!-- <svg
-                class="w-12 h-12 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1"
-                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-                ></path>
-              </svg> -->
-              <img
-                src="./imagenes/inmueble4.jpg"
-                alt="Imagen ilustrativa de casa en venta"
-                class="object-cover w-full h-full"
-              />
-            </div>
-            <!-- Hover overlay -->
-            <div
-              class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
-            >
-              <div class="text-white">
-                <div class="mb-2">
-                  <span
-                    class="bg-gray-600 text-white px-2 py-1 text-xs font-medium rounded"
-                    >Alquiler</span
+                                    <!-- Propiedad 3 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
                   >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="w-full flex-shrink-0">
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+                                    <!-- Propiedad 1 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
+
+                                    <!-- Propiedad 2 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
+
+
+                                    <!-- Propiedad 3 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            
+                        </div>
+                    </div>
+
+                    <!-- Botones de navegación -->
+                    <button id="prevBtn" onclick="previousSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button id="nextBtn" onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+
+                    <!-- Indicadores -->
+                    <div class="flex justify-center mt-8 space-x-2">
+                        <button onclick="goToSlide(0)" class="carousel-indicator w-3 h-3 rounded-full bg-primary-red transition-all duration-300"></button>
+                        <button onclick="goToSlide(1)" class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"></button>
+                    </div>
                 </div>
-                <h3 class="text-lg font-semibold mb-1">Oficina Microcentro</h3>
-                <p class="text-sm text-gray-200 mb-3">Microcentro, Mendoza</p>
-                <div class="flex items-center space-x-3 text-xs">
-                  <span>65 m²</span>
-                  <span>3 amb</span>
-                  <span>1 baño</span>
-                </div>
-              </div>
-            </div>
-          </div>
+      </div>
+    </section>
+     <!-- Featured Properties -->
+    <section class="py-24 px-6">
+      <div class="max-w-container mx-auto">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-semibold text-gray-900 mb-4">
+            Propiedades recien añadidas
+          </h2>
+          <p class="text-gray-600">
+            Las mejores oportunidades del mercado mendocino
+          </p>
         </div>
+
+        <!-- Carrusel de propiedades -->
+  <!-- Carrusel de propiedades -->
+                <div class="relative">
+                    <!-- Contenedor del carrusel -->
+                    <div class="overflow-hidden rounded-xl">
+                        <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                            <!-- Slide 1 -->
+                            <div class="w-full flex-shrink-0">
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+                                    <!-- Propiedad 1 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
+
+                                    <!-- Propiedad 2 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
+
+
+                                    <!-- Propiedad 3 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="w-full flex-shrink-0">
+                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
+                                    <!-- Propiedad 1 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
+
+                                    <!-- Propiedad 2 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
+
+
+                                    <!-- Propiedad 3 -->
+                                    <div
+                    class="flex flex-col overflow-hidden rounded-lg border border-neutral-light bg-white cursor-pointer hover:shadow-lg transition-shadow"
+                  >
+                    <div class="relative">
+                      <div
+                        class="aspect-video w-full bg-cover bg-center"
+                        data-alt="Exterior of a modern house with a large front yard"
+                        style="
+                          background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAROPCbpxpPuqkSBytCuwkiQqQvN555q_NsdG-S4M9jms3C6VlI1tZgRIyCO1Ir_DnpVwlsOQ8huqPmUTdbBk-IlZ0YObxckxn7TVtaw-nuYpRlARqJCkLj7ByGWgm-CEavB4S81AhHlMYm3s8zLdasIoIXfb1TcSO1H7lw20izUIMG8GcqEcsXJI9yMRoWloCglb_cbtTMhYyzy3D_RR2PmMnzJvrKsbDptyg62RE0o_x4hnt5aDxtiIjm_FIV-EmSgjNX2epR684');
+                        "
+                      ></div>
+                      <!-- <button
+                        class="absolute top-3 right-3 rounded-full bg-white/20 p-2 text-white backdrop-blur-sm transition-colors hover:bg-white/30 hover:text-accent"
+                      >
+                        <span class="material-symbols-outlined !text-2xl"
+                          >favorite</span
+                        >
+                      </button> -->
+                    </div>
+                    <div class="flex flex-1 flex-col p-5">
+                      <div class="flex-1">
+                        <p
+                          class="text-2xl font-bold text-primary"
+                        >
+                          $850,000
+                        </p>
+                        <p
+                          class="mt-1 text-lg font-semibold text-primary"
+                        >
+                          Casa en Venta
+                        </p>
+                        <p class="text-sm text-gray-500 ">
+                          123 Vineyard Lane, Luján de Cuyo
+                        </p>
+                      </div>
+                      <div
+                        class="mt-4 flex items-center justify-between border-t border-neutral-light pt-4 text-sm text-gray-600"
+                      >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bed</span
+                          >
+                          4 Hab</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >bathtub</span
+                          >
+                          3 Baños</span
+                        >
+                        <span class="flex items-center gap-1.5"
+                          ><span class="material-symbols-outlined !text-base"
+                            >square_foot</span
+                          >
+                          260 m²</span
+                        >
+                      </div>
+                    </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            
+                        </div>
+                    </div>
+
+                    <!-- Botones de navegación -->
+                    <button id="prevBtn" onclick="previousSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button id="nextBtn" onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl z-10">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+
+                    <!-- Indicadores -->
+                    <div class="flex justify-center mt-8 space-x-2">
+                        <button onclick="goToSlide(0)" class="carousel-indicator w-3 h-3 rounded-full bg-primary-red transition-all duration-300"></button>
+                        <button onclick="goToSlide(1)" class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"></button>
+                    </div>
+                </div>
       </div>
     </section>
 
     <!-- Services Alternating Blocks -->
-    <section id="servicios" class="py-24 px-6">
-      <div class="max-w-4xl mx-auto space-y-32">
-        <!-- Service Block 1 - Left -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div class="order-2 lg:order-1">
-            <div
-              class="aspect-square bg-gray-200 rounded-xl flex items-center justify-center"
-            >
-              <!-- <svg
-                class="w-16 h-16 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1"
-                  d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
-                ></path>
-                <polyline points="9,22 9,12 15,12 15,22"></polyline>
-              </svg> -->
-              <img
-                src="./imagenes/servicio1.jpg"
-                alt="Imagen ilustrativa de servicio, propiedades destacadas de Mendoza"
-                class="object-cover w-full h-full"
-              />
-            </div>
-          </div>
-          <div class="order-1 lg:order-2">
-            <h3 class="text-3xl font-semibold text-gray-900 mb-6">
-              Propiedades destacadas
-            </h3>
-            <p class="text-lg text-gray-600 leading-relaxed">
-              Seleccionamos cuidadosamente las mejores propiedades del mercado
-              mendocino. Cada inmueble pasa por un riguroso proceso de
-              evaluación para garantizar calidad, ubicación y potencial de
-              inversión.
-            </p>
-          </div>
-        </div>
-
-        <!-- Service Block 2 - Right -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h3 class="text-3xl font-semibold text-gray-900 mb-6">
-              Acompañamiento integral
-            </h3>
-            <p class="text-lg text-gray-600 leading-relaxed">
-              Te acompañamos en cada paso del proceso, desde la primera consulta
-              hasta la firma del contrato. Nuestro equipo especializado te
-              brinda asesoramiento personalizado y transparente en todo momento.
-            </p>
-          </div>
-          <div>
-            <div
-              class="aspect-square bg-gray-200 rounded-xl flex items-center justify-center"
-            >
-              <!-- <svg
-                class="w-16 h-16 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1"
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                ></path>
-              </svg> -->
-              <img src="./imagenes/servicio2.png" class="object-cover w-full h-full object-left" alt="Imagen ilustrativa de servicio, Acompañamiento integral">
-            </div>
-          </div>
-        </div>
-
-        <!-- Service Block 3 - Left -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div class="order-2 lg:order-1">
-            <div
-              class="aspect-square bg-gray-200 rounded-xl flex items-center justify-center"
-            >
-              <!-- <svg
-                class="w-16 h-16 text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1"
-                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                ></path>
-              </svg> -->
-              <img src="./imagenes/servicio3.jpg" class="object-cover w-full h-full object-right" alt="Imagen ilustrativa de servicio, Seguridad y confianza">
-            </div>
-          </div>
-          <div class="order-1 lg:order-2">
-            <h3 class="text-3xl font-semibold text-gray-900 mb-6">
-              Seguridad y confianza
-            </h3>
-            <p class="text-lg text-gray-600 leading-relaxed">
-              Más de 15 años de experiencia en el mercado inmobiliario mendocino
-              nos respaldan. Trabajamos con total transparencia, cumpliendo
-              todos los marcos legales y brindando la seguridad que necesitás.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
+ <section class="  bg-gray-ui ">
+                <div class="max-w-container mx-auto py-24 px-6">
+                  <div class="text-center">
+                    <h2
+                      class="text-center text-3xl font-bold tracking-tight text-primary sm:text-4xl"
+                    >
+                      Su asesor de confianza en bienes raíces
+                    </h2>
+                    <p
+                      class="mx-auto mt-4 max-w-2xl text-lg text-text-light/80"
+                    >
+                      Combinamos conocimiento del mercado local con un servicio
+                      hecho a su medida.
+                    </p>
+                  </div>
+                  <div class="mt-20 grid grid-cols-1 gap-16 md:grid-cols-3">
+                    <div
+                      class="text-center rounded-lg bg-white p-8"
+                    >
+                      <div
+                        class="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-accent-red/10 text-accent-red"
+                      >
+                        <span class="material-symbols-outlined !text-4xl"
+                          >map</span
+                        >
+                      </div>
+                      <h3
+                        class="mt-6 font-semibold text-primary "
+                      >
+                        Experiencia Local
+                      </h3>
+                      <p class="mt-2 text-gray-600">
+                        Nuestra experiencia en Mendoza nos permite entender a
+                        fondo el mercado local y anticipar las mejores
+                        oportunidades para nuestros clientes.
+                      </p>
+                    </div>
+                    <div
+                      class="text-center rounded-lg bg-white p-8 "
+                    >
+                      <div
+                        class="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-accent-red/10 text-accent-red"
+                      >
+                        <span class="material-symbols-outlined !text-4xl"
+                          >verified_user</span
+                        >
+                      </div>
+                      <h3
+                        class="mt-6 font-semibold text-primary "
+                      >
+                        Servicio Confiable
+                      </h3>
+                      <p class="mt-2 text-gray-600">
+                        Construimos relaciones duraderas basadas en confianza,
+                        transparencia y resultados excepcionales para nuestros
+                        clientes.
+                      </p>
+                    </div>
+                    <div
+                      class="text-center rounded-lg bg-white p-8 "
+                    >
+                      <div
+                        class="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-accent-red/10 text-accent-red"
+                      >
+                        <span class="material-symbols-outlined !text-4xl"
+                          >support_agent</span
+                        >
+                      </div>
+                      <h3
+                        class="mt-6 font-semibold text-primary "
+                      >
+                        Atención Personalizada
+                      </h3>
+                      <p class="mt-2 text-gray-600 ">
+                        Tu camino es único. Escuchamos tus necesidades y
+                        brindamos asesoramiento personalizado en cada paso.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
     <!-- Benefits Strip -->
-    <section class="py-16 px-6 border-t border-b border-gray-border">
+    <section class="py-16 px-6 border-t border-b border-gray-border bg-gray-ui">
       <div class="max-w-container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="text-center">
@@ -578,7 +1200,7 @@
                 ></path>
               </svg>
             </div>
-            <p class="font-medium text-gray-900">Trato personalizado</p>
+            <p class="font-medium text-gray-900">+100 clientes</p>
           </div>
           <div class="text-center">
             <div
@@ -644,55 +1266,38 @@
                 ></path>
               </svg>
             </div>
-            <p class="font-medium text-gray-900">Red local</p>
+            <p class="font-medium text-gray-900">+ 100 propiedades local</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Form -->
-    <section id="contacto" class="py-24 px-6 bg-gray-ui">
-      <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-3xl font-semibold text-gray-900 mb-4">Contactanos</h2>
-        <p class="text-lg text-gray-600 mb-12">Respondemos en el día.</p>
+ <section
+                class="max-w-container mx-auto my-24 px-6"
+              >
+              <div class="rounded-lg  px-6 py-12 text-center md:px-10 md:py-16">
 
-        <form class="space-y-6">
-          <div>
-            <input
-              type="text"
-              placeholder="Nombre"
-              required
-              class="w-full px-4 py-4 border border-gray-border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
-            />
-          </div>
-          <div>
-            <input
-              type="email"
-              placeholder="Email"
-              required
-              class="w-full px-4 py-4 border border-gray-border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
-            />
-          </div>
-          <div>
-            <textarea
-              placeholder="Mensaje"
-              rows="5"
-              required
-              class="w-full px-4 py-4 border border-gray-border rounded-lg focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            class="w-full bg-gray-900 hover:bg-gray-800 text-white py-4 rounded-lg font-medium transition-colors"
-          >
-            Enviar
-          </button>
-        </form>
-      </div>
-    </section>
-
+                <h2
+                  class="text-3xl font-bold text-primary  sm:text-4xl"
+                >
+                  ¿Listo para Encontrar tu Hogar en Mendoza?
+                </h2>
+                <p
+                  class="mx-auto mt-4 max-w-2xl text-gray-600 "
+                >
+                  Deja que nuestros agentes expertos te guíen en el proceso. Ya
+                  sea que estés comprando, vendiendo o simplemente explorando,
+                  estamos aquí para ayudarte.
+                </p>
+                <button
+                  class="mt-8 flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md bg-accent px-6 py-3 text-base font-bold text-white transition-colors hover:bg-accent/90 mx-auto"
+                >
+                  <span class="truncate">Contáctanos</span>
+                </button>
+              </div>
+              </section>
     <!-- Final CTA -->
-    <section class="py-24 px-6">
+    <!-- <section class="py-24 px-6">
       <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-4xl font-semibold text-gray-900 mb-6">
           Hablemos de tu propiedad
@@ -712,7 +1317,7 @@
           Escribir por WhatsApp
         </button>
       </div>
-    </section>
+    </section> -->
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-16 px-6">
@@ -785,7 +1390,7 @@
           </div>
         </div>
       </div>
-       <script>
+        <script>
       // Navbar scroll effect
       window.addEventListener("scroll", function () {
         const navbar = document.getElementById("navbar");
@@ -901,6 +1506,824 @@
           }
         }
       })();
+    </script>
+    <script>
+        // Base de datos extendida de propiedades
+        const allProperties = [
+            {
+                id: 1,
+                title: "Casa Moderna Chapinero",
+                location: "chapinero",
+                locationName: "Chapinero, Bogotá",
+                fullAddress: "Calle 85 #15-23, Chapinero, Bogotá",
+                price: 450000000,
+                priceText: "$450.000.000",
+                condition: "venta",
+                type: "casa",
+                bedrooms: 3,
+                bathrooms: 2,
+                area: 120,
+                parking: 2,
+                stratum: 5,
+                age: "recent",
+                status: "excellent",
+                features: ["balcony", "garden", "security"],
+                description: "Hermosa casa moderna ubicada en el corazón de Chapinero, una de las zonas más exclusivas y valorizada de Bogotá.",
+                featured: true,
+                dateAdded: new Date('2024-01-15')
+            },
+            {
+                id: 2,
+                title: "Apartamento Zona Rosa",
+                location: "zona-rosa",
+                locationName: "Zona Rosa, Bogotá",
+                fullAddress: "Carrera 13 #85-32, Zona Rosa, Bogotá",
+                price: 320000000,
+                priceText: "$320.000.000",
+                condition: "venta",
+                type: "apartamento",
+                bedrooms: 2,
+                bathrooms: 2,
+                area: 85,
+                parking: 1,
+                stratum: 5,
+                age: "new",
+                status: "excellent",
+                features: ["balcony", "elevator", "security"],
+                description: "Moderno apartamento en la exclusiva Zona Rosa, con acabados de lujo y una ubicación privilegiada.",
+                featured: false,
+                dateAdded: new Date('2024-01-20')
+            },
+            {
+                id: 3,
+                title: "Casa Familiar Cedritos",
+                location: "cedritos",
+                locationName: "Cedritos, Bogotá",
+                fullAddress: "Calle 147 #9-15, Cedritos, Bogotá",
+                price: 580000000,
+                priceText: "$580.000.000",
+                condition: "venta",
+                type: "casa",
+                bedrooms: 4,
+                bathrooms: 3,
+                area: 180,
+                parking: 2,
+                stratum: 4,
+                age: "good",
+                status: "good",
+                features: ["garden", "security", "pool"],
+                description: "Amplia casa familiar en Cedritos, ideal para familias grandes.",
+                featured: false,
+                dateAdded: new Date('2024-01-10')
+            },
+            {
+                id: 4,
+                title: "Apartamento La Candelaria",
+                location: "la-candelaria",
+                locationName: "La Candelaria, Bogotá",
+                fullAddress: "Carrera 4 #12-65, La Candelaria, Bogotá",
+                price: 280000000,
+                priceText: "$280.000.000",
+                condition: "venta",
+                type: "apartamento",
+                bedrooms: 2,
+                bathrooms: 1,
+                area: 65,
+                parking: 0,
+                stratum: 3,
+                age: "older",
+                status: "remodel",
+                features: [],
+                description: "Acogedor apartamento en el histórico barrio de La Candelaria.",
+                featured: false,
+                dateAdded: new Date('2024-01-05')
+            },
+            {
+                id: 5,
+                title: "Penthouse Rosales",
+                location: "rosales",
+                locationName: "Rosales, Bogotá",
+                fullAddress: "Carrera 7 #70-45, Rosales, Bogotá",
+                price: 850000000,
+                priceText: "$850.000.000",
+                condition: "venta",
+                type: "penthouse",
+                bedrooms: 3,
+                bathrooms: 3,
+                area: 200,
+                parking: 2,
+                stratum: 6,
+                age: "new",
+                status: "excellent",
+                features: ["balcony", "elevator", "security", "gym"],
+                description: "Exclusivo penthouse en Rosales con vista panorámica de la ciudad.",
+                featured: true,
+                dateAdded: new Date('2024-01-25')
+            },
+            {
+                id: 6,
+                title: "Casa Campestre Chía",
+                location: "chia",
+                locationName: "Chía, Cundinamarca",
+                fullAddress: "Vereda Fagua, Chía, Cundinamarca",
+                price: 680000000,
+                priceText: "$680.000.000",
+                condition: "venta",
+                type: "casa",
+                bedrooms: 4,
+                bathrooms: 4,
+                area: 250,
+                parking: 3,
+                stratum: 5,
+                age: "recent",
+                status: "excellent",
+                features: ["garden", "pool", "security"],
+                description: "Hermosa casa campestre en Chía, perfecta para descansar.",
+                featured: false,
+                dateAdded: new Date('2024-01-18')
+            },
+            {
+                id: 7,
+                title: "Apartamento Alquiler Chapinero",
+                location: "chapinero",
+                locationName: "Chapinero, Bogotá",
+                fullAddress: "Calle 63 #11-25, Chapinero, Bogotá",
+                price: 2500000,
+                priceText: "$2.500.000/mes",
+                condition: "alquiler",
+                type: "apartamento",
+                bedrooms: 1,
+                bathrooms: 1,
+                area: 45,
+                parking: 0,
+                stratum: 4,
+                age: "recent",
+                status: "excellent",
+                features: ["furnished", "elevator"],
+                description: "Moderno apartamento amoblado en alquiler en Chapinero.",
+                featured: false,
+                dateAdded: new Date('2024-01-22')
+            },
+            {
+                id: 8,
+                title: "Casa Alquiler Zona Rosa",
+                location: "zona-rosa",
+                locationName: "Zona Rosa, Bogotá",
+                fullAddress: "Calle 82 #12-34, Zona Rosa, Bogotá",
+                price: 4200000,
+                priceText: "$4.200.000/mes",
+                condition: "alquiler",
+                type: "casa",
+                bedrooms: 3,
+                bathrooms: 2,
+                area: 110,
+                parking: 1,
+                stratum: 5,
+                age: "good",
+                status: "good",
+                features: ["garden", "security", "petFriendly"],
+                description: "Casa en alquiler en Zona Rosa, acepta mascotas.",
+                featured: false,
+                dateAdded: new Date('2024-01-12')
+            },
+            {
+                id: 9,
+                title: "Local Comercial Centro",
+                location: "la-candelaria",
+                locationName: "Centro, Bogotá",
+                fullAddress: "Carrera 7 #14-23, Centro, Bogotá",
+                price: 180000000,
+                priceText: "$180.000.000",
+                condition: "venta",
+                type: "local",
+                bedrooms: 0,
+                bathrooms: 1,
+                area: 80,
+                parking: 0,
+                stratum: 3,
+                age: "older",
+                status: "good",
+                features: ["security"],
+                description: "Local comercial en el centro histórico de Bogotá.",
+                featured: false,
+                dateAdded: new Date('2024-01-08')
+            },
+            {
+                id: 10,
+                title: "Terreno Chía",
+                location: "chia",
+                locationName: "Chía, Cundinamarca",
+                fullAddress: "Vereda Bojacá, Chía, Cundinamarca",
+                price: 350000000,
+                priceText: "$350.000.000",
+                condition: "venta",
+                type: "terreno",
+                bedrooms: 0,
+                bathrooms: 0,
+                area: 500,
+                parking: 0,
+                stratum: 4,
+                age: "new",
+                status: "new",
+                features: [],
+                description: "Terreno plano ideal para construcción en Chía.",
+                featured: false,
+                dateAdded: new Date('2024-01-30')
+            },
+            {
+                id: 11,
+                title: "Apartamento Cedritos",
+                location: "cedritos",
+                locationName: "Cedritos, Bogotá",
+                fullAddress: "Calle 140 #15-67, Cedritos, Bogotá",
+                price: 380000000,
+                priceText: "$380.000.000",
+                condition: "venta",
+                type: "apartamento",
+                bedrooms: 3,
+                bathrooms: 2,
+                area: 95,
+                parking: 1,
+                stratum: 4,
+                age: "recent",
+                status: "excellent",
+                features: ["balcony", "elevator", "gym"],
+                description: "Apartamento moderno en Cedritos con excelentes acabados.",
+                featured: false,
+                dateAdded: new Date('2024-01-14')
+            },
+            {
+                id: 12,
+                title: "Casa Rosales Premium",
+                location: "rosales",
+                locationName: "Rosales, Bogotá",
+                fullAddress: "Carrera 5 #72-18, Rosales, Bogotá",
+                price: 1200000000,
+                priceText: "$1.200.000.000",
+                condition: "venta",
+                type: "casa",
+                bedrooms: 5,
+                bathrooms: 4,
+                area: 300,
+                parking: 3,
+                stratum: 6,
+                age: "new",
+                status: "excellent",
+                features: ["garden", "pool", "security", "gym", "elevator"],
+                description: "Casa de lujo en Rosales con todas las comodidades.",
+                featured: true,
+                dateAdded: new Date('2024-02-01')
+            }
+        ];
+
+        // Datos de las propiedades para compatibilidad
+        const properties = {
+            1: {
+                title: "Casa Moderna Chapinero",
+                location: "Calle 85 #15-23, Chapinero, Bogotá",
+                price: "$450.000.000",
+                bedrooms: "3",
+                bathrooms: "2",
+                area: "120",
+                parking: "2",
+                description: "Hermosa casa moderna ubicada en el corazón de Chapinero, una de las zonas más exclusivas y valorizada de Bogotá. Esta propiedad combina elegancia contemporánea con funcionalidad, perfecta para familias que buscan comodidad y estilo."
+            },
+            2: {
+                title: "Apartamento Zona Rosa",
+                location: "Carrera 13 #85-32, Zona Rosa, Bogotá",
+                price: "$320.000.000",
+                bedrooms: "2",
+                bathrooms: "2",
+                area: "85",
+                parking: "1",
+                description: "Moderno apartamento en la exclusiva Zona Rosa, con acabados de lujo y una ubicación privilegiada. Perfecto para profesionales jóvenes o parejas que buscan vivir en el centro de la vida nocturna y gastronómica de Bogotá."
+            },
+            3: {
+                title: "Casa Familiar Cedritos",
+                location: "Calle 147 #9-15, Cedritos, Bogotá",
+                price: "$580.000.000",
+                bedrooms: "4",
+                bathrooms: "3",
+                area: "180",
+                parking: "2",
+                description: "Amplia casa familiar en Cedritos, ideal para familias grandes. Cuenta con jardín privado, múltiples espacios sociales y excelente ubicación cerca de colegios y centros comerciales."
+            },
+            4: {
+                title: "Apartamento La Candelaria",
+                location: "Carrera 4 #12-65, La Candelaria, Bogotá",
+                price: "$280.000.000",
+                bedrooms: "2",
+                bathrooms: "1",
+                area: "65",
+                parking: "0",
+                description: "Acogedor apartamento en el histórico barrio de La Candelaria. Perfecto para quienes buscan vivir en el centro histórico de Bogotá, rodeado de cultura, arte y tradición."
+            }
+        };
+
+        // Función para contactar por WhatsApp
+        function contactWhatsApp() {
+            const message = encodeURIComponent("Hola, estoy interesado en los servicios de Nazar Propiedades. ¿Podrían ayudarme?");
+            window.open(`https://wa.me/573001234567?text=${message}`, '_blank');
+        }
+
+        // Función para llamar
+        function callPhone() {
+            window.open('tel:+5712345678', '_self');
+        }
+
+        // Función para buscar propiedades
+        function searchProperties() {
+            alert('Funcionalidad de búsqueda - En una implementación real, esto procesaría los filtros y mostraría los resultados.');
+        }
+
+        // Función para ver todas las propiedades
+        function viewAllProperties() {
+            alert('Funcionalidad de catálogo completo - En una implementación real, esto llevaría a la página de búsqueda avanzada.');
+        }
+
+        // Función para ver propiedad individual
+        function viewProperty(id) {
+            // Buscar propiedad en la base de datos extendida
+            const property = allProperties.find(p => p.id === id);
+            
+            if (property) {
+                // Actualizar información de la propiedad
+                document.getElementById('propertyTitle').textContent = property.title;
+                document.getElementById('propertyLocation').textContent = property.fullAddress;
+                document.getElementById('propertyPrice').textContent = property.priceText;
+                document.getElementById('propertyBedrooms').textContent = property.bedrooms;
+                document.getElementById('propertyBathrooms').textContent = property.bathrooms;
+                document.getElementById('propertyArea').textContent = property.area;
+                document.getElementById('propertyParking').textContent = property.parking;
+                document.getElementById('propertyDescription').innerHTML = `<p>${property.description}</p>`;
+
+                // Ocultar otras páginas y mostrar detalle
+                document.getElementById('mainPage').classList.add('hidden');
+                document.getElementById('propertiesPage').classList.add('hidden');
+                document.getElementById('propertyDetailPage').classList.remove('hidden');
+                
+                // Scroll al inicio
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Variables para la página de propiedades
+        let currentPage = 1;
+        let propertiesPerPage = 9;
+        let filteredProperties = [...allProperties];
+
+        // Función para mostrar la página de propiedades
+        function showPropertiesPage(condition = '') {
+            // Ocultar otras páginas
+            document.getElementById('mainPage').classList.add('hidden');
+            document.getElementById('propertyDetailPage').classList.add('hidden');
+            
+            // Mostrar página de propiedades
+            document.getElementById('propertiesPage').classList.remove('hidden');
+            
+            // Aplicar filtro de condición si se especifica
+            if (condition) {
+                document.getElementById('conditionFilter').value = condition;
+            }
+            
+            // Cargar propiedades
+            applyFilters();
+            window.scrollTo(0, 0);
+        }
+
+        // Función para volver a la página principal
+        function goBackToMain() {
+            document.getElementById('propertyDetailPage').classList.add('hidden');
+            document.getElementById('propertiesPage').classList.add('hidden');
+            document.getElementById('mainPage').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        // Función para mostrar/ocultar filtros avanzados
+        function toggleAdvancedFilters() {
+            const advancedFilters = document.getElementById('advancedFilters');
+            advancedFilters.classList.toggle('hidden');
+        }
+
+        // Función para aplicar filtros
+        function applyFilters() {
+            const filters = {
+                location: document.getElementById('locationFilter').value.toLowerCase(),
+                condition: document.getElementById('conditionFilter').value,
+                type: document.getElementById('typeFilter').value,
+                maxPrice: document.getElementById('priceFilter').value.replace(/[^\d]/g, ''),
+                bedrooms: document.getElementById('bedroomsFilter').value,
+                bathrooms: document.getElementById('bathroomsFilter').value,
+                minArea: document.getElementById('minAreaFilter').value,
+                maxArea: document.getElementById('maxAreaFilter').value,
+                parking: document.getElementById('parkingFilter').value
+            };
+
+            // Obtener características seleccionadas
+            const features = [];
+            if (document.getElementById('balconyFilter').checked) features.push('balcony');
+            if (document.getElementById('gardenFilter').checked) features.push('garden');
+            if (document.getElementById('poolFilter').checked) features.push('pool');
+            if (document.getElementById('gymFilter').checked) features.push('gym');
+            if (document.getElementById('elevatorFilter').checked) features.push('elevator');
+            if (document.getElementById('securityFilter').checked) features.push('security');
+            if (document.getElementById('furnishedFilter').checked) features.push('furnished');
+            if (document.getElementById('petFriendlyFilter').checked) features.push('petFriendly');
+
+            // Filtrar propiedades
+            filteredProperties = allProperties.filter(property => {
+                // Filtro por ubicación (búsqueda flexible)
+                if (filters.location && !property.locationName.toLowerCase().includes(filters.location) && property.location !== filters.location) return false;
+                
+                // Filtro por condición
+                if (filters.condition && property.condition !== filters.condition) return false;
+                
+                // Filtro por tipo
+                if (filters.type && property.type !== filters.type) return false;
+                
+                // Filtro por precio máximo
+                if (filters.maxPrice && property.price > parseInt(filters.maxPrice)) return false;
+                
+                // Filtro por habitaciones
+                if (filters.bedrooms && property.bedrooms < parseInt(filters.bedrooms)) return false;
+                
+                // Filtro por baños
+                if (filters.bathrooms && property.bathrooms < parseInt(filters.bathrooms)) return false;
+                
+                // Filtro por área mínima
+                if (filters.minArea && property.area < parseInt(filters.minArea)) return false;
+                
+                // Filtro por área máxima
+                if (filters.maxArea && property.area > parseInt(filters.maxArea)) return false;
+                
+                // Filtro por cochera
+                if (filters.parking && property.parking < parseInt(filters.parking)) return false;
+                
+                // Filtro por características
+                if (features.length > 0) {
+                    const hasAllFeatures = features.every(feature => property.features.includes(feature));
+                    if (!hasAllFeatures) return false;
+                }
+                
+                return true;
+            });
+
+            // Resetear página actual
+            currentPage = 1;
+            
+            // Ordenar propiedades
+            sortProperties();
+        }
+
+        // Variables para ubicación
+        let selectedLocationValue = '';
+
+        // Función para mostrar sugerencias de ubicación
+        function showLocationSuggestions(value) {
+            const suggestions = document.getElementById('locationSuggestions');
+            const suggestionItems = suggestions.querySelectorAll('div');
+            
+            if (value.length === 0) {
+                suggestions.classList.add('hidden');
+                return;
+            }
+            
+            let hasVisibleSuggestions = false;
+            suggestionItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(value.toLowerCase())) {
+                    item.style.display = 'block';
+                    hasVisibleSuggestions = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            
+            if (hasVisibleSuggestions) {
+                suggestions.classList.remove('hidden');
+            } else {
+                suggestions.classList.add('hidden');
+            }
+        }
+
+        // Función para ocultar sugerencias
+        function hideLocationSuggestions() {
+            setTimeout(() => {
+                document.getElementById('locationSuggestions').classList.add('hidden');
+            }, 200);
+        }
+
+        // Función para seleccionar ubicación
+        function selectLocation(value, displayText) {
+            document.getElementById('locationFilter').value = displayText;
+            selectedLocationValue = value;
+            document.getElementById('locationSuggestions').classList.add('hidden');
+        }
+
+        // Función para formatear entrada de precio
+        function formatPriceInput(input) {
+            let value = input.value.replace(/[^\d]/g, '');
+            if (value) {
+                value = parseInt(value).toLocaleString();
+                input.value = '$' + value;
+            }
+        }
+
+        // Función para limpiar filtros
+        function clearFilters() {
+            // Limpiar filtros básicos
+            document.getElementById('locationFilter').value = '';
+            document.getElementById('conditionFilter').value = '';
+            document.getElementById('typeFilter').value = '';
+            document.getElementById('priceFilter').value = '';
+            
+            // Limpiar filtros avanzados
+            document.getElementById('bedroomsFilter').value = '';
+            document.getElementById('bathroomsFilter').value = '';
+            document.getElementById('minAreaFilter').value = '';
+            document.getElementById('maxAreaFilter').value = '';
+            document.getElementById('parkingFilter').value = '';
+            
+            // Limpiar checkboxes
+            document.getElementById('balconyFilter').checked = false;
+            document.getElementById('gardenFilter').checked = false;
+            document.getElementById('poolFilter').checked = false;
+            document.getElementById('gymFilter').checked = false;
+            document.getElementById('elevatorFilter').checked = false;
+            document.getElementById('securityFilter').checked = false;
+            document.getElementById('furnishedFilter').checked = false;
+            document.getElementById('petFriendlyFilter').checked = false;
+            
+            // Aplicar filtros (mostrar todas las propiedades)
+            applyFilters();
+        }
+
+        // Función para ordenar propiedades
+        function sortProperties() {
+            const sortBy = document.getElementById('sortBy').value;
+            
+            switch (sortBy) {
+                case 'newest':
+                    filteredProperties.sort((a, b) => b.dateAdded - a.dateAdded);
+                    break;
+                case 'price-low':
+                    filteredProperties.sort((a, b) => a.price - b.price);
+                    break;
+                case 'price-high':
+                    filteredProperties.sort((a, b) => b.price - a.price);
+                    break;
+                case 'area-large':
+                    filteredProperties.sort((a, b) => b.area - a.area);
+                    break;
+            }
+            
+            renderProperties();
+        }
+
+        // Función para renderizar propiedades
+        function renderProperties() {
+            const grid = document.getElementById('propertiesGrid');
+            const startIndex = (currentPage - 1) * propertiesPerPage;
+            const endIndex = startIndex + propertiesPerPage;
+            const currentProperties = filteredProperties.slice(startIndex, endIndex);
+            
+            // Actualizar contador de resultados
+            document.getElementById('resultsCount').textContent = `Mostrando ${filteredProperties.length} propiedades`;
+            
+            // Generar HTML de propiedades
+            grid.innerHTML = currentProperties.map(property => `
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(${property.id})">
+                    <div class="h-48 bg-gray-200 relative overflow-hidden">
+                        ${generatePropertySVG(property.id)}
+                        ${property.featured ? '<div class="absolute top-3 right-3 bg-primary-red text-white px-2 py-1 rounded text-sm font-medium">Destacada</div>' : ''}
+                        ${property.condition === 'alquiler' ? '<div class="absolute top-3 left-3 bg-blue-500 text-white px-2 py-1 rounded text-sm font-medium">Alquiler</div>' : ''}
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-lg mb-2">${property.title}</h3>
+                        <p class="text-gray-600 text-sm mb-3">📍 ${property.locationName}</p>
+                        <p class="text-primary-red font-bold text-xl">${property.priceText}</p>
+                        <div class="flex justify-between text-sm text-gray-500 mt-3">
+                            ${property.bedrooms > 0 ? `<span>🛏️ ${property.bedrooms} hab</span>` : '<span></span>'}
+                            ${property.bathrooms > 0 ? `<span>🚿 ${property.bathrooms} baños</span>` : '<span></span>'}
+                            <span>📐 ${property.area} m²</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Actualizar paginación
+            renderPagination();
+        }
+
+        // Función para generar SVG de propiedad
+        function generatePropertySVG(propertyId) {
+            const svgs = {
+                1: `<svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="#f8f9fa" width="300" height="200"/>
+                    <rect fill="#e9ecef" x="0" y="120" width="300" height="80"/>
+                    <rect fill="#dee2e6" x="50" y="60" width="80" height="60"/>
+                    <rect fill="#ced4da" x="170" y="80" width="60" height="40"/>
+                    <circle fill="#adb5bd" cx="250" cy="40" r="20"/>
+                </svg>`,
+                2: `<svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="#f1f3f4" width="300" height="200"/>
+                    <rect fill="#e8eaed" x="0" y="100" width="300" height="100"/>
+                    <rect fill="#dadce0" x="40" y="40" width="100" height="80"/>
+                    <rect fill="#bdc1c6" x="160" y="60" width="80" height="60"/>
+                    <rect fill="#9aa0a6" x="20" y="140" width="260" height="20"/>
+                </svg>`,
+                3: `<svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="#fafafa" width="300" height="200"/>
+                    <rect fill="#f5f5f5" x="0" y="80" width="300" height="120"/>
+                    <rect fill="#eeeeee" x="60" y="30" width="120" height="90"/>
+                    <rect fill="#e0e0e0" x="200" y="50" width="70" height="70"/>
+                    <polygon fill="#bdbdbd" points="60,30 120,10 180,30 180,120 60,120"/>
+                </svg>`
+            };
+            
+            return svgs[propertyId] || svgs[1];
+        }
+
+        // Función para renderizar paginación
+        function renderPagination() {
+            const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
+            const pageNumbers = document.getElementById('pageNumbers');
+            
+            // Actualizar botones anterior/siguiente
+            document.getElementById('prevPageBtn').disabled = currentPage === 1;
+            document.getElementById('nextPageBtn').disabled = currentPage === totalPages;
+            
+            // Generar números de página
+            let paginationHTML = '';
+            for (let i = 1; i <= totalPages; i++) {
+                if (i === currentPage) {
+                    paginationHTML += `<button class="px-3 py-2 bg-primary-red text-white rounded-lg">${i}</button>`;
+                } else {
+                    paginationHTML += `<button onclick="goToPage(${i})" class="px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">${i}</button>`;
+                }
+            }
+            
+            pageNumbers.innerHTML = paginationHTML;
+        }
+
+        // Función para ir a página específica
+        function goToPage(page) {
+            currentPage = page;
+            renderProperties();
+            window.scrollTo(0, 0);
+        }
+
+        // Función para página anterior
+        function previousPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderProperties();
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Función para página siguiente
+        function nextPage() {
+            const totalPages = Math.ceil(filteredProperties.length / propertiesPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderProperties();
+                window.scrollTo(0, 0);
+            }
+        }
+
+        // Función para cambiar imagen principal
+        function changeMainImage(imageNumber) {
+            // En una implementación real, aquí cambiarías la imagen principal
+            console.log(`Cambiando a imagen ${imageNumber}`);
+        }
+
+        // Función para enviar formulario de tasación
+        function submitValuation(event) {
+            event.preventDefault();
+            alert('¡Solicitud enviada exitosamente! Nos contactaremos contigo en las próximas 2 horas para coordinar la tasación gratuita.');
+            event.target.reset();
+        }
+
+        // Función para enviar consulta de propiedad
+        function submitPropertyInquiry(event) {
+            event.preventDefault();
+            alert('¡Mensaje enviado! Nuestro asesor se contactará contigo en menos de 2 horas.');
+            event.target.reset();
+        }
+
+        // Función para calcular crédito
+        function calculateCredit(initialPaymentPercent = 30) {
+            const propertyValue = 450000000; // Valor de la propiedad
+            const initialPayment = propertyValue * (initialPaymentPercent / 100);
+            const loanAmount = propertyValue - initialPayment;
+            const interestRate = 0.12 / 12; // 12% anual / 12 meses
+            const years = 20;
+            const payments = years * 12;
+            
+            const monthlyPayment = loanAmount * (interestRate * Math.pow(1 + interestRate, payments)) / (Math.pow(1 + interestRate, payments) - 1);
+            
+            document.getElementById('initialPaymentPercent').textContent = initialPaymentPercent + '%';
+            document.getElementById('monthlyPayment').textContent = '$' + Math.round(monthlyPayment).toLocaleString();
+        }
+
+        // Variables del carrusel
+        let currentSlide = 0;
+        const totalSlides = 2;
+
+        // Función para ir al siguiente slide
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        // Función para ir al slide anterior
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        // Función para ir a un slide específico
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateCarousel();
+        }
+
+        // Función para actualizar la posición del carrusel
+        function updateCarousel() {
+            const carousel = document.getElementById('carousel');
+            const translateX = -currentSlide * 100;
+            carousel.style.transform = `translateX(${translateX}%)`;
+            
+            // Actualizar indicadores
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            indicators.forEach((indicator, index) => {
+                if (index === currentSlide) {
+                    indicator.classList.remove('bg-gray-300');
+                    indicator.classList.add('bg-primary-red');
+                } else {
+                    indicator.classList.remove('bg-primary-red');
+                    indicator.classList.add('bg-gray-300');
+                }
+            });
+        }
+
+        // Auto-play del carrusel
+        let autoPlayInterval;
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // Pausar auto-play cuando el usuario interactúa
+        document.getElementById('carousel').addEventListener('mouseenter', stopAutoPlay);
+        document.getElementById('carousel').addEventListener('mouseleave', startAutoPlay);
+
+        // Efecto de scroll para la barra superior
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        // Animación de entrada para las tarjetas de propiedades
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar animación a las tarjetas cuando se carga la página
+        document.addEventListener('DOMContentLoaded', function() {
+            const propertyCards = document.querySelectorAll('#properties .grid > div');
+            propertyCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // Inicializar calculadora de crédito
+            calculateCredit();
+            
+            // Iniciar auto-play del carrusel
+            startAutoPlay();
+        });
     </script>
   </body>
 </html>

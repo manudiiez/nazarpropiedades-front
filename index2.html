@@ -112,6 +112,7 @@
                   <a href="index4.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">Inicio 4</a>
                   <a href="index5.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">Inicio 5</a>
                   <a href="index6.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">Inicio 6</a>
+                  <a href="index7.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors">Inicio 7</a>
                 </div>
               </div>
             </div>
@@ -251,403 +252,198 @@
           </p>
         </div>
 
-        <!-- Carrusel de propiedades -->
-                <div class="relative">
-                    <!-- Contenedor del carrusel -->
-                    <div class="overflow-hidden rounded-xl">
-                        <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
-                            <!-- Slide 1 -->
-                            <div class="w-full flex-shrink-0">
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
-                                    <!-- Propiedad 1 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(1)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#f8f9fa" width="300" height="200"/>
-                                                <rect fill="#e9ecef" x="0" y="120" width="300" height="80"/>
-                                                <rect fill="#dee2e6" x="50" y="60" width="80" height="60"/>
-                                                <rect fill="#ced4da" x="170" y="80" width="60" height="40"/>
-                                                <circle fill="#adb5bd" cx="250" cy="40" r="20"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-primary-red text-white px-2 py-1 rounded text-sm font-medium">
-                                                Destacada
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Casa Moderna Chapinero</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Chapinero, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$450.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 3 hab</span>
-                                                <span>🚿 2 baños</span>
-                                                <span>📐 120 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad 2 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(2)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#f1f3f4" width="300" height="200"/>
-                                                <rect fill="#e8eaed" x="0" y="100" width="300" height="100"/>
-                                                <rect fill="#dadce0" x="40" y="40" width="100" height="80"/>
-                                                <rect fill="#bdc1c6" x="160" y="60" width="80" height="60"/>
-                                                <rect fill="#9aa0a6" x="20" y="140" width="260" height="20"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Nuevo
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Apartamento Zona Rosa</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Zona Rosa, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$320.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 2 hab</span>
-                                                <span>🚿 2 baños</span>
-                                                <span>📐 85 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad 3 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(3)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#fafafa" width="300" height="200"/>
-                                                <rect fill="#f5f5f5" x="0" y="80" width="300" height="120"/>
-                                                <rect fill="#eeeeee" x="60" y="30" width="120" height="90"/>
-                                                <rect fill="#e0e0e0" x="200" y="50" width="70" height="70"/>
-                                                <polygon fill="#bdbdbd" points="60,30 120,10 180,30 180,120 60,120"/>
-                                            </svg>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Casa Familiar Cedritos</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Cedritos, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$580.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 4 hab</span>
-                                                <span>🚿 3 baños</span>
-                                                <span>📐 180 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slide 2 -->
-                            <div class="w-full flex-shrink-0">
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
-                                    <!-- Propiedad 4 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(4)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#f8f8f8" width="300" height="200"/>
-                                                <rect fill="#f0f0f0" x="0" y="120" width="300" height="80"/>
-                                                <rect fill="#e8e8e8" x="80" y="40" width="140" height="100"/>
-                                                <rect fill="#d8d8d8" x="100" y="60" width="40" height="60"/>
-                                                <rect fill="#c8c8c8" x="160" y="60" width="40" height="60"/>
-                                                <circle fill="#b8b8b8" cx="50" cy="50" r="15"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-blue-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Oportunidad
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Apartamento La Candelaria</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 La Candelaria, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$280.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 2 hab</span>
-                                                <span>🚿 1 baño</span>
-                                                <span>📐 65 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad adicional 5 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(1)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#e8f5e8" width="300" height="200"/>
-                                                <rect fill="#d4f4d4" x="0" y="120" width="300" height="80"/>
-                                                <rect fill="#c0f0c0" x="60" y="50" width="100" height="80"/>
-                                                <rect fill="#a8e8a8" x="180" y="70" width="80" height="60"/>
-                                                <circle fill="#90e090" cx="240" cy="50" r="25"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-purple-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Premium
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Penthouse Rosales</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Rosales, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$850.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 3 hab</span>
-                                                <span>🚿 3 baños</span>
-                                                <span>📐 200 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad adicional 6 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(2)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#fff8e1" width="300" height="200"/>
-                                                <rect fill="#ffecb3" x="0" y="100" width="300" height="100"/>
-                                                <rect fill="#ffe082" x="50" y="40" width="120" height="90"/>
-                                                <rect fill="#ffd54f" x="190" y="60" width="80" height="70"/>
-                                                <polygon fill="#ffca28" points="40,160 100,140 160,160 160,200 40,200"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Exclusiva
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Casa Campestre Chía</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Chía, Cundinamarca</p>
-                                            <p class="text-primary-red font-bold text-xl">$680.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 4 hab</span>
-                                                <span>🚿 4 baños</span>
-                                                <span>📐 250 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Botones de navegación -->
-                    <button id="prevBtn" onclick="previousSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                        </svg>
-                    </button>
-                    <button id="nextBtn" onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </button>
-
-                    <!-- Indicadores -->
-                    <div class="flex justify-center mt-8 space-x-2">
-                        <button onclick="goToSlide(0)" class="carousel-indicator w-3 h-3 rounded-full bg-primary-red transition-all duration-300"></button>
-                        <button onclick="goToSlide(1)" class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"></button>
-                    </div>
+        <div class="grid grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <!-- Property Card 1 -->
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+            <div
+              class="aspect-square bg-gray-200 flex items-center justify-center transition-all duration-300 group-hover:scale-105"
+            >
+              <!-- <svg
+                class="w-12 h-12 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                ></path>
+                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+              </svg> -->
+              <img
+                src="./imagenes/inmueble1.jpg"
+                alt="Imagen ilustrativa de casa en venta"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <!-- Hover overlay -->
+            <div
+              class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+            >
+              <div class="text-white">
+                <div class="mb-2">
+                  <span
+                    class="bg-accent-red text-white px-2 py-1 text-xs font-medium rounded"
+                    >Venta</span
+                  >
                 </div>
-      </div>
-    </section>
-     <!-- Featured Properties -->
-    <section class="py-24 px-6">
-      <div class="max-w-container mx-auto">
-        <div class="text-center mb-16">
-          <h2 class="text-3xl font-semibold text-gray-900 mb-4">
-            Propiedades recien añadidas
-          </h2>
-          <p class="text-gray-600">
-            Las mejores oportunidades del mercado mendocino
-          </p>
+                <h3 class="text-lg font-semibold mb-1">Casa en Godoy Cruz</h3>
+                <p class="text-sm text-gray-200 mb-3">Godoy Cruz, Mendoza</p>
+                <div class="flex items-center space-x-3 text-xs">
+                  <span>180 m²</span>
+                  <span>3 dorm</span>
+                  <span>2 baños</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Card 2 -->
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+            <div
+              class="aspect-square bg-gray-200 flex items-center justify-center transition-all duration-300 group-hover:scale-105"
+            >
+              <!-- <svg
+                class="w-12 h-12 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                ></path>
+              </svg> -->
+              <img
+                src="./imagenes/inmueble2.jpg"
+                alt="Imagen ilustrativa de casa en venta"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <!-- Hover overlay -->
+            <div
+              class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+            >
+              <div class="text-white">
+                <div class="mb-2">
+                  <span
+                    class="bg-gray-600 text-white px-2 py-1 text-xs font-medium rounded"
+                    >Alquiler</span
+                  >
+                </div>
+                <h3 class="text-lg font-semibold mb-1">Departamento Centro</h3>
+                <p class="text-sm text-gray-200 mb-3">Centro, Mendoza</p>
+                <div class="flex items-center space-x-3 text-xs">
+                  <span>95 m²</span>
+                  <span>2 dorm</span>
+                  <span>1 baño</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Card 3 -->
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+            <div
+              class="aspect-square bg-gray-200 flex items-center justify-center transition-all duration-300 group-hover:scale-105"
+            >
+              <!-- <svg
+                class="w-12 h-12 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"
+                ></path>
+                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+              </svg> -->
+              <img
+                src="./imagenes/inmueble3.jpg"
+                alt="Imagen ilustrativa de casa en venta"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <!-- Hover overlay -->
+            <div
+              class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+            >
+              <div class="text-white">
+                <div class="mb-2">
+                  <span
+                    class="bg-accent-red text-white px-2 py-1 text-xs font-medium rounded"
+                    >Venta</span
+                  >
+                </div>
+                <h3 class="text-lg font-semibold mb-1">PH en Las Heras</h3>
+                <p class="text-sm text-gray-200 mb-3">Las Heras, Mendoza</p>
+                <div class="flex items-center space-x-3 text-xs">
+                  <span>120 m²</span>
+                  <span>2 dorm</span>
+                  <span>1 baño</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Property Card 4 -->
+          <div class="group relative overflow-hidden rounded-xl cursor-pointer">
+            <div
+              class="aspect-square bg-gray-200 flex items-center justify-center transition-all duration-300 group-hover:scale-105"
+            >
+              <!-- <svg
+                class="w-12 h-12 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                ></path>
+              </svg> -->
+              <img
+                src="./imagenes/inmueble4.jpg"
+                alt="Imagen ilustrativa de casa en venta"
+                class="object-cover w-full h-full"
+              />
+            </div>
+            <!-- Hover overlay -->
+            <div
+              class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+            >
+              <div class="text-white">
+                <div class="mb-2">
+                  <span
+                    class="bg-gray-600 text-white px-2 py-1 text-xs font-medium rounded"
+                    >Alquiler</span
+                  >
+                </div>
+                <h3 class="text-lg font-semibold mb-1">Oficina Microcentro</h3>
+                <p class="text-sm text-gray-200 mb-3">Microcentro, Mendoza</p>
+                <div class="flex items-center space-x-3 text-xs">
+                  <span>65 m²</span>
+                  <span>3 amb</span>
+                  <span>1 baño</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <!-- Carrusel de propiedades -->
-                <div class="relative">
-                    <!-- Contenedor del carrusel -->
-                    <div class="overflow-hidden rounded-xl">
-                        <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
-                            <!-- Slide 1 -->
-                            <div class="w-full flex-shrink-0">
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
-                                    <!-- Propiedad 1 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(1)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#f8f9fa" width="300" height="200"/>
-                                                <rect fill="#e9ecef" x="0" y="120" width="300" height="80"/>
-                                                <rect fill="#dee2e6" x="50" y="60" width="80" height="60"/>
-                                                <rect fill="#ced4da" x="170" y="80" width="60" height="40"/>
-                                                <circle fill="#adb5bd" cx="250" cy="40" r="20"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-primary-red text-white px-2 py-1 rounded text-sm font-medium">
-                                                Destacada
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Casa Moderna Chapinero</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Chapinero, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$450.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 3 hab</span>
-                                                <span>🚿 2 baños</span>
-                                                <span>📐 120 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad 2 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(2)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#f1f3f4" width="300" height="200"/>
-                                                <rect fill="#e8eaed" x="0" y="100" width="300" height="100"/>
-                                                <rect fill="#dadce0" x="40" y="40" width="100" height="80"/>
-                                                <rect fill="#bdc1c6" x="160" y="60" width="80" height="60"/>
-                                                <rect fill="#9aa0a6" x="20" y="140" width="260" height="20"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-green-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Nuevo
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Apartamento Zona Rosa</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Zona Rosa, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$320.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 2 hab</span>
-                                                <span>🚿 2 baños</span>
-                                                <span>📐 85 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad 3 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(3)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#fafafa" width="300" height="200"/>
-                                                <rect fill="#f5f5f5" x="0" y="80" width="300" height="120"/>
-                                                <rect fill="#eeeeee" x="60" y="30" width="120" height="90"/>
-                                                <rect fill="#e0e0e0" x="200" y="50" width="70" height="70"/>
-                                                <polygon fill="#bdbdbd" points="60,30 120,10 180,30 180,120 60,120"/>
-                                            </svg>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Casa Familiar Cedritos</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Cedritos, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$580.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 4 hab</span>
-                                                <span>🚿 3 baños</span>
-                                                <span>📐 180 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Slide 2 -->
-                            <div class="w-full flex-shrink-0">
-                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
-                                    <!-- Propiedad 4 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(4)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#f8f8f8" width="300" height="200"/>
-                                                <rect fill="#f0f0f0" x="0" y="120" width="300" height="80"/>
-                                                <rect fill="#e8e8e8" x="80" y="40" width="140" height="100"/>
-                                                <rect fill="#d8d8d8" x="100" y="60" width="40" height="60"/>
-                                                <rect fill="#c8c8c8" x="160" y="60" width="40" height="60"/>
-                                                <circle fill="#b8b8b8" cx="50" cy="50" r="15"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-blue-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Oportunidad
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Apartamento La Candelaria</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 La Candelaria, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$280.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 2 hab</span>
-                                                <span>🚿 1 baño</span>
-                                                <span>📐 65 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad adicional 5 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(1)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#e8f5e8" width="300" height="200"/>
-                                                <rect fill="#d4f4d4" x="0" y="120" width="300" height="80"/>
-                                                <rect fill="#c0f0c0" x="60" y="50" width="100" height="80"/>
-                                                <rect fill="#a8e8a8" x="180" y="70" width="80" height="60"/>
-                                                <circle fill="#90e090" cx="240" cy="50" r="25"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-purple-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Premium
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Penthouse Rosales</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Rosales, Bogotá</p>
-                                            <p class="text-primary-red font-bold text-xl">$850.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 3 hab</span>
-                                                <span>🚿 3 baños</span>
-                                                <span>📐 200 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Propiedad adicional 6 -->
-                                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer transform hover:scale-105 duration-300" onclick="viewProperty(2)">
-                                        <div class="h-48 bg-gray-200 relative overflow-hidden">
-                                            <svg class="w-full h-full" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
-                                                <rect fill="#fff8e1" width="300" height="200"/>
-                                                <rect fill="#ffecb3" x="0" y="100" width="300" height="100"/>
-                                                <rect fill="#ffe082" x="50" y="40" width="120" height="90"/>
-                                                <rect fill="#ffd54f" x="190" y="60" width="80" height="70"/>
-                                                <polygon fill="#ffca28" points="40,160 100,140 160,160 160,200 40,200"/>
-                                            </svg>
-                                            <div class="absolute top-3 right-3 bg-orange-500 text-white px-2 py-1 rounded text-sm font-medium">
-                                                Exclusiva
-                                            </div>
-                                        </div>
-                                        <div class="p-4">
-                                            <h3 class="font-bold text-lg mb-2">Casa Campestre Chía</h3>
-                                            <p class="text-gray-600 text-sm mb-3">📍 Chía, Cundinamarca</p>
-                                            <p class="text-primary-red font-bold text-xl">$680.000.000</p>
-                                            <div class="flex justify-between text-sm text-gray-500 mt-3">
-                                                <span>🛏️ 4 hab</span>
-                                                <span>🚿 4 baños</span>
-                                                <span>📐 250 m²</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Botones de navegación -->
-                    <button id="prevBtn" onclick="previousSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                        </svg>
-                    </button>
-                    <button id="nextBtn" onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-xl z-10">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </button>
-
-                    <!-- Indicadores -->
-                    <div class="flex justify-center mt-8 space-x-2">
-                        <button onclick="goToSlide(0)" class="carousel-indicator w-3 h-3 rounded-full bg-primary-red transition-all duration-300"></button>
-                        <button onclick="goToSlide(1)" class="carousel-indicator w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"></button>
-                    </div>
-                </div>
       </div>
     </section>
 
     <!-- Services Alternating Blocks -->
-    <section id="servicios" class="py-24 px-6 bg-gray-ui">
+    <section id="servicios" class="py-24 px-6">
       <div class="max-w-4xl mx-auto space-y-32">
         <!-- Service Block 1 - Left -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -760,7 +556,7 @@
     </section>
 
     <!-- Benefits Strip -->
-    <section class="py-16 px-6 border-t border-b border-gray-border bg-gray-ui">
+    <section class="py-16 px-6 border-t border-b border-gray-border">
       <div class="max-w-container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="text-center">
@@ -854,7 +650,7 @@
     </section>
 
     <!-- Contact Form -->
-    <section id="contacto" class="py-24 px-6">
+    <section id="contacto" class="py-24 px-6 bg-gray-ui">
       <div class="max-w-2xl mx-auto text-center">
         <h2 class="text-3xl font-semibold text-gray-900 mb-4">Contactanos</h2>
         <p class="text-lg text-gray-600 mb-12">Respondemos en el día.</p>
