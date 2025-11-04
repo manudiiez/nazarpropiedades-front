@@ -46,11 +46,14 @@
         box-sizing: border-box;
       }
 
-      .property-card {
+      .property-card-link {
         transition: all 0.3s ease;
+        display: block;
+        height: 100%;
+        width: 100%;
       }
 
-      .property-card:hover {
+      .property-card-link:hover {
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       }
@@ -190,6 +193,7 @@
   </head>
   <body class="bg-gray-50">
     <!-- Header -->
+    <!-- Navbar -->
     <nav
       id="navbar"
       class="fixed w-full top-0 z-50 transition-all duration-300"
@@ -1435,7 +1439,7 @@
             );
 
           card.innerHTML = `
-                    <a href="#" class="flex hover:shadow-lg transition-shadow duration-300 bg-white rounded-lg overflow-hidden">
+                    <a href="#" class="property-card-link flex bg-white rounded-lg overflow-hidden">
                         <div class="property-image w-96 h-64 bg-gradient-to-br from-gray-200 to-gray-300 relative flex-shrink-0">
                             <div class="absolute bottom-4 left-4 flex gap-2">
                                 <span class="bg-gray-800 bg-opacity-75 text-white px-2 py-1 rounded text-xs font-medium">${
@@ -1451,18 +1455,16 @@
                         </div>
                         <div class="property-content flex-1 p-6 flex flex-col justify-between">
                             <div>
-                                <div class="flex justify-between items-start mb-4">
-                                    <div class="flex-1">
-                                        <h4 class="text-2xl font-semibold text-gray-900 mb-2">${
-                                          property.neighborhood
-                                        }</h4>
-                                        <p class="text-gray-600 text-sm mb-3">${
-                                          property.location
-                                        }</p>
-                                        <span class="text-3xl font-bold text-red-600">${
-                                          property.price
-                                        }</span>
-                                    </div>
+                                <div class="mb-4">
+                                    <h4 class="text-2xl font-semibold text-gray-900 mb-2">${
+                                      property.neighborhood
+                                    }</h4>
+                                    <p class="text-gray-600 text-sm mb-3">${
+                                      property.location
+                                    }</p>
+                                    <span class="text-3xl font-bold text-red-600">${
+                                      property.price
+                                    }</span>
                                 </div>
                                 <div class="grid grid-cols-2 gap-4 mb-4">
                                     ${characteristics.join("")}
@@ -1516,7 +1518,7 @@
             );
 
           card.innerHTML = `
-                    <a href="#" class="block hover:shadow-lg transition-shadow duration-300">
+                    <a href="#" class="property-card-link">
                         <div class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative">
                             <div class="absolute bottom-4 left-4 flex gap-2">
                                 <span class="bg-gray-800 bg-opacity-75 text-white px-2 py-1 rounded text-xs font-medium">${
@@ -1531,16 +1533,16 @@
                             </div>
                         </div>
                         <div class="property-content p-6">
-                            <div class="flex justify-between items-start mb-4">
+                            <div class="mb-4">
                                 <div class="flex-1">
                                     <h4 class="text-xl font-semibold text-gray-900 mb-1">${
                                       property.neighborhood
                                     }</h4>
-                                    <p class="text-gray-500 text-xs">${
+                                    <p class="text-gray-500 text-xs mb-2">${
                                       property.neighborhood
                                     }, ${property.location}</p>
                                 </div>
-                                <span class="text-2xl font-bold text-red-600 ml-4">${
+                                <span class="text-2xl font-bold text-red-600">${
                                   property.price
                                 }</span>
                             </div>
@@ -1553,7 +1555,7 @@
         } else {
           // 3 column view - solo características básicas (sin etiquetas)
           card.innerHTML = `
-                    <a href="#" class="block hover:shadow-lg transition-shadow duration-300">
+                    <a href="#" class="property-card-link">
                         <div class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative">
                             <div class="absolute bottom-4 left-4 flex gap-2">
                                 <span class="bg-gray-800 bg-opacity-75 text-white px-2 py-1 rounded text-xs font-medium">${
@@ -1568,16 +1570,16 @@
                             </div>
                         </div>
                         <div class="property-content p-6">
-                            <div class="flex justify-between items-start mb-4">
+                            <div class="mb-4">
                                 <div class="flex-1">
                                     <h4 class="text-xl font-semibold text-gray-900 mb-1">${
                                       property.neighborhood
                                     }</h4>
-                                    <p class="text-gray-500 text-xs">${
+                                    <p class="text-gray-500 text-xs mb-2">${
                                       property.neighborhood
                                     }, ${property.location}</p>
                                 </div>
-                                <span class="text-2xl font-bold text-red-600 ml-4">${
+                                <span class="text-2xl font-bold text-red-600">${
                                   property.price
                                 }</span>
                             </div>
@@ -1947,7 +1949,7 @@
           if (b) {
             var d = b.createElement("script");
             d.innerHTML =
-              "window.__CF$cv$params={r:'998c817d639b1fe4',t:'MTc2MjE3OTU1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+              "window.__CF$cv$params={r:'99974a6cb3341fe4',t:'MTc2MjI5MjY0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
             b.getElementsByTagName("head")[0].appendChild(d);
           }
         }
