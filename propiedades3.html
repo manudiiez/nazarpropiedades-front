@@ -49,8 +49,6 @@
       .property-card-link {
         transition: all 0.3s ease;
         display: block;
-        height: 100%;
-        width: 100%;
       }
 
       .property-card-link:hover {
@@ -419,7 +417,6 @@
         </div>
       </div>
     </nav>
-
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 pt-32">
       <!-- Page Header -->
@@ -431,97 +428,101 @@
           Encontrá tu hogar ideal entre nuestra selección de propiedades
         </p>
       </div>
-      <div class="flex flex-col lg:flex-row gap-8">
-        <!-- Filters Sidebar -->
-        <aside
-          id="filters-sidebar"
-          class="lg:w-80 flex-shrink-0 transition-all duration-300"
-        >
-          <div
-            class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 sticky top-24"
+      <!-- Top Filters Bar -->
+      <div
+        class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 mb-8"
+      >
+        <div class="flex items-center justify-between mb-4">
+          <h3 id="filter-title" class="text-lg font-semibold text-gray-900">
+            Filtros
+          </h3>
+          <button
+            id="clear-filters"
+            class="text-sm text-red-600 hover:text-red-700 font-medium"
           >
-            <div class="flex items-center justify-between mb-6">
-              <h3 id="filter-title" class="text-lg font-semibold text-gray-900">
-                Filtros
-              </h3>
-              <button
-                id="clear-filters"
-                class="text-sm text-red-600 hover:text-red-700 font-medium"
-              >
-                Limpiar todo
-              </button>
-            </div>
-            <!-- Quick Search -->
-            <div class="filter-section">
-              <label class="block text-sm font-medium text-gray-700 mb-3"
-                >Búsqueda rápida</label
-              >
-              <input
-                type="text"
-                placeholder="Buscar por ubicación, código..."
-                class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg"
-              />
-            </div>
-            <!-- Property Type -->
-            <div class="filter-section">
-              <label class="block text-sm font-medium text-gray-700 mb-3"
-                >Tipo de propiedad</label
-              >
-              <select
-                class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg"
-              >
-                <option value="">Todos los tipos</option>
-                <option value="casa">Casa</option>
-                <option value="departamento">Departamento</option>
-                <option value="ph">PH</option>
-                <option value="duplex">Duplex</option>
-                <option value="lote">Lote</option>
-                <option value="quinta">Quinta</option>
-                <option value="chacra">Chacra</option>
-                <option value="local">Local comercial</option>
-                <option value="oficina">Oficina</option>
-                <option value="galpon">Galpón</option>
-                <option value="cochera">Cochera</option>
-                <option value="edificio">Edificio</option>
-              </select>
-            </div>
-            <!-- Condition -->
-            <div class="filter-section">
-              <label class="block text-sm font-medium text-gray-700 mb-3"
-                >Condición</label
-              >
-              <select
-                class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg"
-              >
-                <option value="">Todas las condiciones</option>
-                <option value="venta">Venta</option>
-                <option value="alquiler">Alquiler</option>
-                <option value="permuta">Permuta</option>
-                <option value="alquiler-temporario">Alquiler Temporario</option>
-              </select>
-            </div>
-            <!-- Location -->
-            <div class="filter-section">
-              <label class="block text-sm font-medium text-gray-700 mb-3"
-                >Departamento</label
-              >
-              <select
-                id="department-select"
-                class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg mb-3"
-              >
-                <option value="">Todos los departamentos</option>
-                <option value="capital">Capital</option>
-                <option value="godoy-cruz">Godoy Cruz</option>
-                <option value="las-heras">Las Heras</option>
-                <option value="maipu">Maipú</option>
-                <option value="lujan-cuyo">Luján de Cuyo</option>
-                <option value="guaymallen">Guaymallén</option>
-                <option value="san-martin">San Martín</option>
-                <option value="rivadavia">Rivadavia</option>
-                <option value="junin">Junín</option>
-                <option value="san-rafael">San Rafael</option>
-              </select>
-              <label class="block text-sm font-medium text-gray-700 mb-3"
+            Limpiar todo
+          </button>
+        </div>
+        <!-- Main Filters Row -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+          <!-- Quick Search -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Búsqueda rápida</label
+            >
+            <input
+              type="text"
+              placeholder="Buscar por ubicación, código..."
+              class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg"
+            />
+          </div>
+          <!-- Property Type -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Tipo de propiedad</label
+            >
+            <select
+              class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg"
+            >
+              <option value="">Todos los tipos</option>
+              <option value="casa">Casa</option>
+              <option value="departamento">Departamento</option>
+              <option value="ph">PH</option>
+              <option value="duplex">Duplex</option>
+              <option value="lote">Lote</option>
+              <option value="quinta">Quinta</option>
+              <option value="chacra">Chacra</option>
+              <option value="local">Local comercial</option>
+              <option value="oficina">Oficina</option>
+              <option value="galpon">Galpón</option>
+              <option value="cochera">Cochera</option>
+              <option value="edificio">Edificio</option>
+            </select>
+          </div>
+          <!-- Condition -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Condición</label
+            >
+            <select
+              class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg"
+            >
+              <option value="">Todas las condiciones</option>
+              <option value="venta">Venta</option>
+              <option value="alquiler">Alquiler</option>
+              <option value="permuta">Permuta</option>
+              <option value="alquiler-temporario">Alquiler Temporario</option>
+            </select>
+          </div>
+          <!-- Department -->
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Departamento</label
+            >
+            <select
+              id="department-select"
+              class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg"
+            >
+              <option value="">Todos los departamentos</option>
+              <option value="capital">Capital</option>
+              <option value="godoy-cruz">Godoy Cruz</option>
+              <option value="las-heras">Las Heras</option>
+              <option value="maipu">Maipú</option>
+              <option value="lujan-cuyo">Luján de Cuyo</option>
+              <option value="guaymallen">Guaymallén</option>
+              <option value="san-martin">San Martín</option>
+              <option value="rivadavia">Rivadavia</option>
+              <option value="junin">Junín</option>
+              <option value="san-rafael">San Rafael</option>
+            </select>
+          </div>
+        </div>
+        <!-- Advanced Filters (Collapsible) -->
+        <div id="advanced-filters" class="hidden border-t border-gray-100 pt-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Zone -->
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
                 >Zona</label
               >
               <select
@@ -533,8 +534,8 @@
               </select>
             </div>
             <!-- Bedrooms -->
-            <div class="filter-section">
-              <label class="block text-sm font-medium text-gray-700 mb-3"
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
                 >Dormitorios</label
               >
               <div class="grid grid-cols-3 gap-2">
@@ -553,26 +554,11 @@
                 >
                   3+
                 </button>
-                <button
-                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
-                >
-                  4+
-                </button>
-                <button
-                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
-                >
-                  5+
-                </button>
-                <button
-                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
-                >
-                  6+
-                </button>
               </div>
             </div>
             <!-- Bathrooms -->
-            <div class="filter-section">
-              <label class="block text-sm font-medium text-gray-700 mb-3"
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
                 >Baños</label
               >
               <div class="grid grid-cols-3 gap-2">
@@ -591,560 +577,491 @@
                 >
                   3+
                 </button>
-                <button
-                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
-                >
-                  4+
-                </button>
-                <button
-                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
-                >
-                  5+
-                </button>
-                <button
-                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
-                >
-                  6+
-                </button>
               </div>
             </div>
             <!-- Price Range -->
-            <div class="filter-section">
-              <label class="block text-sm font-medium text-gray-700 mb-3"
+            <div class="md:col-span-2">
+              <label class="block text-sm font-medium text-gray-700 mb-2"
                 >Rango de precio</label
               >
-              <div class="space-y-4">
-                <div class="flex items-center space-x-2">
-                  <input
-                    type="text"
-                    id="price-min"
-                    placeholder="Mínimo"
-                    class="filter-input flex-1 px-2 py-2 border border-gray-200 rounded-lg text-xs min-w-0"
-                  />
-                  <span class="text-gray-400 text-sm">-</span>
-                  <input
-                    type="text"
-                    id="price-max"
-                    placeholder="Máximo"
-                    class="filter-input flex-1 px-2 py-2 border border-gray-200 rounded-lg text-xs min-w-0"
-                  />
-                </div>
-                <div class="space-y-2 px-1">
-                  <input
-                    type="range"
-                    id="price-range-min"
-                    min="0"
-                    max="500000000"
-                    value="0"
-                    class="price-range-slider w-full"
-                  />
-                  <input
-                    type="range"
-                    id="price-range-max"
-                    min="0"
-                    max="500000000"
-                    value="500000000"
-                    class="price-range-slider w-full"
-                  />
-                </div>
-                <div class="flex justify-between text-xs text-gray-500 px-1">
-                  <span id="price-display-min">$0</span>
-                  <span id="price-display-max">$500M+</span>
-                </div>
+              <div class="flex items-center space-x-4">
+                <input
+                  type="text"
+                  id="price-min"
+                  placeholder="Mínimo"
+                  class="filter-input flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm"
+                />
+                <span class="text-gray-400">-</span>
+                <input
+                  type="text"
+                  id="price-max"
+                  placeholder="Máximo"
+                  class="filter-input flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm"
+                />
               </div>
             </div>
             <!-- Features -->
-            <div class="filter-section">
-              <label class="block text-sm font-medium text-gray-700 mb-3"
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
                 >Características</label
               >
-              <div class="space-y-3">
-                <label class="flex items-center">
-                  <input type="checkbox" class="checkbox-custom mr-3" />
-                  <span class="text-sm text-gray-700">Pileta</span>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="flex items-center text-sm">
+                  <input type="checkbox" class="checkbox-custom mr-2" />
+                  <span class="text-gray-700">Pileta</span>
                 </label>
-                <label class="flex items-center">
-                  <input type="checkbox" class="checkbox-custom mr-3" />
-                  <span class="text-sm text-gray-700">Jardín</span>
+                <label class="flex items-center text-sm">
+                  <input type="checkbox" class="checkbox-custom mr-2" />
+                  <span class="text-gray-700">Jardín</span>
                 </label>
-                <label class="flex items-center">
-                  <input type="checkbox" class="checkbox-custom mr-3" />
-                  <span class="text-sm text-gray-700">Cochera</span>
+                <label class="flex items-center text-sm">
+                  <input type="checkbox" class="checkbox-custom mr-2" />
+                  <span class="text-gray-700">Cochera</span>
                 </label>
-                <label class="flex items-center">
-                  <input type="checkbox" class="checkbox-custom mr-3" />
-                  <span class="text-sm text-gray-700">Quincho</span>
-                </label>
-                <label class="flex items-center">
-                  <input type="checkbox" class="checkbox-custom mr-3" />
-                  <span class="text-sm text-gray-700">Balcón</span>
+                <label class="flex items-center text-sm">
+                  <input type="checkbox" class="checkbox-custom mr-2" />
+                  <span class="text-gray-700">Quincho</span>
                 </label>
               </div>
             </div>
-            <!-- Apply Filters Button -->
-            <button
-              class="w-full btn-primary text-white py-3 rounded-lg font-medium mt-6"
-            >
-              Aplicar Filtros
-            </button>
           </div>
-        </aside>
-        <!-- Properties Grid -->
-        <main class="flex-1">
-          <!-- Results Header -->
-          <div
-            class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6"
+        </div>
+        <!-- Toggle Advanced Filters Button -->
+        <div class="flex justify-center mt-4">
+          <button
+            id="toggle-advanced-filters"
+            class="flex items-center text-sm text-red-600 hover:text-red-700 font-medium"
           >
-            <p class="text-gray-600">
-              <span id="results-count" class="font-semibold text-gray-900"
-                >298</span
-              >
-              <span id="results-text">propiedades encontradas</span>
-            </p>
-            <div
-              class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3"
+            <span id="advanced-filters-text">Más filtros</span>
+            <svg
+              id="advanced-filters-icon"
+              class="w-4 h-4 ml-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewbox="0 0 24 24"
             >
-              <!-- Filter Toggle Button -->
-              <button
-                id="toggle-filters"
-                class="lg:hidden flex items-center justify-center px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium"
-              >
-                <svg
-                  class="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewbox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
-                  />
-                </svg>
-                Filtros
-              </button>
-              <button
-                id="toggle-filters-desktop"
-                class="hidden lg:flex items-center justify-center px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium"
-              >
-                <svg
-                  class="w-4 h-4 mr-2"
-                  fill="none"
-                  stroke="currentColor"
-                  viewbox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
-                  />
-                </svg>
-                <span id="filter-toggle-text">Ocultar Filtros</span>
-              </button>
-              <!-- View Toggle Buttons -->
-              <div class="flex bg-gray-100 rounded-lg p-1">
-                <button
-                  id="view-3"
-                  class="view-btn active px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
-                    <path
-                      d="M3 3h6v6H3V3zm8 0h6v6h-6V3zm8 0h6v6h-6V3zM3 11h6v6H3v-6zm8 0h6v6h-6v-6zm8 0h6v6h-6v-6zM3 19h6v6H3v-6zm8 0h6v6h-6v-6zm8 0h6v6h-6v-6z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  id="view-2"
-                  class="view-btn px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
-                    <path
-                      d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"
-                    />
-                  </svg>
-                </button>
-                <button
-                  id="view-1"
-                  class="view-btn px-3 py-2 rounded-md text-sm font-medium"
-                >
-                  <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
-                    <path d="M3 3h18v4H3V3zm0 6h18v4H3V9zm0 6h18v4H3v-4z" />
-                  </svg>
-                </button>
-              </div>
-              <!-- Sort Dropdown -->
-              <select
-                class="filter-input px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm"
-              >
-                <option>Ordenar por</option>
-                <option>Precio: Menor a Mayor</option>
-                <option>Precio: Mayor a Menor</option>
-                <option>Más Recientes</option>
-                <option>Más Antiguos</option>
-                <option>Superficie</option>
-              </select>
-            </div>
-          </div>
-          <!-- Properties Container -->
-          <div
-            id="properties-container"
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            <!-- Property Card 1 -->
-            <div
-              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
-            >
-              <div
-                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
-              >
-                <div class="absolute top-4 left-4 flex gap-2">
-                  <span
-                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Casa</span
-                  >
-                  <span
-                    class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Venta</span
-                  >
-                </div>
-                <div
-                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
-                >
-                  1/8
-                </div>
-              </div>
-              <div class="property-content p-6">
-                <div class="flex justify-between items-start mb-3">
-                  <div>
-                    <h4 class="text-xl font-semibold text-gray-900">
-                      Barrio Palmares
-                    </h4>
-                    <p class="text-gray-600 text-sm">Godoy Cruz, Mendoza</p>
-                  </div>
-                  <span class="text-2xl font-bold text-red-600">$85M</span>
-                </div>
-                <div
-                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
-                >
-                  <div class="flex items-center">
-                    <span class="mr-1">🛏️</span> <span>3 dorm</span>
-                  </div>
-                  <div class="flex items-center">
-                    <span class="mr-1">🚿</span> <span>2 baños</span>
-                  </div>
-                  <div class="flex items-center">
-                    <span class="mr-1">📐</span> <span>180m²</span>
-                  </div>
-                </div>
-                <button
-                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
-                >
-                  Ver Detalles
-                </button>
-              </div>
-            </div>
-            <!-- Property Card 2 -->
-            <div
-              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
-            >
-              <div
-                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
-              >
-                <div class="absolute top-4 left-4 flex gap-2">
-                  <span
-                    class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Depto</span
-                  >
-                  <span
-                    class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Alquiler</span
-                  >
-                </div>
-                <div
-                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
-                >
-                  1/6
-                </div>
-              </div>
-              <div class="property-content p-6">
-                <div class="flex justify-between items-start mb-3">
-                  <div>
-                    <h4 class="text-xl font-semibold text-gray-900">Centro</h4>
-                    <p class="text-gray-600 text-sm">Ciudad, Mendoza</p>
-                  </div>
-                  <span class="text-2xl font-bold text-red-600">$65K</span>
-                </div>
-                <div
-                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
-                >
-                  <div class="flex items-center">
-                    <span class="mr-1">🛏️</span> <span>2 dorm</span>
-                  </div>
-                  <div class="flex items-center">
-                    <span class="mr-1">🚿</span> <span>1 baño</span>
-                  </div>
-                  <div class="flex items-center">
-                    <span class="mr-1">📐</span> <span>95m²</span>
-                  </div>
-                </div>
-                <button
-                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
-                >
-                  Ver Detalles
-                </button>
-              </div>
-            </div>
-            <!-- Property Card 3 -->
-            <div
-              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
-            >
-              <div
-                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
-              >
-                <div class="absolute top-4 left-4 flex gap-2">
-                  <span
-                    class="bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Lote</span
-                  >
-                  <span
-                    class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Venta</span
-                  >
-                </div>
-                <div
-                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
-                >
-                  1/4
-                </div>
-              </div>
-              <div class="property-content p-6">
-                <div class="flex justify-between items-start mb-3">
-                  <div>
-                    <h4 class="text-xl font-semibold text-gray-900">
-                      Los Álamos
-                    </h4>
-                    <p class="text-gray-600 text-sm">Maipú, Mendoza</p>
-                  </div>
-                  <span class="text-2xl font-bold text-red-600">$45M</span>
-                </div>
-                <div
-                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
-                >
-                  <div class="flex items-center">
-                    <span class="mr-1">📐</span> <span>500m²</span>
-                  </div>
-                  <div class="flex items-center">
-                    <span class="mr-1">🏗️</span> <span>Listo</span>
-                  </div>
-                </div>
-                <button
-                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
-                >
-                  Ver Detalles
-                </button>
-              </div>
-            </div>
-            <!-- Property Card 4 -->
-            <div
-              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
-            >
-              <div
-                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
-              >
-                <div class="absolute top-4 left-4 flex gap-2">
-                  <span
-                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Casa</span
-                  >
-                  <span
-                    class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Venta</span
-                  >
-                </div>
-                <div
-                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
-                >
-                  1/10
-                </div>
-              </div>
-              <div class="property-content p-6">
-                <div class="flex justify-between items-start mb-3">
-                  <div>
-                    <h4 class="text-xl font-semibold text-gray-900">
-                      Villa Nueva
-                    </h4>
-                    <p class="text-gray-600 text-sm">Las Heras, Mendoza</p>
-                  </div>
-                  <span class="text-2xl font-bold text-red-600">$120M</span>
-                </div>
-                <div
-                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
-                >
-                  <div class="flex items-center">
-                    <span class="mr-1">🛏️</span> <span>4 dorm</span>
-                  </div>
-                  <div class="flex items-center">
-                    <span class="mr-1">🚿</span> <span>3 baños</span>
-                  </div>
-                  <div class="flex items-center">
-                    <span class="mr-1">📐</span> <span>250m²</span>
-                  </div>
-                </div>
-                <button
-                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
-                >
-                  Ver Detalles
-                </button>
-              </div>
-            </div>
-            <!-- Property Card 5 -->
-            <div
-              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
-            >
-              <div
-                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
-              >
-                <div class="absolute top-4 left-4 flex gap-2">
-                  <span
-                    class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Depto</span
-                  >
-                  <span
-                    class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Alquiler</span
-                  >
-                </div>
-                <div
-                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
-                >
-                  1/5
-                </div>
-              </div>
-              <div class="property-content p-6">
-                <div class="flex justify-between items-start mb-3">
-                  <div>
-                    <h4 class="text-xl font-semibold text-gray-900">
-                      Microcentro
-                    </h4>
-                    <p class="text-gray-600 text-sm">Ciudad, Mendoza</p>
-                  </div>
-                  <span class="text-2xl font-bold text-red-600">$55K</span>
-                </div>
-                <div
-                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
-                >
-                  <div class="flex items-center">
-                    <span class="mr-1">🛏️</span> <span>1 dorm</span>
-                  </div>
-                  <div class="flex items-center">
-                    <span class="mr-1">🚿</span> <span>1 baño</span>
-                  </div>
-                  <div class="flex items-center">
-                    <span class="mr-1">📐</span> <span>65m²</span>
-                  </div>
-                </div>
-                <button
-                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
-                >
-                  Ver Detalles
-                </button>
-              </div>
-            </div>
-            <!-- Property Card 6 -->
-            <div
-              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
-            >
-              <div
-                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
-              >
-                <div class="absolute top-4 left-4 flex gap-2">
-                  <span
-                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Casa</span
-                  >
-                  <span
-                    class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
-                    >Venta</span
-                  >
-                </div>
-                <div
-                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
-                >
-                  1/7
-                </div>
-              </div>
-              <div class="property-content p-6">
-                <div class="flex justify-between items-start mb-3">
-                  <div>
-                    <h4 class="text-xl font-semibold text-gray-900">
-                      Chacras de Coria
-                    </h4>
-                    <p class="text-gray-600 text-sm">Luján de Cuyo, Mendoza</p>
-                  </div>
-                  <span class="text-2xl font-bold text-red-600">$95M</span>
-                </div>
-                <div
-                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
-                >
-                  <div class="flex items-center">
-                    <span class="mr-1">🛏️</span> <span>3 dorm</span>
-                  </div>
-                  <div class="flex items-center">
-                    <span class="mr-1">🚿</span> <span>2 baños</span>
-                  </div>
-                  <div class="flex items-center">
-                    <span class="mr-1">📐</span> <span>160m²</span>
-                  </div>
-                </div>
-                <button
-                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
-                >
-                  Ver Detalles
-                </button>
-              </div>
-            </div>
-          </div>
-          <!-- Pagination -->
-          <div class="flex justify-center mt-12">
-            <nav class="flex items-center space-x-2">
-              <button
-                class="px-3 py-2 text-sm text-gray-500 hover:text-gray-700 disabled:opacity-50"
-                disabled
-              >
-                Anterior
-              </button>
-              <button
-                class="px-3 py-2 text-sm bg-red-600 text-white rounded-lg"
-              >
-                1
-              </button>
-              <button
-                class="px-3 py-2 text-sm text-gray-700 hover:text-red-600 rounded-lg"
-              >
-                2
-              </button>
-              <button
-                class="px-3 py-2 text-sm text-gray-700 hover:text-red-600 rounded-lg"
-              >
-                3
-              </button>
-              <span class="px-3 py-2 text-sm text-gray-500">...</span>
-              <button
-                class="px-3 py-2 text-sm text-gray-700 hover:text-red-600 rounded-lg"
-              >
-                12
-              </button>
-              <button
-                class="px-3 py-2 text-sm text-gray-700 hover:text-gray-900"
-              >
-                Siguiente
-              </button>
-            </nav>
-          </div>
-        </main>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
+      <!-- Properties Grid -->
+      <main>
+        <!-- Results Header -->
+        <div
+          class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6"
+        >
+          <p class="text-gray-600">
+            <span id="results-count" class="font-semibold text-gray-900"
+              >298</span
+            >
+            <span id="results-text">propiedades encontradas</span>
+          </p>
+          <div
+            class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3"
+          >
+            <!-- View Toggle Buttons -->
+            <div class="flex bg-gray-100 rounded-lg p-1">
+              <button
+                id="view-4"
+                class="view-btn active px-3 py-2 rounded-md text-sm font-medium"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+                  <path
+                    d="M3 3h4v4H3V3zm6 0h4v4H9V3zm6 0h4v4h-4V3zm6 0h4v4h-4V3zM3 9h4v4H3V9zm6 0h4v4H9V9zm6 0h4v4h-4V9zm6 0h4v4h-4V9zM3 15h4v4H3v-4zm6 0h4v4H9v-4zm6 0h4v4h-4v-4zm6 0h4v4h-4v-4z"
+                  />
+                </svg>
+              </button>
+              <button
+                id="view-2"
+                class="view-btn px-3 py-2 rounded-md text-sm font-medium"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+                  <path
+                    d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"
+                  />
+                </svg>
+              </button>
+              <button
+                id="view-1"
+                class="view-btn px-3 py-2 rounded-md text-sm font-medium"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+                  <path d="M3 3h18v4H3V3zm0 6h18v4H3V9zm0 6h18v4H3v-4z" />
+                </svg>
+              </button>
+            </div>
+            <!-- Sort Dropdown -->
+            <select
+              class="filter-input px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm"
+            >
+              <option>Ordenar por</option>
+              <option>Precio: Menor a Mayor</option>
+              <option>Precio: Mayor a Menor</option>
+              <option>Más Recientes</option>
+              <option>Más Antiguos</option>
+              <option>Superficie</option>
+            </select>
+          </div>
+        </div>
+        <!-- Properties Container -->
+        <div
+          id="properties-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
+          <!-- Property Card 1 -->
+          <div
+            class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+          >
+            <div
+              class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+            >
+              <div class="absolute top-4 left-4 flex gap-2">
+                <span
+                  class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Casa</span
+                >
+                <span
+                  class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Venta</span
+                >
+              </div>
+              <div
+                class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+              >
+                1/8
+              </div>
+            </div>
+            <div class="property-content p-6">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h4 class="text-xl font-semibold text-gray-900">
+                    Barrio Palmares
+                  </h4>
+                  <p class="text-gray-600 text-sm">Godoy Cruz, Mendoza</p>
+                </div>
+                <span class="text-2xl font-bold text-red-600">$85M</span>
+              </div>
+              <div
+                class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+              >
+                <div class="flex items-center">
+                  <span class="mr-1">🛏️</span> <span>3 dorm</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="mr-1">🚿</span> <span>2 baños</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="mr-1">📐</span> <span>180m²</span>
+                </div>
+              </div>
+              <button
+                class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+              >
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+          <!-- Property Card 2 -->
+          <div
+            class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+          >
+            <div
+              class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+            >
+              <div class="absolute top-4 left-4 flex gap-2">
+                <span
+                  class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Depto</span
+                >
+                <span
+                  class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Alquiler</span
+                >
+              </div>
+              <div
+                class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+              >
+                1/6
+              </div>
+            </div>
+            <div class="property-content p-6">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h4 class="text-xl font-semibold text-gray-900">Centro</h4>
+                  <p class="text-gray-600 text-sm">Ciudad, Mendoza</p>
+                </div>
+                <span class="text-2xl font-bold text-red-600">$65K</span>
+              </div>
+              <div
+                class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+              >
+                <div class="flex items-center">
+                  <span class="mr-1">🛏️</span> <span>2 dorm</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="mr-1">🚿</span> <span>1 baño</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="mr-1">📐</span> <span>95m²</span>
+                </div>
+              </div>
+              <button
+                class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+              >
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+          <!-- Property Card 3 -->
+          <div
+            class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+          >
+            <div
+              class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+            >
+              <div class="absolute top-4 left-4 flex gap-2">
+                <span
+                  class="bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Lote</span
+                >
+                <span
+                  class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Venta</span
+                >
+              </div>
+              <div
+                class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+              >
+                1/4
+              </div>
+            </div>
+            <div class="property-content p-6">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h4 class="text-xl font-semibold text-gray-900">
+                    Los Álamos
+                  </h4>
+                  <p class="text-gray-600 text-sm">Maipú, Mendoza</p>
+                </div>
+                <span class="text-2xl font-bold text-red-600">$45M</span>
+              </div>
+              <div
+                class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+              >
+                <div class="flex items-center">
+                  <span class="mr-1">📐</span> <span>500m²</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="mr-1">🏗️</span> <span>Listo</span>
+                </div>
+              </div>
+              <button
+                class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+              >
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+          <!-- Property Card 4 -->
+          <div
+            class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+          >
+            <div
+              class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+            >
+              <div class="absolute top-4 left-4 flex gap-2">
+                <span
+                  class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Casa</span
+                >
+                <span
+                  class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Venta</span
+                >
+              </div>
+              <div
+                class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+              >
+                1/10
+              </div>
+            </div>
+            <div class="property-content p-6">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h4 class="text-xl font-semibold text-gray-900">
+                    Villa Nueva
+                  </h4>
+                  <p class="text-gray-600 text-sm">Las Heras, Mendoza</p>
+                </div>
+                <span class="text-2xl font-bold text-red-600">$120M</span>
+              </div>
+              <div
+                class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+              >
+                <div class="flex items-center">
+                  <span class="mr-1">🛏️</span> <span>4 dorm</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="mr-1">🚿</span> <span>3 baños</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="mr-1">📐</span> <span>250m²</span>
+                </div>
+              </div>
+              <button
+                class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+              >
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+          <!-- Property Card 5 -->
+          <div
+            class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+          >
+            <div
+              class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+            >
+              <div class="absolute top-4 left-4 flex gap-2">
+                <span
+                  class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Depto</span
+                >
+                <span
+                  class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Alquiler</span
+                >
+              </div>
+              <div
+                class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+              >
+                1/5
+              </div>
+            </div>
+            <div class="property-content p-6">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h4 class="text-xl font-semibold text-gray-900">
+                    Microcentro
+                  </h4>
+                  <p class="text-gray-600 text-sm">Ciudad, Mendoza</p>
+                </div>
+                <span class="text-2xl font-bold text-red-600">$55K</span>
+              </div>
+              <div
+                class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+              >
+                <div class="flex items-center">
+                  <span class="mr-1">🛏️</span> <span>1 dorm</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="mr-1">🚿</span> <span>1 baño</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="mr-1">📐</span> <span>65m²</span>
+                </div>
+              </div>
+              <button
+                class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+              >
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+          <!-- Property Card 6 -->
+          <div
+            class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+          >
+            <div
+              class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+            >
+              <div class="absolute top-4 left-4 flex gap-2">
+                <span
+                  class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Casa</span
+                >
+                <span
+                  class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                  >Venta</span
+                >
+              </div>
+              <div
+                class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+              >
+                1/7
+              </div>
+            </div>
+            <div class="property-content p-6">
+              <div class="flex justify-between items-start mb-3">
+                <div>
+                  <h4 class="text-xl font-semibold text-gray-900">
+                    Chacras de Coria
+                  </h4>
+                  <p class="text-gray-600 text-sm">Luján de Cuyo, Mendoza</p>
+                </div>
+                <span class="text-2xl font-bold text-red-600">$95M</span>
+              </div>
+              <div
+                class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+              >
+                <div class="flex items-center">
+                  <span class="mr-1">🛏️</span> <span>3 dorm</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="mr-1">🚿</span> <span>2 baños</span>
+                </div>
+                <div class="flex items-center">
+                  <span class="mr-1">📐</span> <span>160m²</span>
+                </div>
+              </div>
+              <button
+                class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+              >
+                Ver Detalles
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12">
+          <nav class="flex items-center space-x-2">
+            <button
+              class="px-3 py-2 text-sm text-gray-500 hover:text-gray-700 disabled:opacity-50"
+              disabled
+            >
+              Anterior
+            </button>
+            <button class="px-3 py-2 text-sm bg-red-600 text-white rounded-lg">
+              1
+            </button>
+            <button
+              class="px-3 py-2 text-sm text-gray-700 hover:text-red-600 rounded-lg"
+            >
+              2
+            </button>
+            <button
+              class="px-3 py-2 text-sm text-gray-700 hover:text-red-600 rounded-lg"
+            >
+              3
+            </button>
+            <span class="px-3 py-2 text-sm text-gray-500">...</span>
+            <button
+              class="px-3 py-2 text-sm text-gray-700 hover:text-red-600 rounded-lg"
+            >
+              12
+            </button>
+            <button class="px-3 py-2 text-sm text-gray-700 hover:text-gray-900">
+              Siguiente
+            </button>
+          </nav>
+        </div>
+      </main>
     </div>
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-12 mt-16">
@@ -1231,8 +1148,8 @@
         font_size: 16,
       };
 
-      let currentView = 3; // 1, 2, or 3 columns
-      let filtersVisible = true;
+      let currentView = 4; // 1, 2, or 4 columns
+      let advancedFiltersVisible = false;
 
       // Property data with different detail levels
       const propertyData = [
@@ -1334,19 +1251,22 @@
         },
       ];
 
-      // Toggle filters visibility
-      function toggleFilters() {
-        const sidebar = document.getElementById("filters-sidebar");
-        const toggleText = document.getElementById("filter-toggle-text");
+      // Toggle advanced filters visibility
+      function toggleAdvancedFilters() {
+        const advancedFilters = document.getElementById("advanced-filters");
+        const toggleText = document.getElementById("advanced-filters-text");
+        const toggleIcon = document.getElementById("advanced-filters-icon");
 
-        filtersVisible = !filtersVisible;
+        advancedFiltersVisible = !advancedFiltersVisible;
 
-        if (filtersVisible) {
-          sidebar.classList.remove("hidden");
-          if (toggleText) toggleText.textContent = "Ocultar Filtros";
+        if (advancedFiltersVisible) {
+          advancedFilters.classList.remove("hidden");
+          toggleText.textContent = "Menos filtros";
+          toggleIcon.style.transform = "rotate(180deg)";
         } else {
-          sidebar.classList.add("hidden");
-          if (toggleText) toggleText.textContent = "Mostrar Filtros";
+          advancedFilters.classList.add("hidden");
+          toggleText.textContent = "Más filtros";
+          toggleIcon.style.transform = "rotate(0deg)";
         }
       }
 
@@ -1367,9 +1287,14 @@
         if (columns === 1) {
           container.classList.add("list-view", "grid-cols-1");
         } else if (columns === 2) {
-          container.classList.add("md:grid-cols-2");
-        } else {
-          container.classList.add("md:grid-cols-2", "lg:grid-cols-3");
+          container.classList.add("grid-cols-1", "md:grid-cols-2");
+        } else if (columns === 4) {
+          container.classList.add(
+            "grid-cols-1",
+            "md:grid-cols-2",
+            "lg:grid-cols-3",
+            "xl:grid-cols-4"
+          );
         }
 
         // Re-render properties with appropriate detail level
@@ -1544,8 +1469,8 @@
                                       property.neighborhood
                                     }</h4>
                                     <p class="text-gray-500 text-xs mb-2">${
-                                      property.neighborhood
-                                    }, ${property.location}</p>
+                                      property.location
+                                    }</p>
                                 </div>
                                 <span class="text-2xl font-bold text-red-600">${
                                   property.price
@@ -1557,12 +1482,12 @@
                         </div>
                     </a>
                 `;
-        } else {
-          // 3 column view - solo características básicas (sin etiquetas)
+        } else if (viewType === 4) {
+          // 4 column view - solo características básicas (sin etiquetas)
           card.innerHTML = `
                     <a href="#" class="property-card-link">
-                        <div class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative">
-                            <div class="absolute bottom-4 left-4 flex gap-2">
+                        <div class="property-image h-40 bg-gradient-to-br from-gray-200 to-gray-300 relative">
+                            <div class="absolute bottom-2 left-2 flex gap-1">
                                 <span class="bg-gray-800 bg-opacity-75 text-white px-2 py-1 rounded text-xs font-medium">${
                                   property.type
                                 }</span>
@@ -1570,25 +1495,23 @@
                                   property.condition
                                 }</span>
                             </div>
-                            <div class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">
+                            <div class="absolute bottom-2 right-2 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-xs">
                                 1/8
                             </div>
                         </div>
-                        <div class="property-content p-6">
-                            <div class="mb-4">
-                                <div class="flex-1">
-                                    <h4 class="text-xl font-semibold text-gray-900 mb-1">${
-                                      property.neighborhood
-                                    }</h4>
-                                    <p class="text-gray-500 text-xs mb-2">${
-                                      property.neighborhood
-                                    }, ${property.location}</p>
-                                </div>
-                                <span class="text-2xl font-bold text-red-600">${
+                        <div class="property-content p-4">
+                            <div class="mb-3">
+                                <h4 class="text-lg font-semibold text-gray-900 mb-1">${
+                                  property.neighborhood
+                                }</h4>
+                                <p class="text-gray-500 text-xs mb-2">${
+                                  property.location
+                                }</p>
+                                <span class="text-xl font-bold text-red-600">${
                                   property.price
                                 }</span>
                             </div>
-                            <div class="property-details grid grid-cols-2 gap-3 text-sm text-gray-600">
+                            <div class="property-details grid grid-cols-2 gap-2 text-xs text-gray-600">
                                 ${
                                   property.bedrooms
                                     ? `<div class="flex items-center"><span class="mr-1">🛏️</span>${property.bedrooms} dorm</div>`
@@ -1608,8 +1531,6 @@
                                   property.garages !== null
                                     ? `<div class="flex items-center"><span class="mr-1">🚗</span>${
                                         property.garages || "Sin"
-                                      } cochera${
-                                        property.garages !== 1 ? "s" : ""
                                       }</div>`
                                     : ""
                                 }
@@ -1622,43 +1543,6 @@
         return card;
       }
 
-      // Price range functionality
-      function updatePriceRange() {
-        const minSlider = document.getElementById("price-range-min");
-        const maxSlider = document.getElementById("price-range-max");
-        const minInput = document.getElementById("price-min");
-        const maxInput = document.getElementById("price-max");
-        const minDisplay = document.getElementById("price-display-min");
-        const maxDisplay = document.getElementById("price-display-max");
-
-        function formatPrice(value) {
-          if (value >= 1000000) {
-            return `$${Math.round(value / 1000000)}M`;
-          } else if (value >= 1000) {
-            return `$${Math.round(value / 1000)}K`;
-          } else {
-            return `$${value}`;
-          }
-        }
-
-        function updateDisplays() {
-          const minVal = parseInt(minSlider.value);
-          const maxVal = parseInt(maxSlider.value);
-
-          minDisplay.textContent = formatPrice(minVal);
-          maxDisplay.textContent =
-            maxVal >= 500000000 ? "$500M+" : formatPrice(maxVal);
-
-          minInput.value = formatPrice(minVal);
-          maxInput.value = maxVal >= 500000000 ? "$500M+" : formatPrice(maxVal);
-        }
-
-        minSlider.addEventListener("input", updateDisplays);
-        maxSlider.addEventListener("input", updateDisplays);
-
-        updateDisplays();
-      }
-
       // Event listeners for view buttons
       document
         .getElementById("view-1")
@@ -1667,16 +1551,13 @@
         .getElementById("view-2")
         .addEventListener("click", () => updateView(2));
       document
-        .getElementById("view-3")
-        .addEventListener("click", () => updateView(3));
+        .getElementById("view-4")
+        .addEventListener("click", () => updateView(4));
 
-      // Filter toggle event listeners
+      // Advanced filters toggle event listener
       document
-        .getElementById("toggle-filters")
-        .addEventListener("click", toggleFilters);
-      document
-        .getElementById("toggle-filters-desktop")
-        .addEventListener("click", toggleFilters);
+        .getElementById("toggle-advanced-filters")
+        .addEventListener("click", toggleAdvancedFilters);
 
       // Zone data for each department
       const zoneData = {
@@ -1775,10 +1656,9 @@
         zoneSelect.innerHTML =
           '<option value="">Seleccione primero un departamento</option>';
 
-        // Reset price range sliders
-        document.getElementById("price-range-min").value = 0;
-        document.getElementById("price-range-max").value = 500000000;
-        updatePriceRange();
+        // Reset price inputs
+        document.getElementById("price-min").value = "";
+        document.getElementById("price-max").value = "";
 
         // Reset bedroom/bathroom buttons
         document.querySelectorAll(".filter-section button").forEach((btn) => {
@@ -1805,7 +1685,6 @@
 
       // Initialize page
       document.addEventListener("DOMContentLoaded", function () {
-        updatePriceRange();
         renderProperties();
         setupLocationSelectors();
       });
@@ -1954,7 +1833,7 @@
           if (b) {
             var d = b.createElement("script");
             d.innerHTML =
-              "window.__CF$cv$params={r:'99974a6cb3341fe4',t:'MTc2MjI5MjY0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+              "window.__CF$cv$params={r:'9997707750401fe4',t:'MTc2MjI5NDIwNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
             b.getElementsByTagName("head")[0].appendChild(d);
           }
         }
