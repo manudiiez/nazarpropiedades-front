@@ -1,0 +1,2096 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todas las Propiedades - Inmobiliaria Mendoza</title>
+    <script src="/_sdk/element_sdk.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#D82C2C",
+              "background-light": "#FFFFFF",
+              "background-dark": "#1a1a1a",
+              "surface-light": "#F4F4F7",
+              "surface-dark": "#2c2c2c",
+              "text-light": "#212529",
+              "text-dark": "#f0f0f0",
+              "text-muted-light": "#6c757d",
+              "text-muted-dark": "#a0a0a0",
+              "border-light": "#e9ecef",
+              "border-dark": "#444444",
+              "accent-red": "#CC3333",
+            },
+            fontFamily: {
+              display: ["Manrope", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            maxWidth: {
+              container: "1280px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+
+      .property-card {
+        transition: all 0.3s ease;
+      }
+
+      .property-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .filter-input:focus {
+        outline: none;
+        border-color: #dc2626;
+        box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+      }
+
+      .btn-primary {
+        background-color: #dc2626;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #b91c1c;
+      }
+
+      .view-btn {
+        transition: all 0.3s ease;
+      }
+
+      .view-btn.active {
+        background-color: #dc2626;
+        color: white;
+      }
+
+      .view-btn:not(.active) {
+        background-color: #f9fafb;
+        color: #6b7280;
+      }
+
+      .view-btn:not(.active):hover {
+        background-color: #f3f4f6;
+        color: #374151;
+      }
+
+      .filter-section {
+        border-bottom: 1px solid #f3f4f6;
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .filter-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .price-range-slider {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 4px;
+        background: #e5e7eb;
+        border-radius: 2px;
+        outline: none;
+      }
+
+      .price-range-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background: #dc2626;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .price-range-slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background: #dc2626;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+      }
+
+      .checkbox-custom {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 2px solid #d1d5db;
+        border-radius: 3px;
+        background: white;
+        cursor: pointer;
+        position: relative;
+        transition: all 0.2s ease;
+      }
+
+      .checkbox-custom:checked {
+        background: #dc2626;
+        border-color: #dc2626;
+      }
+
+      .checkbox-custom:checked::after {
+        content: "✓";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+      }
+
+      .list-view .property-card {
+        display: flex;
+        align-items: stretch;
+        margin-bottom: 1.5rem;
+      }
+
+      .list-view .property-image {
+        width: 384px;
+        height: 256px;
+        flex-shrink: 0;
+      }
+
+      .list-view .property-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      @media (max-width: 768px) {
+        .list-view .property-card {
+          flex-direction: column;
+        }
+
+        .list-view .property-image {
+          width: 100%;
+        }
+      }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <nav
+      id="navbar"
+      class="fixed w-full top-0 z-50 transition-all duration-300"
+    >
+      <div class="max-w-container mx-auto px-6">
+        <div class="flex justify-between items-center h-20">
+          <!-- <div class="flex justify-between items-center h-16"> -->
+          <!-- <div class="text-xl font-semibold text-gray-900">
+            <img src="./imagenes/logo.png" alt="Nazar Propiedades Logo" class="h-6 inline-block mr-2" />
+            Nazar Propiedades
+          </div> -->
+          <div class="text-xl font-semibold text-gray-900">
+            <img
+              src="./imagenes/brand.png"
+              alt="Nazar Propiedades Logo"
+              class="h-14 inline-block mr-2"
+            />
+          </div>
+
+          <div class="hidden md:flex items-center space-x-8">
+            <!-- Dropdown Inicio -->
+            <div class="relative group">
+              <button
+                class="text-gray-900 font-medium flex items-center hover:text-gray-700 transition-colors"
+              >
+                Inicio
+                <svg
+                  class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+              >
+                <div class="py-2">
+                  <a
+                    href="./index.html"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    >Inicio</a
+                  >
+                  <a
+                    href="./index2.html"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    >Inicio 2</a
+                  >
+                  <a
+                    href="./index3.html"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    >Inicio 3</a
+                  >
+                  <a
+                    href="./index4.html"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    >Inicio 4</a
+                  >
+                  <a
+                    href="./index5.html"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    >Inicio 5</a
+                  >
+                  <a
+                    href="./index6.html"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    >Inicio 6</a
+                  >
+                  <a
+                    href="./index7.html"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    >Inicio 7</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="relative group">
+              <button
+                class="text-gray-900 font-medium flex items-center hover:text-gray-700 transition-colors"
+              >
+                Propiedades
+                <svg
+                  class="w-4 h-4 ml-1 transition-transform group-hover:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+              <!-- Dropdown menu -->
+              <div
+                class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+              >
+                <div class="py-2">
+                  <a
+                    href="./propiedades.html"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    >Propiedades</a
+                  >
+                  <a
+                    href="./propiedades2.html"
+                    class="block px-4 py-2 text-gray-700 hover:bg-gray-100 transition-colors"
+                    >Propiedades 2</a
+                  >
+                </div>
+              </div>
+            </div>
+            <a
+              href="#servicios"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
+              >Servicios</a
+            >
+            <a
+              href="#contacto"
+              class="text-gray-600 hover:text-gray-900 transition-colors"
+              >Contacto</a
+            >
+          </div>
+
+          <button
+            class="hidden md:block bg-accent-red hover:bg-red-700 text-white px-4 py-2 text-sm font-medium rounded-lg transition-colors"
+          >
+            Publicar mi propiedad
+          </button>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-600">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden hidden bg-white border-t border-gray-border"
+      >
+        <div class="px-6 py-4 space-y-3">
+          <!-- Dropdown Inicio Mobile -->
+          <div>
+            <button
+              id="mobile-inicio-btn"
+              class="w-full text-left text-gray-900 font-medium flex items-center justify-between"
+            >
+              Inicio
+              <svg
+                id="mobile-inicio-icon"
+                class="w-4 h-4 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div id="mobile-inicio-submenu" class="hidden pl-4 mt-2 space-y-2">
+              <a href="./index.html" class="block text-gray-600 py-1">Inicio</a>
+              <a href="./index2.html" class="block text-gray-600 py-1"
+                >Inicio 2</a
+              >
+              <a href="./index3.html" class="block text-gray-600 py-1"
+                >Inicio 3</a
+              >
+              <a href="./index4.html" class="block text-gray-600 py-1"
+                >Inicio 4</a
+              >
+              <a href="./index5.html" class="block text-gray-600 py-1"
+                >Inicio 5</a
+              >
+              <a href="./index6.html" class="block text-gray-600 py-1"
+                >Inicio 6</a
+              >
+              <a href="./index7.html" class="block text-gray-600 py-1"
+                >Inicio 7</a
+              >
+            </div>
+          </div>
+          <a href="./propiedades.html" class="block text-gray-600"
+            >Propiedades</a
+          >
+          <a href="#servicios" class="block text-gray-600">Servicios</a>
+          <a href="#contacto" class="block text-gray-600">Contacto</a>
+          <button
+            class="w-full bg-accent-red text-white px-4 py-2 text-sm font-medium rounded-lg mt-4"
+          >
+            Publicar mi propiedad
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <!-- Page Header -->
+      <div class="mb-8">
+        <h1 id="page-title" class="text-3xl font-light text-gray-900 mb-2">
+          Todas las Propiedades
+        </h1>
+        <p class="text-gray-600">
+          Encontrá tu hogar ideal entre nuestra selección de propiedades
+        </p>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Filters Sidebar -->
+        <aside
+          id="filters-sidebar"
+          class="lg:w-80 flex-shrink-0 transition-all duration-300"
+        >
+          <div
+            class="bg-white rounded-lg shadow-sm border border-gray-100 p-6 sticky top-24"
+          >
+            <div class="flex items-center justify-between mb-6">
+              <h3 id="filter-title" class="text-lg font-semibold text-gray-900">
+                Filtros
+              </h3>
+              <button
+                id="clear-filters"
+                class="text-sm text-red-600 hover:text-red-700 font-medium"
+              >
+                Limpiar todo
+              </button>
+            </div>
+            <!-- Quick Search -->
+            <div class="filter-section">
+              <label class="block text-sm font-medium text-gray-700 mb-3"
+                >Búsqueda rápida</label
+              >
+              <input
+                type="text"
+                placeholder="Buscar por ubicación, código..."
+                class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg"
+              />
+            </div>
+            <!-- Property Type -->
+            <div class="filter-section">
+              <label class="block text-sm font-medium text-gray-700 mb-3"
+                >Tipo de propiedad</label
+              >
+              <select
+                class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg"
+              >
+                <option value="">Todos los tipos</option>
+                <option value="casa">Casa</option>
+                <option value="departamento">Departamento</option>
+                <option value="ph">PH</option>
+                <option value="duplex">Duplex</option>
+                <option value="lote">Lote</option>
+                <option value="quinta">Quinta</option>
+                <option value="chacra">Chacra</option>
+                <option value="local">Local comercial</option>
+                <option value="oficina">Oficina</option>
+                <option value="galpon">Galpón</option>
+                <option value="cochera">Cochera</option>
+                <option value="edificio">Edificio</option>
+              </select>
+            </div>
+            <!-- Condition -->
+            <div class="filter-section">
+              <label class="block text-sm font-medium text-gray-700 mb-3"
+                >Condición</label
+              >
+              <select
+                class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg"
+              >
+                <option value="">Todas las condiciones</option>
+                <option value="venta">Venta</option>
+                <option value="alquiler">Alquiler</option>
+                <option value="permuta">Permuta</option>
+                <option value="alquiler-temporario">Alquiler Temporario</option>
+              </select>
+            </div>
+            <!-- Location -->
+            <div class="filter-section">
+              <label class="block text-sm font-medium text-gray-700 mb-3"
+                >Departamento</label
+              >
+              <select
+                id="department-select"
+                class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg mb-3"
+              >
+                <option value="">Todos los departamentos</option>
+                <option value="capital">Capital</option>
+                <option value="godoy-cruz">Godoy Cruz</option>
+                <option value="las-heras">Las Heras</option>
+                <option value="maipu">Maipú</option>
+                <option value="lujan-cuyo">Luján de Cuyo</option>
+                <option value="guaymallen">Guaymallén</option>
+                <option value="san-martin">San Martín</option>
+                <option value="rivadavia">Rivadavia</option>
+                <option value="junin">Junín</option>
+                <option value="san-rafael">San Rafael</option>
+              </select>
+              <label class="block text-sm font-medium text-gray-700 mb-3"
+                >Zona</label
+              >
+              <select
+                id="zone-select"
+                class="filter-input w-full px-4 py-2 border border-gray-200 rounded-lg"
+                disabled
+              >
+                <option value="">Seleccione primero un departamento</option>
+              </select>
+            </div>
+            <!-- Bedrooms -->
+            <div class="filter-section">
+              <label class="block text-sm font-medium text-gray-700 mb-3"
+                >Dormitorios</label
+              >
+              <div class="grid grid-cols-3 gap-2">
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  1+
+                </button>
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  2+
+                </button>
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  3+
+                </button>
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  4+
+                </button>
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  5+
+                </button>
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  6+
+                </button>
+              </div>
+            </div>
+            <!-- Bathrooms -->
+            <div class="filter-section">
+              <label class="block text-sm font-medium text-gray-700 mb-3"
+                >Baños</label
+              >
+              <div class="grid grid-cols-3 gap-2">
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  1+
+                </button>
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  2+
+                </button>
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  3+
+                </button>
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  4+
+                </button>
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  5+
+                </button>
+                <button
+                  class="px-3 py-2 text-sm border border-gray-200 rounded-lg hover:border-red-600 hover:text-red-600 transition-colors"
+                >
+                  6+
+                </button>
+              </div>
+            </div>
+            <!-- Price Range -->
+            <div class="filter-section">
+              <label class="block text-sm font-medium text-gray-700 mb-3"
+                >Rango de precio</label
+              >
+              <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                  <input
+                    type="text"
+                    id="price-min"
+                    placeholder="Mínimo"
+                    class="filter-input flex-1 px-2 py-2 border border-gray-200 rounded-lg text-xs min-w-0"
+                  />
+                  <span class="text-gray-400 text-sm">-</span>
+                  <input
+                    type="text"
+                    id="price-max"
+                    placeholder="Máximo"
+                    class="filter-input flex-1 px-2 py-2 border border-gray-200 rounded-lg text-xs min-w-0"
+                  />
+                </div>
+                <div class="space-y-2 px-1">
+                  <input
+                    type="range"
+                    id="price-range-min"
+                    min="0"
+                    max="500000000"
+                    value="0"
+                    class="price-range-slider w-full"
+                  />
+                  <input
+                    type="range"
+                    id="price-range-max"
+                    min="0"
+                    max="500000000"
+                    value="500000000"
+                    class="price-range-slider w-full"
+                  />
+                </div>
+                <div class="flex justify-between text-xs text-gray-500 px-1">
+                  <span id="price-display-min">$0</span>
+                  <span id="price-display-max">$500M+</span>
+                </div>
+              </div>
+            </div>
+            <!-- Features -->
+            <div class="filter-section">
+              <label class="block text-sm font-medium text-gray-700 mb-3"
+                >Características</label
+              >
+              <div class="space-y-3">
+                <label class="flex items-center">
+                  <input type="checkbox" class="checkbox-custom mr-3" />
+                  <span class="text-sm text-gray-700">Pileta</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" class="checkbox-custom mr-3" />
+                  <span class="text-sm text-gray-700">Jardín</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" class="checkbox-custom mr-3" />
+                  <span class="text-sm text-gray-700">Cochera</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" class="checkbox-custom mr-3" />
+                  <span class="text-sm text-gray-700">Quincho</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" class="checkbox-custom mr-3" />
+                  <span class="text-sm text-gray-700">Balcón</span>
+                </label>
+              </div>
+            </div>
+            <!-- Apply Filters Button -->
+            <button
+              class="w-full btn-primary text-white py-3 rounded-lg font-medium mt-6"
+            >
+              Aplicar Filtros
+            </button>
+          </div>
+        </aside>
+        <!-- Properties Grid -->
+        <main class="flex-1">
+          <!-- Results Header -->
+          <div
+            class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6"
+          >
+            <p class="text-gray-600">
+              <span id="results-count" class="font-semibold text-gray-900"
+                >298</span
+              >
+              <span id="results-text">propiedades encontradas</span>
+            </p>
+            <div
+              class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3"
+            >
+              <!-- Filter Toggle Button -->
+              <button
+                id="toggle-filters"
+                class="lg:hidden flex items-center justify-center px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium"
+              >
+                <svg
+                  class="w-4 h-4 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+                  />
+                </svg>
+                Filtros
+              </button>
+              <button
+                id="toggle-filters-desktop"
+                class="hidden lg:flex items-center justify-center px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium"
+              >
+                <svg
+                  class="w-4 h-4 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewbox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+                  />
+                </svg>
+                <span id="filter-toggle-text">Ocultar Filtros</span>
+              </button>
+              <!-- View Toggle Buttons -->
+              <div class="flex bg-gray-100 rounded-lg p-1">
+                <button
+                  id="view-3"
+                  class="view-btn active px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+                    <path
+                      d="M3 3h6v6H3V3zm8 0h6v6h-6V3zm8 0h6v6h-6V3zM3 11h6v6H3v-6zm8 0h6v6h-6v-6zm8 0h6v6h-6v-6zM3 19h6v6H3v-6zm8 0h6v6h-6v-6zm8 0h6v6h-6v-6z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  id="view-2"
+                  class="view-btn px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+                    <path
+                      d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"
+                    />
+                  </svg>
+                </button>
+                <button
+                  id="view-1"
+                  class="view-btn px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24">
+                    <path d="M3 3h18v4H3V3zm0 6h18v4H3V9zm0 6h18v4H3v-4z" />
+                  </svg>
+                </button>
+              </div>
+              <!-- Sort Dropdown -->
+              <select
+                class="filter-input px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm"
+              >
+                <option>Ordenar por</option>
+                <option>Precio: Menor a Mayor</option>
+                <option>Precio: Mayor a Menor</option>
+                <option>Más Recientes</option>
+                <option>Más Antiguos</option>
+                <option>Superficie</option>
+              </select>
+            </div>
+          </div>
+          <!-- Properties Container -->
+          <div
+            id="properties-container"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            <!-- Property Card 1 -->
+            <div
+              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+            >
+              <div
+                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+              >
+                <div class="absolute top-4 left-4 flex gap-2">
+                  <span
+                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Casa</span
+                  >
+                  <span
+                    class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Venta</span
+                  >
+                </div>
+                <div
+                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+                >
+                  1/8
+                </div>
+              </div>
+              <div class="property-content p-6">
+                <div class="flex justify-between items-start mb-3">
+                  <div>
+                    <h4 class="text-xl font-semibold text-gray-900">
+                      Barrio Palmares
+                    </h4>
+                    <p class="text-gray-600 text-sm">Godoy Cruz, Mendoza</p>
+                  </div>
+                  <span class="text-2xl font-bold text-red-600">$85M</span>
+                </div>
+                <div
+                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+                >
+                  <div class="flex items-center">
+                    <span class="mr-1">🛏️</span> <span>3 dorm</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-1">🚿</span> <span>2 baños</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-1">📐</span> <span>180m²</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+                >
+                  Ver Detalles
+                </button>
+              </div>
+            </div>
+            <!-- Property Card 2 -->
+            <div
+              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+            >
+              <div
+                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+              >
+                <div class="absolute top-4 left-4 flex gap-2">
+                  <span
+                    class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Depto</span
+                  >
+                  <span
+                    class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Alquiler</span
+                  >
+                </div>
+                <div
+                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+                >
+                  1/6
+                </div>
+              </div>
+              <div class="property-content p-6">
+                <div class="flex justify-between items-start mb-3">
+                  <div>
+                    <h4 class="text-xl font-semibold text-gray-900">Centro</h4>
+                    <p class="text-gray-600 text-sm">Ciudad, Mendoza</p>
+                  </div>
+                  <span class="text-2xl font-bold text-red-600">$65K</span>
+                </div>
+                <div
+                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+                >
+                  <div class="flex items-center">
+                    <span class="mr-1">🛏️</span> <span>2 dorm</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-1">🚿</span> <span>1 baño</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-1">📐</span> <span>95m²</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+                >
+                  Ver Detalles
+                </button>
+              </div>
+            </div>
+            <!-- Property Card 3 -->
+            <div
+              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+            >
+              <div
+                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+              >
+                <div class="absolute top-4 left-4 flex gap-2">
+                  <span
+                    class="bg-yellow-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Lote</span
+                  >
+                  <span
+                    class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Venta</span
+                  >
+                </div>
+                <div
+                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+                >
+                  1/4
+                </div>
+              </div>
+              <div class="property-content p-6">
+                <div class="flex justify-between items-start mb-3">
+                  <div>
+                    <h4 class="text-xl font-semibold text-gray-900">
+                      Los Álamos
+                    </h4>
+                    <p class="text-gray-600 text-sm">Maipú, Mendoza</p>
+                  </div>
+                  <span class="text-2xl font-bold text-red-600">$45M</span>
+                </div>
+                <div
+                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+                >
+                  <div class="flex items-center">
+                    <span class="mr-1">📐</span> <span>500m²</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-1">🏗️</span> <span>Listo</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+                >
+                  Ver Detalles
+                </button>
+              </div>
+            </div>
+            <!-- Property Card 4 -->
+            <div
+              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+            >
+              <div
+                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+              >
+                <div class="absolute top-4 left-4 flex gap-2">
+                  <span
+                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Casa</span
+                  >
+                  <span
+                    class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Venta</span
+                  >
+                </div>
+                <div
+                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+                >
+                  1/10
+                </div>
+              </div>
+              <div class="property-content p-6">
+                <div class="flex justify-between items-start mb-3">
+                  <div>
+                    <h4 class="text-xl font-semibold text-gray-900">
+                      Villa Nueva
+                    </h4>
+                    <p class="text-gray-600 text-sm">Las Heras, Mendoza</p>
+                  </div>
+                  <span class="text-2xl font-bold text-red-600">$120M</span>
+                </div>
+                <div
+                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+                >
+                  <div class="flex items-center">
+                    <span class="mr-1">🛏️</span> <span>4 dorm</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-1">🚿</span> <span>3 baños</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-1">📐</span> <span>250m²</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+                >
+                  Ver Detalles
+                </button>
+              </div>
+            </div>
+            <!-- Property Card 5 -->
+            <div
+              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+            >
+              <div
+                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+              >
+                <div class="absolute top-4 left-4 flex gap-2">
+                  <span
+                    class="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Depto</span
+                  >
+                  <span
+                    class="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Alquiler</span
+                  >
+                </div>
+                <div
+                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+                >
+                  1/5
+                </div>
+              </div>
+              <div class="property-content p-6">
+                <div class="flex justify-between items-start mb-3">
+                  <div>
+                    <h4 class="text-xl font-semibold text-gray-900">
+                      Microcentro
+                    </h4>
+                    <p class="text-gray-600 text-sm">Ciudad, Mendoza</p>
+                  </div>
+                  <span class="text-2xl font-bold text-red-600">$55K</span>
+                </div>
+                <div
+                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+                >
+                  <div class="flex items-center">
+                    <span class="mr-1">🛏️</span> <span>1 dorm</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-1">🚿</span> <span>1 baño</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-1">📐</span> <span>65m²</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+                >
+                  Ver Detalles
+                </button>
+              </div>
+            </div>
+            <!-- Property Card 6 -->
+            <div
+              class="property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden"
+            >
+              <div
+                class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative"
+              >
+                <div class="absolute top-4 left-4 flex gap-2">
+                  <span
+                    class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Casa</span
+                  >
+                  <span
+                    class="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-medium"
+                    >Venta</span
+                  >
+                </div>
+                <div
+                  class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm"
+                >
+                  1/7
+                </div>
+              </div>
+              <div class="property-content p-6">
+                <div class="flex justify-between items-start mb-3">
+                  <div>
+                    <h4 class="text-xl font-semibold text-gray-900">
+                      Chacras de Coria
+                    </h4>
+                    <p class="text-gray-600 text-sm">Luján de Cuyo, Mendoza</p>
+                  </div>
+                  <span class="text-2xl font-bold text-red-600">$95M</span>
+                </div>
+                <div
+                  class="property-details grid grid-cols-2 gap-4 text-sm text-gray-600 mb-4"
+                >
+                  <div class="flex items-center">
+                    <span class="mr-1">🛏️</span> <span>3 dorm</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-1">🚿</span> <span>2 baños</span>
+                  </div>
+                  <div class="flex items-center">
+                    <span class="mr-1">📐</span> <span>160m²</span>
+                  </div>
+                </div>
+                <button
+                  class="w-full btn-primary text-white py-2 rounded-lg font-medium"
+                >
+                  Ver Detalles
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Pagination -->
+          <div class="flex justify-center mt-12">
+            <nav class="flex items-center space-x-2">
+              <button
+                class="px-3 py-2 text-sm text-gray-500 hover:text-gray-700 disabled:opacity-50"
+                disabled
+              >
+                Anterior
+              </button>
+              <button
+                class="px-3 py-2 text-sm bg-red-600 text-white rounded-lg"
+              >
+                1
+              </button>
+              <button
+                class="px-3 py-2 text-sm text-gray-700 hover:text-red-600 rounded-lg"
+              >
+                2
+              </button>
+              <button
+                class="px-3 py-2 text-sm text-gray-700 hover:text-red-600 rounded-lg"
+              >
+                3
+              </button>
+              <span class="px-3 py-2 text-sm text-gray-500">...</span>
+              <button
+                class="px-3 py-2 text-sm text-gray-700 hover:text-red-600 rounded-lg"
+              >
+                12
+              </button>
+              <button
+                class="px-3 py-2 text-sm text-gray-700 hover:text-gray-900"
+              >
+                Siguiente
+              </button>
+            </nav>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 mt-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Inmobiliaria Mendoza</h4>
+            <p class="text-gray-400">
+              Tu socio de confianza en bienes raíces desde 1995
+            </p>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Propiedades</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors">Casas</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Departamentos</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors">Lotes</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Comerciales</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Servicios</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>
+                <a href="#" class="hover:text-white transition-colors">Venta</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Alquiler</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Tasaciones</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Administración</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-lg font-semibold mb-4">Contacto</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li>📍 Av. San Martín 1234, Mendoza</li>
+              <li>📞 (0261) 412-3456</li>
+              <li>✉️ info@inmobiliariamendoza.com</li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400"
+        >
+          <p>© 2024 Inmobiliaria Mendoza. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Default configuration
+      const defaultConfig = {
+        page_title: "Todas las Propiedades",
+        filter_title: "Filtros",
+        results_text: "propiedades encontradas",
+        background_color: "#ffffff",
+        surface_color: "#ffffff",
+        text_color: "#111827",
+        primary_action_color: "#dc2626",
+        secondary_action_color: "#6b7280",
+        font_family: "Inter",
+        font_size: 16,
+      };
+
+      let currentView = 3; // 1, 2, or 3 columns
+      let filtersVisible = true;
+
+      // Property data with different detail levels
+      const propertyData = [
+        {
+          id: 1,
+          type: "Casa",
+          condition: "Venta",
+          neighborhood: "Barrio Palmares",
+          location: "Godoy Cruz, Mendoza",
+          price: "$85.000.000",
+          bedrooms: 3,
+          bathrooms: 2,
+          totalArea: 180,
+          coveredArea: 150,
+          garages: 2,
+          rooms: 5,
+          expenses: null,
+          features: ["Pileta", "Jardín", "Quincho"],
+        },
+        {
+          id: 2,
+          type: "Depto",
+          condition: "Alquiler",
+          neighborhood: "Centro",
+          location: "Ciudad, Mendoza",
+          price: "$65.000",
+          bedrooms: 2,
+          bathrooms: 1,
+          totalArea: 95,
+          coveredArea: 85,
+          garages: 1,
+          rooms: 3,
+          expenses: "$15.000",
+          features: ["Balcón", "Portero"],
+        },
+        {
+          id: 3,
+          type: "Lote",
+          condition: "Venta",
+          neighborhood: "Los Álamos",
+          location: "Maipú, Mendoza",
+          price: "$45.000.000",
+          bedrooms: null,
+          bathrooms: null,
+          totalArea: 500,
+          coveredArea: null,
+          garages: null,
+          rooms: null,
+          expenses: null,
+          features: ["Barrio privado", "Servicios"],
+        },
+        {
+          id: 4,
+          type: "Casa",
+          condition: "Venta",
+          neighborhood: "Villa Nueva",
+          location: "Las Heras, Mendoza",
+          price: "$120.000.000",
+          bedrooms: 4,
+          bathrooms: 3,
+          totalArea: 250,
+          coveredArea: 200,
+          garages: 3,
+          rooms: 7,
+          expenses: null,
+          features: ["Pileta", "Quincho", "Parque"],
+        },
+        {
+          id: 5,
+          type: "Depto",
+          condition: "Alquiler",
+          neighborhood: "Microcentro",
+          location: "Ciudad, Mendoza",
+          price: "$55.000",
+          bedrooms: 1,
+          bathrooms: 1,
+          totalArea: 65,
+          coveredArea: 60,
+          garages: 0,
+          rooms: 2,
+          expenses: "$12.000",
+          features: ["Balcón"],
+        },
+        {
+          id: 6,
+          type: "Casa",
+          condition: "Venta",
+          neighborhood: "Chacras de Coria",
+          location: "Luján de Cuyo, Mendoza",
+          price: "$95.000.000",
+          bedrooms: 3,
+          bathrooms: 2,
+          totalArea: 160,
+          coveredArea: 140,
+          garages: 1,
+          rooms: 5,
+          expenses: null,
+          features: ["Jardín", "Asador"],
+        },
+      ];
+
+      // Toggle filters visibility
+      function toggleFilters() {
+        const sidebar = document.getElementById("filters-sidebar");
+        const toggleText = document.getElementById("filter-toggle-text");
+
+        filtersVisible = !filtersVisible;
+
+        if (filtersVisible) {
+          sidebar.classList.remove("hidden");
+          if (toggleText) toggleText.textContent = "Ocultar Filtros";
+        } else {
+          sidebar.classList.add("hidden");
+          if (toggleText) toggleText.textContent = "Mostrar Filtros";
+        }
+      }
+
+      // View toggle functionality
+      function updateView(columns) {
+        currentView = columns;
+        const container = document.getElementById("properties-container");
+        const viewButtons = document.querySelectorAll(".view-btn");
+
+        // Update button states
+        viewButtons.forEach((btn) => btn.classList.remove("active"));
+        document.getElementById(`view-${columns}`).classList.add("active");
+
+        // Update grid classes
+        container.className = container.className.replace(/grid-cols-\d+/g, "");
+        container.classList.remove("list-view");
+
+        if (columns === 1) {
+          container.classList.add("list-view", "grid-cols-1");
+        } else if (columns === 2) {
+          container.classList.add("md:grid-cols-2");
+        } else {
+          container.classList.add("md:grid-cols-2", "lg:grid-cols-3");
+        }
+
+        // Re-render properties with appropriate detail level
+        renderProperties();
+      }
+
+      // Render properties based on current view
+      function renderProperties() {
+        const container = document.getElementById("properties-container");
+        container.innerHTML = "";
+
+        propertyData.forEach((property) => {
+          const card = createPropertyCard(property, currentView);
+          container.appendChild(card);
+        });
+      }
+
+      // Create property card based on view type
+      function createPropertyCard(property, viewType) {
+        const card = document.createElement("div");
+        card.className =
+          "property-card bg-white rounded-lg shadow-sm border border-gray-100 overflow-hidden";
+
+        // Create tags for additional features
+        const tags = [
+          "Amoblado",
+          "Permite mascotas",
+          "Apto profesional",
+          "Luminoso",
+          "Seguridad 24hs",
+        ];
+        const randomTags = tags
+          .sort(() => 0.5 - Math.random())
+          .slice(0, Math.floor(Math.random() * 3) + 1);
+        const tagsHtml = randomTags
+          .map(
+            (tag) =>
+              `<span class="inline-block bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded-full">${tag}</span>`
+          )
+          .join(" ");
+
+        if (viewType === 1) {
+          // List view - imagen más grande y más detalles
+          const characteristics = [];
+          if (property.bedrooms)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-2">🛏️</span><span class="font-medium">${property.bedrooms} dorm</span></div>`
+            );
+          if (property.bathrooms)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-2">🚿</span><span class="font-medium">${property.bathrooms} baños</span></div>`
+            );
+          if (property.totalArea)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-2">📐</span><span class="font-medium">${property.totalArea}m² tot</span></div>`
+            );
+          if (property.coveredArea)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-2">🏠</span><span class="font-medium">${property.coveredArea}m² cub</span></div>`
+            );
+          if (property.garages !== null)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-2">🚗</span><span class="font-medium">${property.garages} cocheras</span></div>`
+            );
+          if (property.rooms)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-2">🏡</span><span class="font-medium">${property.rooms} amb</span></div>`
+            );
+          if (property.expenses)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-2">💰</span><span class="font-medium">${property.expenses} exp</span></div>`
+            );
+
+          card.innerHTML = `
+                    <a href="#" class="flex hover:shadow-lg transition-shadow duration-300 bg-white rounded-lg overflow-hidden">
+                        <div class="property-image w-96 h-64 bg-gradient-to-br from-gray-200 to-gray-300 relative flex-shrink-0">
+                            <div class="absolute bottom-4 left-4 flex gap-2">
+                                <span class="bg-gray-800 bg-opacity-75 text-white px-2 py-1 rounded text-xs font-medium">${
+                                  property.type
+                                }</span>
+                                <span class="bg-gray-800 bg-opacity-75 text-white px-2 py-1 rounded text-xs font-medium">${
+                                  property.condition
+                                }</span>
+                            </div>
+                            <div class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">
+                                1/8
+                            </div>
+                        </div>
+                        <div class="property-content flex-1 p-6 flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="flex-1">
+                                        <h4 class="text-2xl font-semibold text-gray-900 mb-2">${
+                                          property.neighborhood
+                                        }</h4>
+                                        <p class="text-gray-600 text-sm mb-3">${
+                                          property.location
+                                        }</p>
+                                        <span class="text-3xl font-bold text-red-600">${
+                                          property.price
+                                        }</span>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    ${characteristics.join("")}
+                                </div>
+                                <div class="mb-4">
+                                    <h5 class="text-sm font-semibold text-gray-700 mb-2">Características destacadas:</h5>
+                                    <div class="flex flex-wrap gap-2">
+                                        ${property.features
+                                          .map(
+                                            (feature) =>
+                                              `<span class="inline-block bg-blue-50 text-blue-700 text-xs px-3 py-1 rounded-full font-medium">${feature}</span>`
+                                          )
+                                          .join("")}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mt-4">
+                                ${tagsHtml}
+                            </div>
+                        </div>
+                    </a>
+                `;
+        } else if (viewType === 2) {
+          // 2 column view - características principales + superficie cubierta y ambientes
+          const characteristics = [];
+          if (property.bedrooms)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-1">🛏️</span>${property.bedrooms} dorm</div>`
+            );
+          if (property.bathrooms)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-1">🚿</span>${property.bathrooms} baños</div>`
+            );
+          if (property.totalArea)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-1">📐</span>${property.totalArea}m² tot</div>`
+            );
+          if (property.coveredArea)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-1">🏠</span>${property.coveredArea}m² cub</div>`
+            );
+          if (property.garages !== null)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-1">🚗</span>${
+                property.garages || "Sin"
+              } cochera${property.garages !== 1 ? "s" : ""}</div>`
+            );
+          if (property.rooms)
+            characteristics.push(
+              `<div class="flex items-center text-sm text-gray-600"><span class="mr-1">🏡</span>${property.rooms} ambientes</div>`
+            );
+
+          card.innerHTML = `
+                    <a href="#" class="block hover:shadow-lg transition-shadow duration-300">
+                        <div class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative">
+                            <div class="absolute bottom-4 left-4 flex gap-2">
+                                <span class="bg-gray-800 bg-opacity-75 text-white px-2 py-1 rounded text-xs font-medium">${
+                                  property.type
+                                }</span>
+                                <span class="bg-gray-800 bg-opacity-75 text-white px-2 py-1 rounded text-xs font-medium">${
+                                  property.condition
+                                }</span>
+                            </div>
+                            <div class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">
+                                1/8
+                            </div>
+                        </div>
+                        <div class="property-content p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex-1">
+                                    <h4 class="text-xl font-semibold text-gray-900 mb-1">${
+                                      property.neighborhood
+                                    }</h4>
+                                    <p class="text-gray-500 text-xs">${
+                                      property.neighborhood
+                                    }, ${property.location}</p>
+                                </div>
+                                <span class="text-2xl font-bold text-red-600 ml-4">${
+                                  property.price
+                                }</span>
+                            </div>
+                            <div class="property-details grid grid-cols-3 gap-3 text-sm text-gray-600">
+                                ${characteristics.slice(0, 6).join("")}
+                            </div>
+                        </div>
+                    </a>
+                `;
+        } else {
+          // 3 column view - solo características básicas (sin etiquetas)
+          card.innerHTML = `
+                    <a href="#" class="block hover:shadow-lg transition-shadow duration-300">
+                        <div class="property-image h-48 bg-gradient-to-br from-gray-200 to-gray-300 relative">
+                            <div class="absolute bottom-4 left-4 flex gap-2">
+                                <span class="bg-gray-800 bg-opacity-75 text-white px-2 py-1 rounded text-xs font-medium">${
+                                  property.type
+                                }</span>
+                                <span class="bg-gray-800 bg-opacity-75 text-white px-2 py-1 rounded text-xs font-medium">${
+                                  property.condition
+                                }</span>
+                            </div>
+                            <div class="absolute bottom-4 right-4 bg-black bg-opacity-50 text-white px-2 py-1 rounded text-sm">
+                                1/8
+                            </div>
+                        </div>
+                        <div class="property-content p-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="flex-1">
+                                    <h4 class="text-xl font-semibold text-gray-900 mb-1">${
+                                      property.neighborhood
+                                    }</h4>
+                                    <p class="text-gray-500 text-xs">${
+                                      property.neighborhood
+                                    }, ${property.location}</p>
+                                </div>
+                                <span class="text-2xl font-bold text-red-600 ml-4">${
+                                  property.price
+                                }</span>
+                            </div>
+                            <div class="property-details grid grid-cols-2 gap-3 text-sm text-gray-600">
+                                ${
+                                  property.bedrooms
+                                    ? `<div class="flex items-center"><span class="mr-1">🛏️</span>${property.bedrooms} dorm</div>`
+                                    : ""
+                                }
+                                ${
+                                  property.bathrooms
+                                    ? `<div class="flex items-center"><span class="mr-1">🚿</span>${property.bathrooms} baños</div>`
+                                    : ""
+                                }
+                                ${
+                                  property.totalArea
+                                    ? `<div class="flex items-center"><span class="mr-1">📐</span>${property.totalArea}m²</div>`
+                                    : ""
+                                }
+                                ${
+                                  property.garages !== null
+                                    ? `<div class="flex items-center"><span class="mr-1">🚗</span>${
+                                        property.garages || "Sin"
+                                      } cochera${
+                                        property.garages !== 1 ? "s" : ""
+                                      }</div>`
+                                    : ""
+                                }
+                            </div>
+                        </div>
+                    </a>
+                `;
+        }
+
+        return card;
+      }
+
+      // Price range functionality
+      function updatePriceRange() {
+        const minSlider = document.getElementById("price-range-min");
+        const maxSlider = document.getElementById("price-range-max");
+        const minInput = document.getElementById("price-min");
+        const maxInput = document.getElementById("price-max");
+        const minDisplay = document.getElementById("price-display-min");
+        const maxDisplay = document.getElementById("price-display-max");
+
+        function formatPrice(value) {
+          if (value >= 1000000) {
+            return `$${Math.round(value / 1000000)}M`;
+          } else if (value >= 1000) {
+            return `$${Math.round(value / 1000)}K`;
+          } else {
+            return `$${value}`;
+          }
+        }
+
+        function updateDisplays() {
+          const minVal = parseInt(minSlider.value);
+          const maxVal = parseInt(maxSlider.value);
+
+          minDisplay.textContent = formatPrice(minVal);
+          maxDisplay.textContent =
+            maxVal >= 500000000 ? "$500M+" : formatPrice(maxVal);
+
+          minInput.value = formatPrice(minVal);
+          maxInput.value = maxVal >= 500000000 ? "$500M+" : formatPrice(maxVal);
+        }
+
+        minSlider.addEventListener("input", updateDisplays);
+        maxSlider.addEventListener("input", updateDisplays);
+
+        updateDisplays();
+      }
+
+      // Event listeners for view buttons
+      document
+        .getElementById("view-1")
+        .addEventListener("click", () => updateView(1));
+      document
+        .getElementById("view-2")
+        .addEventListener("click", () => updateView(2));
+      document
+        .getElementById("view-3")
+        .addEventListener("click", () => updateView(3));
+
+      // Filter toggle event listeners
+      document
+        .getElementById("toggle-filters")
+        .addEventListener("click", toggleFilters);
+      document
+        .getElementById("toggle-filters-desktop")
+        .addEventListener("click", toggleFilters);
+
+      // Zone data for each department
+      const zoneData = {
+        capital: [
+          { value: "centro", text: "Centro" },
+          { value: "microcentro", text: "Microcentro" },
+          { value: "quinta-seccion", text: "Quinta Sección" },
+          { value: "sexta-seccion", text: "Sexta Sección" },
+          { value: "parque-central", text: "Parque Central" },
+        ],
+        "godoy-cruz": [
+          { value: "godoy-cruz-centro", text: "Godoy Cruz Centro" },
+          { value: "parque-benegas", text: "Parque Benegas" },
+          { value: "palmares", text: "Palmares" },
+          { value: "san-vicente", text: "San Vicente" },
+          { value: "presidente-peron", text: "Presidente Perón" },
+        ],
+        "las-heras": [
+          { value: "las-heras-centro", text: "Las Heras Centro" },
+          { value: "villa-nueva", text: "Villa Nueva" },
+          { value: "panquehua", text: "Panquehua" },
+          { value: "el-plumerillo", text: "El Plumerillo" },
+        ],
+        maipu: [
+          { value: "maipu-centro", text: "Maipú Centro" },
+          { value: "cruz-de-piedra", text: "Cruz de Piedra" },
+          { value: "russell", text: "Russell" },
+          { value: "coquimbito", text: "Coquimbito" },
+          { value: "los-alamos", text: "Los Álamos" },
+        ],
+        "lujan-cuyo": [
+          { value: "lujan-centro", text: "Luján Centro" },
+          { value: "chacras-coria", text: "Chacras de Coria" },
+          { value: "mayor-drummond", text: "Mayor Drummond" },
+          { value: "carrodilla", text: "Carrodilla" },
+          { value: "vistalba", text: "Vistalba" },
+        ],
+        guaymallen: [
+          { value: "guaymallen-centro", text: "Guaymallén Centro" },
+          { value: "san-jose", text: "San José" },
+          { value: "kilometro-8", text: "Kilómetro 8" },
+          { value: "pedro-molina", text: "Pedro Molina" },
+        ],
+      };
+
+      // Department/Zone selector functionality
+      function setupLocationSelectors() {
+        const departmentSelect = document.getElementById("department-select");
+        const zoneSelect = document.getElementById("zone-select");
+
+        departmentSelect.addEventListener("change", function () {
+          const selectedDepartment = this.value;
+
+          // Clear zone selector
+          zoneSelect.innerHTML = '<option value="">Todas las zonas</option>';
+
+          if (selectedDepartment && zoneData[selectedDepartment]) {
+            // Enable zone selector and populate with zones
+            zoneSelect.disabled = false;
+
+            zoneData[selectedDepartment].forEach((zone) => {
+              const option = document.createElement("option");
+              option.value = zone.value;
+              option.textContent = zone.text;
+              zoneSelect.appendChild(option);
+            });
+          } else {
+            // Disable zone selector if no department selected
+            zoneSelect.disabled = true;
+            zoneSelect.innerHTML =
+              '<option value="">Seleccione primero un departamento</option>';
+          }
+        });
+      }
+
+      // Clear filters functionality
+      document.getElementById("clear-filters").addEventListener("click", () => {
+        // Clear all checkboxes
+        document.querySelectorAll(".checkbox-custom").forEach((checkbox) => {
+          checkbox.checked = false;
+        });
+
+        // Clear text inputs
+        document.querySelectorAll('input[type="text"]').forEach((input) => {
+          input.value = "";
+        });
+
+        // Clear select inputs
+        document.querySelectorAll("select").forEach((select) => {
+          select.selectedIndex = 0;
+        });
+
+        // Reset zone selector
+        const zoneSelect = document.getElementById("zone-select");
+        zoneSelect.disabled = true;
+        zoneSelect.innerHTML =
+          '<option value="">Seleccione primero un departamento</option>';
+
+        // Reset price range sliders
+        document.getElementById("price-range-min").value = 0;
+        document.getElementById("price-range-max").value = 500000000;
+        updatePriceRange();
+
+        // Reset bedroom/bathroom buttons
+        document.querySelectorAll(".filter-section button").forEach((btn) => {
+          btn.classList.remove("border-red-600", "text-red-600", "bg-red-50");
+          btn.classList.add("border-gray-200");
+        });
+      });
+
+      // Bedroom/bathroom button selection
+      document.querySelectorAll(".filter-section button").forEach((button) => {
+        button.addEventListener("click", function () {
+          // Remove active state from siblings
+          const siblings = this.parentElement.querySelectorAll("button");
+          siblings.forEach((btn) => {
+            btn.classList.remove("border-red-600", "text-red-600", "bg-red-50");
+            btn.classList.add("border-gray-200");
+          });
+
+          // Add active state to clicked button
+          this.classList.remove("border-gray-200");
+          this.classList.add("border-red-600", "text-red-600", "bg-red-50");
+        });
+      });
+
+      // Initialize page
+      document.addEventListener("DOMContentLoaded", function () {
+        updatePriceRange();
+        renderProperties();
+        setupLocationSelectors();
+      });
+
+      // Element SDK implementation
+      async function onConfigChange(config) {
+        const customFont = config.font_family || defaultConfig.font_family;
+        const baseSize = config.font_size || defaultConfig.font_size;
+        const baseFontStack = "system-ui, -apple-system, sans-serif";
+
+        // Update text content
+        document.getElementById("page-title").textContent =
+          config.page_title || defaultConfig.page_title;
+        document.getElementById("filter-title").textContent =
+          config.filter_title || defaultConfig.filter_title;
+        document.getElementById("results-text").textContent =
+          config.results_text || defaultConfig.results_text;
+
+        // Update colors
+        const backgroundColor =
+          config.background_color || defaultConfig.background_color;
+        const surfaceColor =
+          config.surface_color || defaultConfig.surface_color;
+        const textColor = config.text_color || defaultConfig.text_color;
+        const primaryActionColor =
+          config.primary_action_color || defaultConfig.primary_action_color;
+        const secondaryActionColor =
+          config.secondary_action_color || defaultConfig.secondary_action_color;
+
+        // Update surface colors
+        document.querySelectorAll(".bg-white").forEach((el) => {
+          el.style.backgroundColor = surfaceColor;
+        });
+
+        // Update text colors
+        document.querySelectorAll(".text-gray-900").forEach((el) => {
+          el.style.color = textColor;
+        });
+
+        // Update primary action colors
+        document.querySelectorAll(".btn-primary, .bg-red-600").forEach((el) => {
+          el.style.backgroundColor = primaryActionColor;
+        });
+
+        // Update fonts
+        document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+        document.body.style.fontSize = `${baseSize}px`;
+
+        // Scale headings proportionally
+        document.querySelectorAll("h1").forEach((el) => {
+          el.style.fontSize = `${baseSize * 1.875}px`;
+        });
+        document.querySelectorAll("h3").forEach((el) => {
+          el.style.fontSize = `${baseSize * 1.125}px`;
+        });
+        document.querySelectorAll("h4").forEach((el) => {
+          el.style.fontSize = `${baseSize * 1.25}px`;
+        });
+      }
+
+      // Initialize Element SDK
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities: (config) => ({
+            recolorables: [
+              {
+                get: () =>
+                  config.background_color || defaultConfig.background_color,
+                set: (value) => {
+                  config.background_color = value;
+                  window.elementSdk.setConfig({ background_color: value });
+                },
+              },
+              {
+                get: () => config.surface_color || defaultConfig.surface_color,
+                set: (value) => {
+                  config.surface_color = value;
+                  window.elementSdk.setConfig({ surface_color: value });
+                },
+              },
+              {
+                get: () => config.text_color || defaultConfig.text_color,
+                set: (value) => {
+                  config.text_color = value;
+                  window.elementSdk.setConfig({ text_color: value });
+                },
+              },
+              {
+                get: () =>
+                  config.primary_action_color ||
+                  defaultConfig.primary_action_color,
+                set: (value) => {
+                  config.primary_action_color = value;
+                  window.elementSdk.setConfig({ primary_action_color: value });
+                },
+              },
+              {
+                get: () =>
+                  config.secondary_action_color ||
+                  defaultConfig.secondary_action_color,
+                set: (value) => {
+                  config.secondary_action_color = value;
+                  window.elementSdk.setConfig({
+                    secondary_action_color: value,
+                  });
+                },
+              },
+            ],
+            borderables: [],
+            fontEditable: {
+              get: () => config.font_family || defaultConfig.font_family,
+              set: (value) => {
+                config.font_family = value;
+                window.elementSdk.setConfig({ font_family: value });
+              },
+            },
+            fontSizeable: {
+              get: () => config.font_size || defaultConfig.font_size,
+              set: (value) => {
+                config.font_size = value;
+                window.elementSdk.setConfig({ font_size: value });
+              },
+            },
+          }),
+          mapToEditPanelValues: (config) =>
+            new Map([
+              ["page_title", config.page_title || defaultConfig.page_title],
+              [
+                "filter_title",
+                config.filter_title || defaultConfig.filter_title,
+              ],
+              [
+                "results_text",
+                config.results_text || defaultConfig.results_text,
+              ],
+            ]),
+        });
+      }
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'998c817d639b1fe4',t:'MTc2MjE3OTU1OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+    <script>
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("navbar-scroll", "bg-white", "shadow-lg");
+        } else {
+          navbar.classList.remove("navbar-scroll", "bg-white", "shadow-lg");
+        }
+      });
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+            // Close mobile menu if open
+            mobileMenu.classList.add("hidden");
+          }
+        });
+      });
+
+      // Form submission
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        alert("¡Gracias por tu mensaje! Te responderemos a la brevedad.");
+        this.reset();
+      });
+
+      // WhatsApp button functionality
+      document
+        .querySelector("button:has(svg)")
+        .addEventListener("click", function () {
+          if (this.textContent.includes("WhatsApp")) {
+            window.open(
+              "https://wa.me/5492611234567?text=Hola, me interesa obtener más información sobre sus propiedades.",
+              "_blank"
+            );
+          }
+        });
+
+      // Property buttons functionality
+      document.querySelectorAll("button").forEach((button) => {
+        if (button.textContent.includes("Ver propiedad")) {
+          button.addEventListener("click", function () {
+            alert("Redirigiendo a la página de la propiedad...");
+          });
+        }
+      });
+
+      // CTA buttons functionality
+      document.querySelectorAll("button").forEach((button) => {
+        if (button.textContent.includes("Ver propiedades")) {
+          button.addEventListener("click", function () {
+            alert("Redirigiendo a la página de propiedades...");
+          });
+        }
+        if (button.textContent.includes("Tasación gratuita")) {
+          button.addEventListener("click", function () {
+            alert("Redirigiendo al formulario de tasación...");
+          });
+        }
+        if (button.textContent.includes("Publicar mi propiedad")) {
+          button.addEventListener("click", function () {
+            alert("Redirigiendo al formulario de publicación...");
+          });
+        }
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9814c99476fba77a',t:'MTc1ODIzOTg2NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
